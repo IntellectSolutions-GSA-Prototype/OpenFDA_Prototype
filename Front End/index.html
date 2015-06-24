@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" ng-app="OpenFDAPrototype">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+    <!--CDN References-->
+    <!--Styles-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
+    <!--Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <!--Site Dependencies-->
+    <!--Styles-->
+    <!--Style Overrides-->
+    <link href="Styles/Master/master.css" rel="stylesheet" />
+    <link href="Styles/Master/menu.css" rel="stylesheet" />
+    <link href="Styles/Views/index.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainController as main" ng-init="main.setPageTitle()">
+    <div class="site-menu menu-blue">
+        <ul class="site-menu-list">
+            <li ng-repeat="item in main.menuItems" class="menu-item {{item.classes}}" ng-show="item.show" ng-class="{'menu-logo': item.isLogo}">
+                <span class="menu-item-content" ng-class="{'menu-logo-content': item.isLogo}">
+                    <span ng-class="{'prototype-logo': item.isLogo}">
+                        <a href="{{item.url}}" ng-click="main.closeMenu()">
+                            <span ng-show="{{ !item.isImage }}">
+                                {{item.text}}
+                            </span>
+                            <img src="{{item.src}}" alt="{{item.alt}}" ng-show="{{item.isImage}}" />
+                        </a>
+                    </span>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="site-menu-mobile-icon">
+        <div class="site-menu-mobile-text">
+            <span class="site-menu-mobile-bar">
+            </span>
+            <span class="site-menu-mobile-bar">
+            </span>
+            <span class="site-menu-mobile-bar">
+            </span>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="beta-disclaimer" ng-show="!main.isMobile">
+            <div class="heading-medium beta-disclaimer-heading beta-disclaimer-yellow text-center">
+               Beta Usage &amp; API Alert
+            </div>
+            <div class="beta-disclaimer-text">
+                <div class="para">
+                    <b>openFDA</b> is a beta research project and is not for clinical use.
+                </div>
+                <div class="para">
+                    We may limit or otherwise restrict your access according to our <a href="#" class="beta-disclaimer-yellow">Terms of Use</a>.
+                </div>
+            </div>
+        </div>
+        <div class="view-area">
+            <div ng-view>
+                <!--View Content Injected Here-->
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="mobilify" />
+    <!--CDN References-->
+    <!--Scripts-->
+    <!--ExoTools-->
+    <script type="text/javascript" src="https://cdn.rawgit.com/JacobHeater/ExoTools.js/Version-2.0/ExoTools.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/JacobHeater/ExoTools.js/Version-2.0/ExoTools.Collections.js"></script>
+    <script src="Scripts/ExoTools/ExoTools.Document.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <!--Site References Post Dependencies Loaded-->
+    <script src="Scripts/Master/menu.js"></script>
+    <script src="Scripts/Master/master.js"></script>
+    <script src="Scripts/Master/Angular-Init.js"></script>
+    <!--Controllers-->
+    <!--Views/Search.html-->
+    <script src="Scripts/Controllers/SearchController.js"></script>
+    <script src="Scripts/Controllers/PrescriptionLabelsController.js"></script>
+    <script src="Scripts/Controllers/DrugSearchController.js"></script>
+    <script src="Scripts/Controllers/FoodSearchController.js"></script>
+    <!--Views/Disclosure.html-->
+    <script src="Scripts/Controllers/DisclosureController.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+﻿/*****************************************************
+******************************************************
+*****************************************************
+Identifiers
+******************************************************
+******************************************************
+******************************************************/
+
+
+/*****************************************************
+******************************************************
+*****************************************************
+Tags
+******************************************************
+******************************************************
+******************************************************/
+
+
+/*****************************************************
+******************************************************
+*****************************************************
+Classes
+******************************************************
+******************************************************
+******************************************************/
+.site-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    -webkit-box-shadow: 0px 0px 10px black;
+    -moz-box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px black;
+    z-index: 9999;
+}
+
+    .site-menu a {
+        text-decoration: none;
+        color: white;
+    }
+
+        .site-menu a:hover {
+            color: white;
+        }
+
+.site-menu-list {
+    list-style-type: none;
+}
+
+.menu-item {
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px black;
+}
+
+    .menu-item:hover {
+        text-shadow: 1px 1px 5px black;
+        text-decoration: none;
+    }
+
+    .menu-item a:hover {
+        text-decoration: none;
+    }
+
+.menu-logo {
+    font-size: 2em;
+    text-shadow: 2px 2px 5px black;
+    padding-right: 55px;
+    border: none;
+    box-shadow: none;
+}
+
+    .menu-logo:hover {
+        text-shadow: 2px 2px 5px black;
+        text-decoration: none;
+    }
+
+    .menu-logo a:hover {
+        text-decoration: none;
+    }
+
+
+.menu-olive {
+    background-color: #63744a;
+    border-bottom: 1px solid #4a5637;
+}
+
+.menu-brown {
+    background-color: #64411b;
+    border-bottom: 1px solid #3e2911;
+}
+
+.menu-blue {
+    background-color: rgb(86, 133, 217);
+    border-bottom: 1px solid rgb(45, 124, 222);
+}
+
+.site-menu-mobile-icon {
+    display: none;
+}
+
+/*****************************************************
+******************************************************
+******************************************************
+Mobile Styles
+******************************************************
+******************************************************
+******************************************************/
+@media only screen and (max-device-width : 800px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    .site-menu {
+        left: -200px;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border-right: 2px solid #efefef;
+    }
+
+    .site-menu-mobile-icon {
+        display: inherit;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+    }
+
+    .site-menu-mobile-text {
+        background-color: rgb(86, 133, 217);
+        color: white;
+        padding: 4px 9px 4px 9px;
+        border: 2px solid #efefef;
+        border-radius: 100%;
+        -webkit-box-shadow: 1px 1px 5px black;
+        -moz-box-shadow: 1px 1px 5px black;
+        -o-box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 5px black;
+    }
+
+    .site-menu-mobile-bar {
+        display: table;
+        width: 15px;
+        height: 2px;
+        background-color: #efefef;
+        margin: 0 auto;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .site-menu-list {
+        display: block;
+        padding: 10px 0 10px 0;
+        margin-top: 55px;
+    }
+
+    .menu-item {
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid rgb(37, 96, 168);
+    }
+
+        .menu-item:hover {
+            background-color: rgb(45, 124, 222);
+        }
+
+        .menu-item:nth-child(2) {
+            border-top: 1px solid rgb(37, 96, 168);
+        }
+
+    .menu-logo {
+        padding: 0;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border: none;
+        font-size: 2em;
+    }
+
+        .menu-logo:hover {
+            background-color: inherit;
+        }
+    .beta-menu, .beta-menu a {
+        color: #ffb373;
+    }
+}
