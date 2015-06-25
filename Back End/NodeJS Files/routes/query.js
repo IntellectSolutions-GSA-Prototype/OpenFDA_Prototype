@@ -19,16 +19,58 @@ var queryListBrandNamePres = {
   };
 
 // Query Parametesr - List of Generic Name OTC Drugs with Adverse Reactions
-var queryListGenericNameOTC = {
+var queryListGenericOTC = {
     sPath: '/drug/label.json',
     sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.generic_name.exact'
   };
 
 // Query Parameters - List of Generic Name Prescription Drugs with Adverse Reactions
-var queryListGenericNamePres = {
+var queryListGenericPres = {
     sPath: '/drug/label.json',
     sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.generic_name.exact'
   };
+
+// Cache List Queries that do not change
+var cacheBrandNameOTC = null;
+var cacheBrandNamePres = null;
+var cacheGenericOTC = null;
+var cacheGenericPres = null;
+
+performRequest(queryListBrandNameOTC, function(responseData) { 
+  if(responseData) {
+    printMsg('Caching BrandName OTC List');
+    cacheBrandNameOTC = responseData; 
+  } else {
+    printMsg('Unable to Cache BrandName OTC List');
+  }
+});
+
+performRequest(queryListBrandNamePres, function(responseData) { 
+  if(responseData) {
+    printMsg('Caching BrandName Prescription List');
+    cacheBrandNamePres = responseData; 
+  } else {
+    printMsg('Unable to Cache BrandName Prescription List');
+  }
+});
+
+performRequest(queryListGenericOTC, function(responseData) { 
+  if(responseData) {
+    printMsg('Caching Generic OTC List');
+    cacheGenericOTC = responseData; 
+  } else {
+    printMsg('Unable to Cache Generic OTC List');
+  }
+});
+
+performRequest(queryListGenericPres, function(responseData) { 
+  if(responseData) {
+    printMsg('Caching Generic Prescription List');
+    cacheGenericPres = responseData; 
+  } else {
+    printMsg('Unable to Cache Generic Prescription List');
+  }
+});
 
 function performRequest(params, success) {
   var headers = {};
@@ -63,7 +105,7 @@ function performRequest(params, success) {
       });
 
       res.on('end', function() {
-        success(responseString);
+        success(JSON.parse(responseString));
       });
     } else {
 	success(null);
@@ -111,36 +153,67 @@ function printMsg (sStr, res) {
 function processOpenFDAResponse(response, responseData) {
   if(responseData) {
     printMsg('Fetched ' + responseData.length + ' bytes.');
-    response.json(200,JSON.parse(responseData));
+    response.json(200,responseData);
   } else {
     printMsg('No response received for query parameters',response);
   }
 }
 
 exports.listBrandNameOTCDrugs = function(req,res) {
-  var responseData = {};
-  printMsg('Brand Name OTC List Request: ' + queryListBrandNameOTC.sPath + '?' + queryListBrandNameOTC.sQuery);
-  performRequest(queryListBrandNameOTC, function(responseData) {
-    processOpenFDAResponse(res,responseData);
-  });
+  if(cacheBrandNameOTC) {
+    printMsg('Using Cached BrandName OTC Data');
+    res.json(200,cacheBrandNameOTC);
+  } else {
+    printMsg('Brand Name OTC List Request: ' + queryListBrandNameOTC.sPath + '?' + queryListBrandNameOTC.sQuery);
+    performRequest(queryListBrandNameOTC, function(responseData) {
+      processOpenFDAResponse(res,responseData)
+      cachBrandNameOTC = responseData;
+    });
+  }
 }
 
 exports.listBrandNamePresDrugs = function(req,res) {
-  performRequest(queryListBrandNamePres, function(responseData) {
-    processOpenFDAResponse(res,responseData);
-  });
+  if(cacheBrandNamePres) {
+    printMsg('Using Cached BrandName Prescription Data');
+    res.json(200,cacheBrandNamePres);
+  } else {
+    performRequest(queryListBrandNamePres, function(responseData) {
+      processOpenFDAResponse(res,responseData);
+      cacheBrandNamePres = responseData;
+    });
+  }
 }
 
-exports.listGenericNameOTCDrugs = function(req,res) {
-  performRequest(queryListGenericNameOTC, function(responseData) {
-    processOpenFDAResponse(res,responseData);
-  });
+exports.listGenericOTCDrugs = function(req,res) {
+  if(cacheGenericOTC) {
+    printMsg('Using Cached Generic OTC Data');
+    res.json(200,cacheGenericOTC);
+  } else {
+    performRequest(queryListGenericOTC, function(responseData) {
+      processOpenFDAResponse(res,responseData);
+      cacheGenericOTC = responseData;
+    });
+  }
 }
 
-exports.listGenericNamePresDrugs = function(req,res) {
-  performRequest(queryListGenericNameOTC, function(responseData) {
-    processOpenFDAResponse(res,responseData);
-  });
+exports.listGenericPresDrugs = function(req,res) {
+  if(cacheGenericPres) {
+    printMsg('Using Cached Generic Prescription Data');
+    res.json(200,cacheGenericPres);
+  } else {
+    performRequest(queryListGenericOTC, function(responseData) {
+      processOpenFDAResponse(res,responseData);
+      cacheGenericPres = responseData;
+    });
+  }
+}
+
+exports.clearCache = function(req,res) {
+  cacheBrandNameOTC = null;
+  cacheBrandNamePres = null;
+  cacheGenericOTC = null;
+  cacheGenericPres = null;
+  res.send(200);
 }
 
 exports.openFDA = function(req,res) {

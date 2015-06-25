@@ -32,10 +32,11 @@ app.set('json spaces',2);
 app.set('json replacer', undefined);
 
 // Define get/post methods accepted by server
+app.get('/openfda/clearcache',query.clearCache);
 app.get('/openfda/listBrandNameOTCDrugs',query.listBrandNameOTCDrugs);
 app.get('/openfda/listBrandNamePresDrugs',query.listBrandNamePresDrugs);
-app.get('/openfda/listGenericOTCDrugs',query.listGenericNameOTCDrugs);
-app.get('/openfda/listGenericPresDrugs',query.listGenericNamePresDrugs);
+app.get('/openfda/listGenericOTCDrugs',query.listGenericOTCDrugs);
+app.get('/openfda/listGenericPresDrugs',query.listGenericPresDrugs);
 app.post('/openfda/query',query.openFDA);
 
 // Error Handling
