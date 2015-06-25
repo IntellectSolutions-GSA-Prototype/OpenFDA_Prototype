@@ -4,15 +4,40 @@ var https = require('https');
 var host = 'api.fda.gov';
 var apiKey = '*****';
 var sessionId = null;
+var debug = true;
 
-function performRequest(apiPath, data, success) {
+// Query Parameters List of Brand Name OTC Drugs with Adverse Reactions
+var queryListBrandNameOTC = {
+    sPath: '/drug/label.json',
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.brand_name.exact'
+  };
+
+// Query Parameters - List of Brand Name Prescription Drugs with Adverse Reactions
+var queryListBrandNamePres = {
+    sPath: '/drug/label.json',
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.brand_name.exact'
+  };
+
+// Query Parametesr - List of Generic Name OTC Drugs with Adverse Reactions
+var queryListGenericNameOTC = {
+    sPath: '/drug/label.json',
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.generic_name.exact'
+  };
+
+// Query Parameters - List of Generic Name Prescription Drugs with Adverse Reactions
+var queryListGenericNamePres = {
+    sPath: '/drug/label.json',
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.generic_name.exact'
+  };
+
+function performRequest(params, success) {
   var headers = {};
   var method = 'GET';
 
   // OpenFDA Query Syntax is very particular.  This function assumes
-  // data is a string representing a properly formated set of query parameters 
+  // data is a string representing a properly formatted set of query parameters 
   // OpenFDA query method = GET (POST not supported)
-  apiPath += '?' + data;
+  var apiPath = params.sPath + '?' + params.sQuery;
   
   var options = {
     host: host,
@@ -21,12 +46,12 @@ function performRequest(apiPath, data, success) {
     headers: headers
   };
 
-  messageToConsole('Host: ' + options.host);
-  messageToConsole('Path: ' + options.path);
-  messageToConsole('Method: ' + options.method);
+  printMsg('Host: ' + options.host);
+  printMsg('Path: ' + options.path);
+  printMsg('Method: ' + options.method);
 
   var req = https.request(options, function(res) {
-    messageToConsole(options.host + ':' + res.statusCode);
+    printMsg('OpenFDA Query Response: ' + res.statusCode);
 
     if(res.statusCode == 200) {
       var responseString = '';
@@ -50,71 +75,89 @@ function performRequest(apiPath, data, success) {
 }
 
 function parseParameters(data) {
-  var qString = {
+  var qParams = {
     sPath: '',
     sQuery: ''
   };
 
   if(!isNaN(data.QueryType.Index)) {
-    messageToConsole('Query Index = ' + data.QueryType.Index);
+    printMsg('Query Index = ' + data.QueryType.Index);
     switch(data.QueryType.Index) {
       case 0:  //Food Recalls
-        qString.sPath = '/drug/event.json';
-	qString.sQuery = 'search=reason_for_recall:"' + data.Value.replace(/ /g,"+") + '"';
+        qParams.sPath = '/drug/event.json';
+	qParams.sQuery = 'search=reason_for_recall:"' + data.Value.replace(/ /g,"+") + '"';
         break;
       case 1:  //Adverse Reactions
-        qString.sPath = '/drug/event.json';
-	qString.sQuery = 'search=patient.drug.openfda.pharm_class_epc:"' + data.Value.replace(/ /g,"+") + '"';
+        qParams.sPath = '/drug/event.json';
+	qParams.sQuery = 'search=patient.drug.openfda.pharm_class_epc:"' + data.Value.replace(/ /g,"+") + '"';
         break;
       case 2: //Label Search - Boxed Warnings
-	qString.sPath = '/drug/label.json';
-	qString.sQuery = 'search=_exists_:boxed_warning';
+	qParams.sPath = '/drug/label.json';
+	qParams.sQuery = 'search=_exists_:boxed_warning';
 	break;
       default:
 	// Do nothing
 	break;
     } 
   }
-  return qString; 
+  return qParams; 
 }
 
-function messageToConsole (sStr, res) {
-  console.log(sStr);
-  if(res) {
-    res.write(sStr);
+function printMsg (sStr, res) {
+  if(debug) { console.log(sStr); }
+  if(res) { res.write(sStr); }
+}
+
+function processOpenFDAResponse(response, responseData) {
+  if(responseData) {
+    printMsg('Fetched ' + responseData.length + ' bytes.');
+    response.json(200,JSON.parse(responseData));
+  } else {
+    printMsg('No response received for query parameters',response);
   }
 }
 
-var cachedResult = '[{"result":""},{"result":""},{"result":""}]';
-var resultArray = JSON.parse(cachedResult);
+exports.listBrandNameOTCDrugs = function(req,res) {
+  var responseData = {};
+  printMsg('Brand Name OTC List Request: ' + queryListBrandNameOTC.sPath + '?' + queryListBrandNameOTC.sQuery);
+  performRequest(queryListBrandNameOTC, function(responseData) {
+    processOpenFDAResponse(res,responseData);
+  });
+}
+
+exports.listBrandNamePresDrugs = function(req,res) {
+  performRequest(queryListBrandNamePres, function(responseData) {
+    processOpenFDAResponse(res,responseData);
+  });
+}
+
+exports.listGenericNameOTCDrugs = function(req,res) {
+  performRequest(queryListGenericNameOTC, function(responseData) {
+    processOpenFDAResponse(res,responseData);
+  });
+}
+
+exports.listGenericNamePresDrugs = function(req,res) {
+  performRequest(queryListGenericNameOTC, function(responseData) {
+    processOpenFDAResponse(res,responseData);
+  });
+}
 
 exports.openFDA = function(req,res) {
   var data = req.body;
-  //var data = JSON.parse('{"QueryType":{"Index":2,"Value":"Label Search - Boxed Warnings"},"Value":""}');
 
   if(data.QueryType.Index !== undefined) {
-    if(resultArray[data.QueryType.Index].result != "") {
-      messageToConsole('Responding from cached value');
-      res.json(200,resultArray[data.QueryType.Index]);
+    printMsg('Parameters Received: ' + JSON.stringify(data));
+    var searchData = parseParameters(data);
+    if (searchData.sPath !== '') {
+      performRequest(searchData, function(responseData) {
+        processOpenFDAResponse(res,responseData);
+      });
     } else {
-      messageToConsole('Parameters Received: ' + JSON.stringify(data));
-      var searchData = parseParameters(data);
-      if (searchData.sPath !== '') {
-        performRequest(searchData.sPath, searchData.sQuery, function(responseData) {
-          if(responseData) {
-            messageToConsole('Fetched ' + responseData.length + ' bytes.  Response cached');
-            resultArray[data.QueryType.Index] = JSON.parse(responseData);
-            res.json(200,JSON.parse(responseData));
-          } else {
-            messageToConsole('No response received for query parameters',res);
-          }
-        });
-      } else {
-	messageToConsole('Query Parameters not recognized',res);
-      }
+      printMsg('Query Parameters not recognized',res);
     }
   } else {
-    messageToConsole('No query parameters received',res);
+    printMsg('No query parameters received',res);
   }
 }
 
