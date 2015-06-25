@@ -21,12 +21,12 @@ function performRequest(apiPath, data, success) {
     headers: headers
   };
 
-  console.log('Host: ' + options.host);
-  console.log('Path: ' + options.path);
-  console.log('Method: ' + options.method);
+  messageToConsole('Host: ' + options.host);
+  messageToConsole('Path: ' + options.path);
+  messageToConsole('Method: ' + options.method);
 
   var req = https.request(options, function(res) {
-    console.log(options.host + ':' + res.statusCode);
+    messageToConsole(options.host + ':' + res.statusCode);
 
     if(res.statusCode == 200) {
       var responseString = '';
@@ -55,7 +55,8 @@ function parseParameters(data) {
     sQuery: ''
   };
 
-  if(data.QueryType.Index) {
+  if(!isNaN(data.QueryType.Index)) {
+    messageToConsole('Query Index = ' + data.QueryType.Index);
     switch(data.QueryType.Index) {
       case 0:  //Food Recalls
         qString.sPath = '/drug/event.json';
@@ -65,6 +66,10 @@ function parseParameters(data) {
         qString.sPath = '/drug/event.json';
 	qString.sQuery = 'search=patient.drug.openfda.pharm_class_epc:"' + data.Value.replace(/ /g,"+") + '"';
         break;
+      case 2: //Label Search - Boxed Warnings
+	qString.sPath = '/drug/label.json';
+	qString.sQuery = 'search=_exists_:boxed_warning';
+	break;
       default:
 	// Do nothing
 	break;
@@ -73,27 +78,43 @@ function parseParameters(data) {
   return qString; 
 }
 
-exports.openFDA = function(req,res) {
-  //var data = req.body;
-  var data = JSON.parse('{"QueryType":{"Index":1,"Value":"Adverse Reactions"},"Value":"nonsteroidal anti-inflammatory drug"}');
+function messageToConsole (sStr, res) {
+  console.log(sStr);
+  if(res) {
+    res.write(sStr);
+  }
+}
 
-  if(data) {
-    console.log('Parameters Received: ' + JSON.stringify(data));
-    var searchData = parseParameters(data);
-    if (searchData.sPath != '') {
-      performRequest(searchData.sPath, searchData.sQuery, function(responseData) {
-        if(responseData) {
-          console.log('Fetched ' + responseData.length + ' bytes');
-          res.json(200,JSON.parse(responseData));
-        } else {
-          res.write('No response received for query parameters');
-        }
-      });
+var cachedResult = '[{"result":""},{"result":""},{"result":""}]';
+var resultArray = JSON.parse(cachedResult);
+
+exports.openFDA = function(req,res) {
+  var data = req.body;
+  //var data = JSON.parse('{"QueryType":{"Index":2,"Value":"Label Search - Boxed Warnings"},"Value":""}');
+
+  if(data.QueryType.Index !== undefined) {
+    if(resultArray[data.QueryType.Index].result != "") {
+      messageToConsole('Responding from cached value');
+      res.json(200,resultArray[data.QueryType.Index]);
     } else {
-	res.write('Query Parameters not recognized');
+      messageToConsole('Parameters Received: ' + JSON.stringify(data));
+      var searchData = parseParameters(data);
+      if (searchData.sPath !== '') {
+        performRequest(searchData.sPath, searchData.sQuery, function(responseData) {
+          if(responseData) {
+            messageToConsole('Fetched ' + responseData.length + ' bytes.  Response cached');
+            resultArray[data.QueryType.Index] = JSON.parse(responseData);
+            res.json(200,JSON.parse(responseData));
+          } else {
+            messageToConsole('No response received for query parameters',res);
+          }
+        });
+      } else {
+	messageToConsole('Query Parameters not recognized',res);
+      }
     }
   } else {
-    res.write('No query parameters received');
+    messageToConsole('No query parameters received',res);
   }
 }
 

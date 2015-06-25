@@ -15,6 +15,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.compress());
+
+app.use(function(req,res,next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'POST');
+
+  // intercept non-POST requests
+  if (req.method != 'POST') {
+    res.send(200);
+  } else {
+    next();
+  }
+});
+
 app.set('json spaces',2);
 app.set('json replacer', undefined);
 
