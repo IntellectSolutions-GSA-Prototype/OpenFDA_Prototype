@@ -6,6 +6,71 @@ var apiKey = '*****';
 var sessionId = null;
 var debug = true;
 
+// Query Filter Arrays
+// Arrays containing the filter parameters to add to queries based on user selection
+
+// Query Type 1 - List Drug Events by Drug for the specified adverse effect
+//   0 = Drug Ineffective
+//   1 = Nausea
+//   2 = Death
+//   3 = Headache
+//   4 = Dysponea
+//   5 = Pain
+//   6 = Dizziness 
+//   7 = Vomiting
+//   8 = Diarrhoea
+//   9 = Fatigue
+var queryFilterType1Query = [
+  "patient.reaction.reactionmeddrapt:drug+ineffective",
+  "patient.reaction.reactionmeddrapt:nausea",
+  "patient.reaction.reactionmeddrapt:death",
+  "patient.reaction.reactionmeddrapt:headache",
+  "patient.reaction.reactionmeddrapt:dysponea",
+  "patient.reaction.reactionmeddrapt:pain",
+  "patient.reaction.reactionmeddrapt:dizziness",
+  "patient.reaction.reactionmeddrapt:vomiting",
+  "patient.reaction.reactionmeddrapt:diarrhoea",
+  "patient.reaction.reactionmeddrapt:fatigue"
+];
+
+// Query Type 2 - List Adverse effects for specified drug for given demographics
+//   0 = Any
+//   1 = Females < 21
+//   2 = Females 22 - 60
+//   3 = Females 61 - 90
+//   4 = Females > 90
+//   5 = Males < 21
+//   6 = Males 22 - 60
+//   7 = Males 61 - 90
+//   8 = Males > 90
+var queryFilterType2Query = [
+  "",
+  "patient.patientsex:2+AND+patient.patientonsetage:[0+TO+21]",
+  "patient.patientsex:2+AND+patient.patientonsetage:[22+TO+60]",
+  "patient.patientsex:2+AND+patient.patientonsetage:[60+TO+90]",
+  "patient.patientsex:2+AND+patient.patientonsetage:[91+TO+200]",
+  "patient.patientsex:1+AND+patient.patientonsetage:[0+TO+21]",
+  "patient.patientsex:1+AND+patient.patientonsetage:[22+TO+60]",
+  "patient.patientsex:1+AND+patient.patientonsetage:[60+TO+90]",
+  "patient.patientsex:1+AND+patient.patientonsetage:[91+TO+200]"
+ ];
+
+// Drug Display Name Parameters
+//   0 = Generic
+//   1 = Brand Name
+var queryDrugNameField = [
+  "patient.drug.openfda.generic_name.exact",
+  "patient.drug.openfda.brand_name.exact"
+];
+
+// Drug Product Type
+//   0 = Over the Counter
+//   1 = Prescription
+var queryDrugProductType = [
+  "patient.drug.openfda.product_type:otc",
+  "patient.drug.openfda.product_type:prescription"
+];
+
 // Query Parameters List of Brand Name OTC Drugs with Adverse Reactions
 var queryListBrandNameOTC = {
     sPath: '/drug/label.json',
@@ -116,46 +181,86 @@ function performRequest(params, success) {
   req.end();
 }
 
-function parseParameters(data) {
+function parseParameters(queryParams) {
   var qParams = {
     sPath: '',
     sQuery: ''
   };
 
-  if(!isNaN(data.QueryType.Index)) {
-    printMsg('Query Index = ' + data.QueryType.Index);
-    switch(data.QueryType.Index) {
-      case 0:  //Food Recalls
+  if(!isNaN(queryParams.queryType)) {
+    printMsg('Query Index = ' + queryParams.queryType);
+    switch(queryParams.queryType) {
+      case 1:  // Drugs listed for selected adverse effect
         qParams.sPath = '/drug/event.json';
-	qParams.sQuery = 'search=reason_for_recall:"' + data.Value.replace(/ /g,"+") + '"';
-        break;
-      case 1:  //Adverse Reactions
+        qParams.sQuery = 'search=' + queryFilterType1Query[queryParams.filterIndex];
+        qParams.sQuery += '+AND+' + queryDrugProductType[queryParams.drugSource];
+        qParams.sQuery += '&count=' + queryDrugNameField[queryParams.drugType];
+      break;
+      case 2:  // Adverse effects for specified drug and demographics
         qParams.sPath = '/drug/event.json';
-	qParams.sQuery = 'search=patient.drug.openfda.pharm_class_epc:"' + data.Value.replace(/ /g,"+") + '"';
+        qParams.sQuery += 'search=' + queryFilterType2Query[queryParams.filterIndex];
+        if(queryParams.drugType === 0) {
+          qParams.sQuery = 'search=patient.drug.openfda.generic_name:' + queryParams.drugName;
+        } else {
+	  qParams.sQuery = 'search=patient.drug.openfda.brand_name:' + queryParams.drugName;
+        }
+        if(queryParams.filterIndex > 0) {
+          qParams.sQuery += '+AND+' + queryFilterType2Query[queryParams.filterIndex];
+        }
+        qParams.sQuery += '&count=patient.reaction.reactionmeddrapt.exact';
         break;
-      case 2: //Label Search - Boxed Warnings
-	qParams.sPath = '/drug/label.json';
-	qParams.sQuery = 'search=_exists_:boxed_warning';
+      case 3: //Label Search - Boxed Warnings
+        qParams.sPath = '/drug/label.json';
+        if(queryParams.drugType === 0) {
+          qParams.sQuery = 'search=openfda.generic_name:' + queryParams.drugName;
+        } else {
+          qParams.sQuery = 'search=openfda.brand_name:' + queryParams.drugName;
+        }
 	break;
       default:
-	// Do nothing
+        // Do nothing: Unknown Query Type Submitted
 	break;
-    } 
+    }
   }
   return qParams; 
 }
 
-function printMsg (sStr, res) {
-  if(debug) { console.log(sStr); }
-  if(res) { res.write(sStr); }
+function printMsg (sStr) {
+  if(debug) { console.log(timeStamp() + ' | ' + sStr); }
+}
+
+/**
+ *  Return a timestamp with the format "yyyy-mm-dd HH:mm:ss"
+ *  @type {Date}
+ *    
+ **/
+ 
+function timeStamp() {
+// Create a date object with the current time
+   var now = new Date();
+    
+   // Create an array with the current month, day and time
+   var date = [ 
+     now.getFullYear(), 
+     now.getMonth()<10?"0"+now.getMonth():now.getMonth(), 
+     now.getDate()<10?"0"+now.getDate():now.getDate() ];
+       
+   // Create an array with the current hour, minute and second (Military Format)
+   var time = [ 
+     now.getHours()<10?"0"+now.getHours():now.getHours(), 
+     now.getMinutes()<10?"0"+now.getMinutes():now.getMinutes(), 
+     now.getSeconds()<10?"0"+now.getMinutes():now.getSeconds() ];
+          
+   // Return the formatted string
+   return date.join("-") + " " + time.join(":");
 }
 
 function processOpenFDAResponse(response, responseData) {
   if(responseData) {
-    printMsg('Fetched ' + responseData.length + ' bytes.');
     response.json(200,responseData);
   } else {
-    printMsg('No response received for query parameters',response);
+    printMsg('No response received for query parameters');
+    response.json(200,JSON.parse('[{"results":"No Response Received"}]'));
   }
 }
 
@@ -219,18 +324,20 @@ exports.clearCache = function(req,res) {
 exports.openFDA = function(req,res) {
   var data = req.body;
 
-  if(data.QueryType.Index !== undefined) {
+  if(data.QueryParameters !== undefined) {
     printMsg('Parameters Received: ' + JSON.stringify(data));
-    var searchData = parseParameters(data);
+    var searchData = parseParameters(data.QueryParameters);
     if (searchData.sPath !== '') {
       performRequest(searchData, function(responseData) {
         processOpenFDAResponse(res,responseData);
       });
     } else {
-      printMsg('Query Parameters not recognized',res);
+      printMsg('Query Parameters not recognized');
+      res.json(200,JSON.parse('[{"results":"Query Parameters not recognized"}]'));
     }
   } else {
-    printMsg('No query parameters received',res);
+    printMsg('No query parameters received');
+    res.json(200,JSON.parse('[{"results":"No Query Parameters Received"}]'));
   }
 }
 
