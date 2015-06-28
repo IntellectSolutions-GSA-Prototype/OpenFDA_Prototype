@@ -1,10 +1,14 @@
 ﻿var app = angular.module('OpenFDAPrototype', ['ngRoute']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     var urlFormat = "../../Views/{0}";
-    var createUrl = function(viewName){
+    var createUrl = function (viewName) {
         return exoTools.stringFormatter(urlFormat, viewName);
     };
-    $routeProvider.when('/Search', {
+    $routeProvider.when('/', {
+        templateUrl: createUrl('Landing.html'),
+        controller: 'LandingController',
+        controllerAs: 'landing'
+    }).when('/Search', {
         templateUrl: createUrl('Search.html'),
         controller: 'SearchController',
         controllerAs: 'search'
@@ -24,6 +28,14 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         templateUrl: createUrl('Disclosure.html'),
         controller: 'DisclosureController',
         controllerAs: 'disclosure'
+    }).when('/About', {
+        templateUrl: createUrl('About.html'),
+        controller: 'AboutController',
+        controllerAs: 'about'
+    }).when('/Video', {
+        templateUrl: createUrl('Video.html'),
+        controller: 'VideoController',
+        controllerAs: 'video'
     });
 }]);
 var menuItem = exoTools.$class('Prototype.MenuItem', function (text, url, isLogo, show, classes) {
@@ -40,7 +52,7 @@ var imageMenuItem = exoTools.$class('Prototype.ImageMenuItem', function (src, al
     this.alt = alt;
     this.isImage = true;
 }, menuItem);
-app.controller('MainController', ['$route', '$routeParams', '$location', function ($route, $routeParams, $location) {
+app.controller('MainController', ['$route', '$routeParams', '$location', '$scope', function ($route, $routeParams, $location, $scope) {
     this.$route = $route;
     this.$routeParams = $routeParams;
     this.$location = $location;
@@ -48,16 +60,17 @@ app.controller('MainController', ['$route', '$routeParams', '$location', functio
         window.$menu.close();
         this.setPageTitle();
     };
-    this.isMobile = window.isMobile;
+    this.isMobile = function () {
+        return window.isMobile();
+    };
     this.setPageTitle = function () {
         window.setPageTitle('openFDA Home');
     };
     this.menuItems = [
-        new menuItem('openFDA', '/', true, true),
-        new menuItem('Prescription Labels', '#/Search/Prescription', false, true),
-        new menuItem('Drug Search', '#/Search/Drugs', false, true),
-        new menuItem('Food Search', '#/Search/Food', false, true),
-        new menuItem('About Us', '/', false, true),
-        new menuItem('Beta Disclosure', '#/Disclosure', false, this.isMobile, 'beta-menu')
+        new imageMenuItem('../../Images/openFDALogo.png', 'Open FDA Logo', '/#/', true, true, 'openFdaLogo'),
+        new menuItem('Drug Search', '#/Search', false, true),
+        new menuItem('Video Introduction', '#/Video', false, true),
+        new menuItem('About Us', '#/About', false, true),
+        new menuItem('Beta Disclosure', '#/Disclosure', false, this.isMobile(), 'beta-menu')
     ];
 }]);

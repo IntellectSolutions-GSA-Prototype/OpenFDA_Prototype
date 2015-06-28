@@ -1,0 +1,317 @@
+﻿@charset "utf-8";
+/* CSS Document 
+Preview styles at 
+http://www.jrsgraphics.com/RWD-base-structure/index-ofda.html
+*/
+body 
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+/* redefine a href links to not show underlines */
+a 
+{
+	text-decoration: none;
+}
+
+/* oFDA App colors | styles for re-use
+Additive styles that can be added to any element to sync / centralize shared attributes, colors, bold or plain fonts, etc.
+ */
+.ofda-font-bold 
+{
+	font-weight: bold;
+}
+
+.ofda-clr-white 
+{
+	color:rgba(255,255,255,1.00);
+}
+
+ 
+.ofda-brand-clr-gray 
+{
+  color : #707070;
+  color : rgb(112, 112, 112);
+}
+
+.ofda-brand-pms-darkblue 
+{
+	color : #003152;
+	color : rgba(0, 49, 82, 1);
+}
+
+.ofda-page-container
+{
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.ofda-logo 
+{
+	background-image:url(../../images/l_openFDA.png);
+	background-repeat:no-repeat;
+	display: inline-block;
+	position:absolute;
+	left: 20px;
+	top: 20px;
+    width: 189px;
+    height: 34px;
+    margin: 10px;
+}
+
+.ofda-FDA-logo 
+{
+	background-image:url(../../images/FDA-logo.png);
+	background-repeat:no-repeat;
+	display: inline-block;
+	position:absolute;
+	left: 20px;
+	bottom: 20px;
+	float: left;
+    width: 98px;
+    height: 49px;
+    margin: 10px;
+}
+
+.ofda-IS-logo 
+{
+	background-image: url(../../images/IntellectSolutions-Logo.png);
+	background-repeat:no-repeat;
+	display: inline-block;
+	position:absolute;
+	right: 20px;
+	bottom: 20px;
+    width: 208px;
+    height: 43px;
+    margin: 10px;
+}
+
+.ofda-masthead-bg
+{
+	float: right;
+	z-index: 10;
+	width: 100%;
+	height: 90px;
+  /* bg gradients */
+	background : -moz-linear-gradient(0% 50% 0deg,rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 21.18%,rgba(150, 214, 240, 1) 33%,rgba(39, 170, 225, 1) 100%);
+	background : -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 21.18%, rgba(150, 214, 240, 1) 33%, rgba(39, 170, 225, 1) 100%);
+	background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(255, 255, 255, 1) ),color-stop(0.2118,rgba(255, 255, 255, 1) ),color-stop(0.33,rgba(150, 214, 240, 1) ),color-stop(1,rgba(39, 170, 225, 1) ));
+	background : -o-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 21.18%, rgba(150, 214, 240, 1) 33%, rgba(39, 170, 225, 1) 100%);
+	background : -ms-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 21.18%, rgba(150, 214, 240, 1) 33%, rgba(39, 170, 225, 1) 100%);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#27AAE1' ,GradientType=0)";
+	background : linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 21.18%, rgba(150, 214, 240, 1) 33%, rgba(39, 170, 225, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',endColorstr='#27AAE1' , GradientType=1);
+/* border */
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom:solid;
+	border-bottom-color: : #A7A9AC;
+	border-bottom-color: rgba(167, 169, 172, 1);
+	border-bottom-width: 6px;
+/* padding
+	padding-right: 40px;
+	 */
+}
+
+.ofda-footer-gray-container
+{
+  position: absolute;
+  z-index: -1;
+  bottom: 0px;
+  width: 100%;
+  height: 160px;
+  background : #F1F1F1;
+  background : rgba(241, 241, 241, 1);
+  border-style : Solid;
+  border-color : #27AAE1;
+  border-color : rgba(39, 170, 225, 1);
+  border-width : 0px;
+}
+
+.ofda-footer-drk-gray-linktext
+{
+	display: inline-block;
+	position: absolute;
+	right: 40px;
+	padding-top: 20px;	
+	font-family : Myriad Pro;
+	text-align: center;
+	text-decoration: none;
+	text-align: center;
+	font-size : 14px;
+	color : #707070;
+	color : rgb(112, 112, 112);
+	position:relative;
+	margin-left: 10px; 
+	margin-right: 10px;
+	float: right;
+}
+
+.ofda-footer-white-txt
+{
+  font-family : Myriad Pro;
+  font-size : 12px;
+  line-height: 105%;
+  color: rgba(255,255,255,1.00);
+}
+
+
+.ofda-footer-column-text
+{
+	display: inline-block;
+	position: relative;
+	left: 200px;
+	top: 20px;
+	padding-top: 20px;	
+	text-decoration: none;
+	text-align: left;
+	font-size : 12px;
+	margin-left: 40px; 
+	margin-right: 10px;
+	float: left;
+}
+
+.ofda-footer-contact-icons 
+{
+	background-image: url(../../images/ofda-contact-us-icons.png);
+	background-repeat:no-repeat;
+	display: inline-block;
+	float: left;
+	position:absolute;
+	left: 40px;
+	top: 0px;
+    width: 178px;
+    height: 33px;
+    margin: 10px;
+}
+
+.ofda-footer-blue-container
+{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 108px;
+  background : #003152;
+  background : rgba(0, 49, 82, 1);
+}
+
+
+.ofda-banner
+{
+	z-index: -3;
+	width: 100%;
+	height: 230px;
+/* bg gradients */
+	background-image: url(../../images/RF_StockArt_Comp.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: top;
+	position:absolute;
+	left: 0px;
+	top: 90px;
+ /*border 
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom:solid;
+	border-bottom-color: : #A7A9AC;
+	border-bottom-color: rgba(167, 169, 172, 1);
+	border-bottom-width: 6px;
+	*/
+/* padding */
+	padding-top: 90px;
+	 
+}
+
+.ofda-btn-shape
+{
+/* shape and position */	
+	display: inline-block;
+	float:right;
+/* size */
+	width: auto;
+	height: 35px;
+/* borders */
+	border-style : Solid;
+	border-color : #FFFFFF;
+	border-color : rgba(255, 255, 255, 1);
+	border-width : 2px;
+	border-radius : 7px;
+	-moz-border-radius : 7px;
+	-webkit-border-radius : 7px;
+	box-shadow: 0px 0px 5px rgba(127,127,127,1.00);
+/* padding */
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+/* margins */
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 12px;
+	margin-right: 12px;	
+/*Button Text*/
+	font-family : Myriad Pro;
+	line-height: 170%;
+	font-size : 22px;
+	text-align: center;
+	color : #FFFFFF;
+	color : rgb(255, 255, 255);
+	text-shadow: 0px 0px 5px rgba(127,127,127,1.00);
+}
+
+.ofda-beta-alert-bg-clr
+{
+	z-index: -1;
+	position: absolute;
+	left: -10px;
+	top: 70px;
+	width: 300px;
+	height: 100px;
+/*padding*/
+	padding-top: 35px;
+	padding-left: 50px;
+	padding-right: 10px;
+	background : #F15A29;
+	background : rgba(241, 90, 41, 1);
+	opacity : 0.9;
+	border-radius : 12px;
+	-moz-border-radius : 12px;
+	-webkit-border-radius : 12px;
+	filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+	box-shadow: 0px 0px 5px rgba(127,127,127,1.00); 
+}
+
+.ofda-beta-alert-text-lrg-bold
+{
+  font-family : Myriad Pro; 
+  font-weight:bold;
+  text-align:center;
+  font-size : 16px;
+  color : #FFF200;
+  color : rgb(255, 242, 0);
+}
+
+.ofda-beta-alert-text
+{
+  font-family : Myriad Pro;
+  font-size : 12px;
+  line-height: 75%;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+.ofda-beta-alert-text-bold
+{
+  font-family : Myriad Pro;
+  font-size : 12px;
+  font-weight:bold;
+  line-height: 75%;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}

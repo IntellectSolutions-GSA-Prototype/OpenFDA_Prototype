@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" />
     <title></title>
+    <!--Begin Style References-->
     <!--CDN References-->
     <!--Styles-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />
@@ -14,58 +16,12 @@
     <!--Site Dependencies-->
     <!--Styles-->
     <!--Style Overrides-->
+    <link href="Styles/Master/banner.css" rel="stylesheet" />
     <link href="Styles/Master/master.css" rel="stylesheet" />
     <link href="Styles/Master/menu.css" rel="stylesheet" />
     <link href="Styles/Views/index.css" rel="stylesheet" />
-</head>
-<body ng-controller="MainController as main" ng-init="main.setPageTitle()">
-    <div class="site-menu menu-blue">
-        <ul class="site-menu-list">
-            <li ng-repeat="item in main.menuItems" class="menu-item {{item.classes}}" ng-show="item.show" ng-class="{'menu-logo': item.isLogo}">
-                <span class="menu-item-content" ng-class="{'menu-logo-content': item.isLogo}">
-                    <span ng-class="{'prototype-logo': item.isLogo}">
-                        <a href="{{item.url}}" ng-click="main.closeMenu()">
-                            <span ng-show="{{ !item.isImage }}">
-                                {{item.text}}
-                            </span>
-                            <img src="{{item.src}}" alt="{{item.alt}}" ng-show="{{item.isImage}}" />
-                        </a>
-                    </span>
-                </span>
-            </li>
-        </ul>
-    </div>
-    <div class="site-menu-mobile-icon">
-        <div class="site-menu-mobile-text">
-            <span class="site-menu-mobile-bar">
-            </span>
-            <span class="site-menu-mobile-bar">
-            </span>
-            <span class="site-menu-mobile-bar">
-            </span>
-        </div>
-    </div>
-    <div class="main-content">
-        <div class="beta-disclaimer" ng-show="!main.isMobile">
-            <div class="heading-medium beta-disclaimer-heading beta-disclaimer-yellow text-center">
-               Beta Usage &amp; API Alert
-            </div>
-            <div class="beta-disclaimer-text">
-                <div class="para">
-                    <b>openFDA</b> is a beta research project and is not for clinical use.
-                </div>
-                <div class="para">
-                    We may limit or otherwise restrict your access according to our <a href="#" class="beta-disclaimer-yellow">Terms of Use</a>.
-                </div>
-            </div>
-        </div>
-        <div class="view-area">
-            <div ng-view>
-                <!--View Content Injected Here-->
-            </div>
-        </div>
-    </div>
-    <input type="hidden" id="mobilify" />
+    <link href="Styles/Views/search.css" rel="stylesheet" />
+    <!--Begin Script References-->
     <!--CDN References-->
     <!--Scripts-->
     <!--ExoTools-->
@@ -81,13 +37,122 @@
     <script src="Scripts/Master/menu.js"></script>
     <script src="Scripts/Master/master.js"></script>
     <script src="Scripts/Master/Angular-Init.js"></script>
+</head>
+<body ng-controller="MainController as main" ng-init="main.setPageTitle()">
+    <input type="hidden" id="mobilify" />
+    <div class="flex-menu site-menu menu-blue">
+        <ul class="site-menu-list">
+            <li ng-repeat="item in main.menuItems" class="menu-item {{item.classes}}" ng-show="item.show" ng-class="{'menu-logo': item.isLogo}">
+                <span class="menu-item-content" ng-class="{'menu-logo-content': item.isLogo}">
+                    <span ng-class="{'prototype-logo': item.isLogo}">
+                        <a href="{{item.url}}" ng-click="main.closeMenu()">
+                            <span ng-show="{{ !item.isImage }}">
+                                {{item.text}}
+                            </span>
+                            <img src="{{item.src}}" alt="{{item.alt}}" ng-show="{{item.isImage}}" />
+                        </a>
+                    </span>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="flex-menu site-menu-mobile-icon">
+        <div class="site-menu-mobile-text">
+            <span class="site-menu-mobile-bar">
+            </span>
+            <span class="site-menu-mobile-bar">
+            </span>
+            <span class="site-menu-mobile-bar">
+            </span>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="header">
+            <div class="banner">
+                <img src="Images/RF_StockArt_Comp.jpg" class="img-responsive" />
+            </div>
+            <div class="beta-disclaimer" ng-show="!main.isMobile()">
+                <div class="heading-medium beta-disclaimer-heading beta-disclaimer-yellow text-center">
+                    Beta Usage &amp; API Alert
+                </div>
+                <div class="beta-disclaimer-text">
+                    <div class="para">
+                        <b>openFDA</b> is a beta research project and is not for clinical use.
+                    </div>
+                    <div class="para">
+                        We may limit or otherwise restrict your access according to our <a href="#" class="beta-disclaimer-yellow">Terms of Use</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div class="view-area">
+                <div ng-view>
+                    <!--View Content Injected Here-->
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <table class="footer-content">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="footer-logo">
+                                <img src="Images/FDA-logo.png" alt="FDA Logo" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="footer-contact">
+                                <span>CONTACT US</span>
+                                <br />
+                                <b>1-888-INFO-FDA</b>
+                                <br />
+                                <span>(1-888-463-6332)</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="footer-address">
+                                <b>U.S. Food and Drug Administration</b>
+                                <br />
+                                <span>10903 New Hampshire Avenue</span>
+                                <br />
+                                <span>Silver Spring, MD 20993</span>
+                            </div>
+                        </td>
+                        <td ng-show="!main.isMobile()">
+                            <div class="intellLogoContainer">
+                                &copy;<img src="Images/IntellectSolutions-Logo.png" alt="Intellect Solutions Logo" class="intellLogo" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div ng-show="main.isMobile()">
+                <table class="table-center">
+                    <tbody>
+                        <tr>
+                            <td>
+                                &copy;<img src="Images/IntellectSolutions-Logo.png" alt="Intellect Solutions Logo" class="intellLogo" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     <!--Controllers-->
     <!--Views/Search.html-->
-    <script src="Scripts/Controllers/SearchController.js"></script>
-    <script src="Scripts/Controllers/PrescriptionLabelsController.js"></script>
-    <script src="Scripts/Controllers/DrugSearchController.js"></script>
-    <script src="Scripts/Controllers/FoodSearchController.js"></script>
+    <script src="Scripts/Controllers/SearchController.js" type="text/javascript"></script>
+    <script src="Scripts/Controllers/PrescriptionLabelsController.js" type="text/javascript"></script>
+    <script src="Scripts/Controllers/DrugSearchController.js" type="text/javascript"></script>
+    <script src="Scripts/Controllers/FoodSearchController.js" type="text/javascript"></script>
     <!--Views/Disclosure.html-->
-    <script src="Scripts/Controllers/DisclosureController.js"></script>
+    <script src="Scripts/Controllers/DisclosureController.js" type="text/javascript"></script>
+    <!--Views/About.html-->
+    <script src="Scripts/Controllers/AboutController.js" type="text/javascript"></script>
+    <!--Views/Video.html-->
+    <script src="Scripts/Controllers/VideoController.js"></script>
+    <!--Views/Landing.html-->
+    <script src="Scripts/Controllers/Shared/LandingController.js"></script>
 </body>
 </html>

@@ -21,32 +21,6 @@ Classes
 ******************************************************
 ******************************************************
 ******************************************************/
-.beta-disclaimer {
-    position: fixed;
-    top: 73px;
-    left: 0;
-    z-index: 1000;
-    padding: 15px 10px 15px 25px;
-    background-color: #dc7024;
-    opacity: 1;
-    border-bottom-right-radius: 4px;
-    border: 1px solid #9b4000;
-    border-top: none;
-    -webkit-box-shadow: 0 1px 7px 1px black;
-    -moz-box-shadow: 0 1px 7px 1px black;
-    box-shadow: 0 1px 7px 1px black;
-    color: white;
-    max-width: 450px;
-}
-
-.beta-disclaimer-yellow {
-    color: #ffd800;
-}
-
-.beta-disclaimer a, .beta-disclaimer a:hover, .beta-disclaimer a:active, .beta-disclaimer a:visited {
-    color: #ffd800;
-}
-
 
 /*****************************************************
 ******************************************************
@@ -56,22 +30,12 @@ Mobile Styles
 ******************************************************
 ******************************************************/
 @media only screen and (max-device-width : 800px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    .beta-disclaimer {
-        top: initial;
-        right: inherit;
-        left: initial;
-        position: initial;
-        max-width: 250px;
-        z-index: initial;
-        display: table;
-        margin: 0 auto;
-        margin-top: 50px;
-        max-width: initial;
+    .filter-tools, .report-viewer, .search-controls td {
+        display: block;
+        width: 100%;
     }
-}
-
-@media only screen and (orientation: landscape) and (max-width: 1000px) {
-    .beta-disclaimer {
-        margin-top: 0;
+    
+    .filter-tools td {
+        display: initial;
     }
 }

@@ -5,7 +5,9 @@
         menuDefaultLeft = menu.position().left,
         offset = 10,
         delay = 200,
-        speed = 'fast';
+        speed = 'fast',
+        className = '.flex-menu',
+        dest = 200;
     function close() {
         var left = menu.position().left;
         var degree;
@@ -38,7 +40,7 @@
         var degree;
         if (left < 0) {
             icon.stop().animate({
-                left: 200 + offset + 'px',
+                left: dest + offset + 'px',
             }, {
                 step: function (now, fx) {
                     degree = now * 1.71428571429;
@@ -70,4 +72,10 @@
             close();
         }
     };
+    $(document).click(function (e) {
+        var $target = $(e.target);
+        if (!$target.is(className)) {
+            window.$menu.close();
+        }
+    });
 });

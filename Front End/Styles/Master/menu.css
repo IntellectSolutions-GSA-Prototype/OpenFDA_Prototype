@@ -100,7 +100,7 @@ Classes
 }
 
 .menu-blue {
-    background-color: rgb(86, 133, 217);
+    background-color: rgb(94, 146, 241);
     border-bottom: 1px solid rgb(45, 124, 222);
 }
 
@@ -164,8 +164,8 @@ Mobile Styles
 
     .menu-item {
         display: block;
-        padding-top: 7px;
-        padding-bottom: 7px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin: 0;
         border: none;
         box-shadow: none;
@@ -190,9 +190,14 @@ Mobile Styles
         font-size: 2em;
     }
 
+    .menu-logo img {
+        zoom: 90%;
+    }
+
         .menu-logo:hover {
             background-color: inherit;
         }
+
     .beta-menu, .beta-menu a {
         color: #ffb373;
     }
