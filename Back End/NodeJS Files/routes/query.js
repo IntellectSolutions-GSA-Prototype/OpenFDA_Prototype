@@ -260,7 +260,7 @@ function processOpenFDAResponse(response, responseData) {
     response.json(200,responseData);
   } else {
     printMsg('No response received for query parameters');
-    response.json(200,JSON.parse('[{"results":"No Response Received"}]'));
+    response.json(400,JSON.parse('[{"results":"No Response Received"}]'));
   }
 }
 
@@ -318,7 +318,7 @@ exports.clearCache = function(req,res) {
   cacheBrandNamePres = null;
   cacheGenericOTC = null;
   cacheGenericPres = null;
-  res.send(200);
+  res.send(200,JSON.parse('[{"results":"Local Cache Reset"}]'));
 }
 
 exports.openFDA = function(req,res) {
@@ -333,11 +333,11 @@ exports.openFDA = function(req,res) {
       });
     } else {
       printMsg('Query Parameters not recognized');
-      res.json(200,JSON.parse('[{"results":"Query Parameters not recognized"}]'));
+      res.json(402,JSON.parse('[{"results":"Query Parameters not recognized"}]'));
     }
   } else {
     printMsg('No query parameters received');
-    res.json(200,JSON.parse('[{"results":"No Query Parameters Received"}]'));
+    res.json(401,JSON.parse('[{"results":"No Query Parameters Received"}]'));
   }
 }
 
