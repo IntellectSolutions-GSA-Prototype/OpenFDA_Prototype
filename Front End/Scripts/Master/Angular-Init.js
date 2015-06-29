@@ -1,4 +1,4 @@
-﻿var app = angular.module('OpenFDAPrototype', ['ngRoute']);
+﻿var app = angular.module('OpenFDAPrototype', ['ngRoute','dangle']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     var urlFormat = "../../Views/{0}";
     var createUrl = function (viewName) {
@@ -11,18 +11,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     }).when('/Search', {
         templateUrl: createUrl('Search.html'),
         controller: 'SearchController',
-        controllerAs: 'search'
-    }).when('/Search/Prescription', {
-        templateUrl: createUrl('Search.html'),
-        controller: 'PrescriptionLabelsController',
-        controllerAs: 'search'
-    }).when('/Search/Food', {
-        templateUrl: createUrl('Search.html'),
-        controller: 'FoodSearchController',
-        controllerAs: 'search'
-    }).when('/Search/Drugs', {
-        templateUrl: createUrl('Search.html'),
-        controller: 'DrugSearchController',
         controllerAs: 'search'
     }).when('/Disclosure', {
         templateUrl: createUrl('Disclosure.html'),

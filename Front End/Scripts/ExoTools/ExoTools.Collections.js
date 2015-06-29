@@ -82,8 +82,7 @@
             this.take = function (count, endIndex) {
                 var worker = copy,
                     base = exoTools.isNumber(count) ? count : 0,
-                    end = exoTools.isNumber(endIndex) ? endIndex : worker.length,
-                    trimmed = worker.slice(base, end);
+                    trimmed = exoTools.isDefined(endIndex) ? worker.slice(base, endIndex) : worker.slice(0, base);
                 return renderEnumerable(trimmed);
             };
             this.select = function (selector) {
@@ -208,9 +207,12 @@
             var base = exoTools.isEnumerable(init) ? init.toArray() : exoTools.isArray(init) ? init : [],
                 $this = this,
                 postInvoke = function () {
-                    $this.preview = $this.asEnumerable().preview;
                     $this.initializeBase(base);
+                    $this.preview = $this.base.preview;
                 };
+            this.overrides = {
+                clear: 'clear'
+            };
             this.initializeBase(base);
             this.asEnumerable = function () {
                 return exoTools.collections.asEnumerable(base);
@@ -226,7 +228,7 @@
                 return this;
             };
             this.clear = function () {
-                this.asEnumerable().clear();
+                base = this.asEnumerable().clear().toArray();
                 postInvoke();
                 return this;
             };

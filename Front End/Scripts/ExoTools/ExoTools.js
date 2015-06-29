@@ -221,7 +221,13 @@
                             $this.base = construct(base, arguments);
                             exoTools.enumerateObject($this.base, function (key, value) {
                                 if (key !== "getType" && key !== "isClass" && key !== "is" && key !== "base" && key !== "initializeBase" && key !== 'getHashCode') {
-                                    $this[key] = value;
+                                    if (exoTools.isDefined($this.overrides)) {
+                                        if (!exoTools.isDefined($this.overrides[key])) {
+                                            $this[key] = value;
+                                        }
+                                    } else {
+                                        $this[key] = value;
+                                    }
                                 }
                             });
                         }

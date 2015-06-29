@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" class="no-js" ng-app="OpenFDAPrototype">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" ng-app="OpenFDAPrototype">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,8 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
     <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <!--Site Dependencies-->
     <!--Styles-->
     <!--Style Overrides-->
@@ -21,21 +21,25 @@
     <link href="Styles/Master/menu.css" rel="stylesheet" />
     <link href="Styles/Views/index.css" rel="stylesheet" />
     <link href="Styles/Views/search.css" rel="stylesheet" />
+    <link href="Modules/Dangle/dangle.css" rel="stylesheet" />
     <!--Begin Script References-->
     <!--CDN References-->
     <!--Scripts-->
     <!--ExoTools-->
-    <script type="text/javascript" src="https://cdn.rawgit.com/JacobHeater/ExoTools.js/Version-2.0/ExoTools.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/JacobHeater/ExoTools.js/Version-2.0/ExoTools.Collections.js"></script>
+    <script src="Scripts/ExoTools/ExoTools.js"></script>
+    <script src="Scripts/ExoTools/ExoTools.Collections.js"></script>
     <script src="Scripts/ExoTools/ExoTools.Document.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <!--Site References Post Dependencies Loaded-->
     <script src="Scripts/Master/menu.js"></script>
     <script src="Scripts/Master/master.js"></script>
+    <script src="Scripts/Master/types.js"></script>
+    <script src="Modules/Dangle/dangle.min.js"></script>
     <script src="Scripts/Master/Angular-Init.js"></script>
 </head>
 <body ng-controller="MainController as main" ng-init="main.setPageTitle()">
