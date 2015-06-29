@@ -8,7 +8,9 @@
              similar to C#'s LINQ API for manipulating datasets in JS arrays.,
     Author: Jacob Heater,
     Dependencies: ExoTools.JS,
-    Questions/Comments: jacobheater@gmail.com
+    Questions/Comments: jacobheater@gmail.com,
+    License: Open Source under MIT License @ https://github.com/JacobHeater/ExoTools.js/blob/Version-2.0/LICENSE,
+    Version: 2.0
 }
 ****************************************************************************
 *****************************************************************************
@@ -49,7 +51,31 @@
             this.orderBy = function (predicate) {
                 var worker = copy,
                     fn = exoTools.isFunction(predicate) ? predicate : function () { return false; },
-                    sorted = worker.sort(fn);
+                    sorted,
+                    direction = arguments[1];
+                if (exoTools.isString(direction) && exoTools.isString(predicate)) {
+                    if (direction === 'ascending' || direction === 'asc') {
+                        sorted = worker.sort(function (a, b) {
+                            var aValue = a[predicate];
+                            var bValue = b[predicate];
+                            if (exoTools.isDefined(aValue) && exoTools.isDefined(bValue)) {
+                                return aValue > bValue ? 1 : aValue < bValue ? -1 : 0;
+                            }
+                            return 0;
+                        });
+                    } else if (direction === 'descending' || direction === 'desc') {
+                        sorted = worker.sort(function (a, b) {
+                            var aValue = a[predicate];
+                            var bValue = b[predicate];
+                            if (exoTools.isDefined(aValue) && exoTools.isDefined(bValue)) {
+                                return aValue < bValue ? 1 : aValue > bValue ? -1 : 0;
+                            }
+                            return 0;
+                        });
+                    }
+                } else {
+                    sorted = worker.sort(predicate);
+                }
                 return renderEnumerable(sorted);
             };
             this.groupBy = function (predicate) {

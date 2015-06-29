@@ -9,7 +9,9 @@
              among many other useful features.
     Author: Jacob Heater,
     Dependencies: None,
-    Questions/Comments: jacobheater@gmail.com
+    Questions/Comments: jacobheater@gmail.com,
+    License: Open Source under MIT License @ https://github.com/JacobHeater/ExoTools.js/blob/Version-2.0/LICENSE,
+    Version: 2.0
 }
 *****************************************************************************
 *****************************************************************************
@@ -643,6 +645,29 @@
                 return flattened;
             }
             return [];
+        },
+        string: {
+            toTitleCase: function (string) {
+                if (exoTools.isString(string)) {
+                    var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+
+                    return string.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function (match, index, title) {
+                        if (index > 0 && index + match.length !== title.length &&
+                          match.search(smallWords) > -1 && title.charAt(index - 2) !== ":" &&
+                          (title.charAt(index + match.length) !== '-' || title.charAt(index - 1) === '-') &&
+                          title.charAt(index - 1).search(/[^\s-]/) < 0) {
+                            return match.toLowerCase();
+                        }
+
+                        if (match.substr(1).search(/[A-Z]|\../) > -1) {
+                            return match;
+                        }
+
+                        return match.charAt(0).toUpperCase() + match.substr(1);
+                    });
+                }
+                return string;
+            }
         }
     });
     exoTools.tryCatch.errorHandler = function (exception) {

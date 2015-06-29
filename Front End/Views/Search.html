@@ -57,7 +57,7 @@
         <table>
             <tr ng-repeat="r in search.adverseReactionsList">
                 <td>
-                    <input type="radio" name="adverse_reactions" id='{{ "adverse_reactions" + r.key }}' value="{{r.key}}" ng-checked="r.key === search.selectedReaction.key" ng-model="search.selectedReaction" ng-click="search.displayData(1)" />
+                    <input type="radio" name="adverse_reactions" id='{{ "adverse_reactions" + r.key }}' value="{{r.key}}" ng-checked="r.key === search.selectedReaction" ng-model="search.selectedReaction" ng-click="search.displayData(1)" />
                 </td>
                 <td>
                     <label for='{{ "adverse_reactions" + r.key }}'>{{r.value}}</label>

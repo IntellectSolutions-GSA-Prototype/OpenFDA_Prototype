@@ -28,15 +28,7 @@
         var successHandler = function (data, status, headers, config) {
             if (exoTools.isDefined(data.results)) {
                 var results = data.results;
-                var enumerable = exoTools.collections.asEnumerable(results).orderBy(function (a, b) {
-                    if (a.term < b.term) {
-                        return -1;
-                    }
-                    if (a.term > b.term) {
-                        return 1;
-                    }
-                    return 0;
-                });
+                var enumerable = exoTools.collections.asEnumerable(results).orderBy('term', 'asc');
                 var output = new exoTools.collections.list();
                 output.add(defaultListItem);
                 enumerable.forEach(function (index, value) {
@@ -111,15 +103,7 @@
                     if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
                         var results = data.results;
                         var enumerable = exoTools.collections.asEnumerable(results);
-                        var orderByIncidence = enumerable.orderBy(function (drugA, drugB) {
-                            if (drugA.count > drugB.count) {
-                                return 1;
-                            }
-                            if (drugA.count < drugB.count) {
-                                return -1;
-                            }
-                            return 0;
-                        }).reverse();
+                        var orderByIncidence = enumerable.orderBy('count', 'asc').reverse();
                         $this.dataSet = {
                             _type: 'terms',
                             other: 0,
@@ -137,7 +121,7 @@
                     var query = new Query({
                         queryType: 2,
                         drugName: this.drugName.value,
-                        filterIndex: this.selectedDemograph,
+                        filterIndex: exoTools.convert.toNumber(this.selectedDemograph),
                         drugType: (this.drugTypeToNumber() === this.drugTypes.brand.toNumber() ? this.drugTypes.brand : this.drugTypes.generic).toNumber(),
                         drugSource: (this.drugSourceToNumber() === this.drugSources.OTC.toNumber() ? this.drugSources.OTC : this.drugSources.prescription).toNumber(),
                     });
@@ -146,9 +130,7 @@
                         if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
                             var results = data.results;
                             var enumerable = exoTools.collections.asEnumerable(results);
-                            var orderByIncidence = enumerable.orderBy(function (drugA, drugB) {
-                                return drugA.count > drugB.count ? 1 : drugA.count < drugB.count ? -1 : 0;
-                            }).reverse();
+                            var orderByIncidence = enumerable.orderBy('count', 'asc').reverse();
                             $this.dataSet = {
                                 _type: 'terms',
                                 other: 0,
