@@ -56,11 +56,11 @@ var queryFilterType2Query = [
  ];
 
 // Drug Display Name Parameters
-//   0 = Generic
-//   1 = Brand Name
+//   0 = Brand Name
+//   1 = Generic
 var queryDrugNameField = [
-  "patient.drug.openfda.generic_name.exact",
-  "patient.drug.openfda.brand_name.exact"
+  "patient.drug.openfda.brand_name.exact",
+  "patient.drug.openfda.generic_name.exact"
 ];
 
 // Drug Product Type
@@ -200,9 +200,9 @@ function parseParameters(queryParams) {
         qParams.sPath = '/drug/event.json';
         qParams.sQuery += 'search=' + queryFilterType2Query[queryParams.filterIndex];
         if(queryParams.drugType === 0) {
-          qParams.sQuery = 'search=patient.drug.openfda.generic_name:' + queryParams.drugName;
+	  qParams.sQuery = 'search=patient.drug.openfda.brand_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         } else {
-	  qParams.sQuery = 'search=patient.drug.openfda.brand_name:' + queryParams.drugName;
+          qParams.sQuery = 'search=patient.drug.openfda.generic_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         }
         if(queryParams.filterIndex > 0) {
           qParams.sQuery += '+AND+' + queryFilterType2Query[queryParams.filterIndex];
@@ -212,9 +212,9 @@ function parseParameters(queryParams) {
       case 3: //Label Search - Boxed Warnings
         qParams.sPath = '/drug/label.json';
         if(queryParams.drugType === 0) {
-          qParams.sQuery = 'search=openfda.generic_name:' + queryParams.drugName;
+          qParams.sQuery = 'search=openfda.brand_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         } else {
-          qParams.sQuery = 'search=openfda.brand_name:' + queryParams.drugName;
+          qParams.sQuery = 'search=openfda.generic_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         }
 	break;
       default:
