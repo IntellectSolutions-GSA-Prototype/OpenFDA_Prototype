@@ -1,95 +1,108 @@
-﻿<div class="search-container">
-    <div class="controls-group">
-        <div class="heading-large">
-            Search Adverse Drug Effects
+﻿<style type="text/css">
+    .data-row {
+        background-color: #006eae;
+        height: 50px;
+        display: inline-block;
+        border-radius: 4px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+</style>
+<div>
+    <div class="search-container">
+        <div ng-show="true">
+            <div class="controls-group">
+                <div class="heading-large">
+                    Search Adverse Drug Effects
+                </div>
+                <div class="control">
+                    <select ng-model="search.drugName" ng-options="option.value for option in search.listItems" title="Drug Names by Filter" ng-change="search.displayData(3)"></select>
+                </div>
+                <div class="control">
+                    <div class="heading-large">Select Search Criteria</div>
+                </div>
+                <div class="control drug-types">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="radio" value="{{ search.drugTypes.brand.Index }}" id="drug_types_1" name="drug_types" ng-model="search.drugType" ng-click="search.compileList()" />
+                            </td>
+                            <td>
+                                <label for="drug_types_1">{{ search.drugTypes.brand.Value }}</label>
+                            </td>
+                            <td><div class="inline-spacer"></div></td>
+                            <td>
+                                <input type="radio" value="{{ search.drugSources.OTC.Index }}" id="drug_source_1" name="drug_source" ng-model="search.drugSource" ng-click="search.compileList()" />
+                            </td>
+                            <td>
+                                <label for="drug_source_1">{{ search.drugSources.OTC.Value }}</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" value="{{ search.drugTypes.generic.Index }}" id="drug_types_2" name="drug_types" ng-model="search.drugType" ng-click="search.compileList()" />
+                            </td>
+                            <td>
+                                <label for="drug_types_2">{{ search.drugTypes.generic.Value }}</label>
+                            </td>
+                            <td><div class="inline-spacer"></div></td>
+                            <td>
+                                <input type="radio" value="{{ search.drugSources.prescription.Index }}" id="drug_source_2" name="drug_source" ng-model="search.drugSource" ng-click="search.compileList()" />
+                            </td>
+                            <td>
+                                <label for="drug_source_2">{{ search.drugSources.prescription.Value }}</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="reactions" ng-hide="search.hasDrugName">
+                <hr />
+                <table>
+                    <tr ng-repeat="r in search.adverseReactionsList">
+                        <td>
+                            <input type="radio" name="adverse_reactions" id='{{ "adverse_reactions" + r.key }}' value="{{r.key}}" ng-checked="r.key === search.selectedReaction" ng-model="search.selectedReaction" ng-click="search.displayData(1)" />
+                        </td>
+                        <td>
+                            <label for='{{ "adverse_reactions" + r.key }}'>{{r.value}}</label>
+                        </td>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+            <div class="demographics" ng-show="search.hasDrugName">
+                <table>
+                    <tr ng-repeat="r in search.patientDemographicsList">
+                        <td>
+                            <input type="radio" name="patient_demograph" id='{{ "patient_demograph" + r.key }}' value="{{r.key}}" ng-model="search.selectedDemograph" ng-click="search.displayData(2)" />
+                        </td>
+                        <td>
+                            <label for='{{ "patient_demograph" + r.key }}'>{{r.value}}</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="control">
-            <select ng-model="search.drugName" ng-options="option.value for option in search.listItems" title="Drug Names by Filter" ng-change="search.displayData(3)">
-            </select>
-        </div>
-        <div class="control">
-            <div class="heading-large">Select Search Criteria</div>
-        </div>
-        <div class="control drug-types">
-            <table>
-                <tr>
-                    <td>
-                        <input type="radio" value="{{ search.drugTypes.brand.Index }}" id="drug_types_1" name="drug_types" ng-model="search.drugType" ng-click="search.compileList()"/>
-                    </td>
-                    <td>
-                        <label for="drug_types_1">{{ search.drugTypes.brand.Value }}</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" value="{{ search.drugTypes.generic.Index }}" id="drug_types_2" name="drug_types" ng-model="search.drugType" ng-click="search.compileList()" />
-                    </td>
-                    <td>
-                        <label for="drug_types_2">{{ search.drugTypes.generic.Value }}</label>
-                    </td>
-                </tr>
+        <div>
+            <table class="table-center">
+                <tbody>
+                    <tr ng-repeat="term in search.dataSet.terms">
+                        <td style="text-align: right;">
+                            <div class="inline-block">
+                                {{term.term + "(" + term.count + ")"}}
+                            </div>
+                        </td>
+                        <td>
+                            &nbsp;
+                            &nbsp;
+                        </td>
+                        <td>
+                            <div class="data-row" style="width: {{term.count > 20000 ? term.count / 100 : term.count < 3000 ? term.count : term.count / 10}}px;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-        </div>
-        <hr />
-        <div class="control drug-source">
-            <table>
-                <tr>
-                    <td>
-                        <input type="radio" value="{{ search.drugSources.OTC.Index }}" id="drug_source_1" name="drug_source" ng-model="search.drugSource" ng-click="search.compileList()" />
-                    </td>
-                    <td>
-                        <label for="drug_source_1">{{ search.drugSources.OTC.Value }}</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" value="{{ search.drugSources.prescription.Index }}" id="drug_source_2" name="drug_source" ng-model="search.drugSource" ng-click="search.compileList()" />
-                    </td>
-                    <td>
-                        <label for="drug_source_2">{{ search.drugSources.prescription.Value }}</label>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <hr />
-    <div class="reactions">
-        <table>
-            <tr ng-repeat="r in search.adverseReactionsList">
-                <td>
-                    <input type="radio" name="adverse_reactions" id='{{ "adverse_reactions" + r.key }}' value="{{r.key}}" ng-checked="r.key === search.selectedReaction" ng-model="search.selectedReaction" ng-click="search.displayData(1)" />
-                </td>
-                <td>
-                    <label for='{{ "adverse_reactions" + r.key }}'>{{r.value}}</label>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <hr />
-    <div class="demographics">
-        <table>
-            <tr ng-repeat="r in search.patientDemographicsList">
-                <td>
-                    <input type="radio" name="patient_demograph" id='{{ "patient_demograph" + r.key }}' value="{{r.key}}" ng-model="search.selectedDemograph" ng-click="search.displayData(2)" />
-                </td>
-                <td>
-                    <label for='{{ "patient_demograph" + r.key }}'>{{r.value}}</label>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="data-viz">
-        <div class="heading-large">
-            Filter Data
-        </div>
-        <p>
-            Something here...
-        </p>
-        <div class="chart">
-            <fs:bar width="900"
-                    height="search.dataSet.total"
-                    duration="750"
-                    bind="search.dataSet" ng-show="search.dataSet.terms.length > 0" />
         </div>
     </div>
 </div>

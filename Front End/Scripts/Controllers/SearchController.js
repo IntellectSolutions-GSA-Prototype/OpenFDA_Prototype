@@ -16,7 +16,14 @@
     var defaultListItem = {
         id: -1,
         value: 'Select a Drug Name'
-    }
+    };
+    this.isMobile = function () {
+        return window.isMobile();
+    };
+    //Chart height and width
+    this.chartWidth = this.isMobile() ? 300 : 1000;
+    this.chartHeight = this.isMobile() ? 100 : 300;
+    //End chart height and width
     this.drugName = defaultListItem;
     this.listItems = [defaultListItem];
     this.compileList = function () {
@@ -80,17 +87,29 @@
         generic: new EnumMember(1, 'Generic')
     });
     this.drugSources = new Enum({
-        OTC: new EnumMember(0, 'OTC'),
+        OTC: new EnumMember(0, 'Over the Counter'),
         prescription: new EnumMember(1, 'Prescription'),
     });
-    this.dataSet = {
+    var defaultDataSet = {
         terms: [],
         _type: 'terms',
         other: 0,
         total: 0,
         missing: 0
     };
+    this.dataSet = defaultDataSet;
+    this.hasDrugName = false;
+    var updateNoRecords = function (query) {
+        if (exoTools.isDefined(query)) {
+            $this.noRecordsMessage = query.count() <= 0 ? "No records found" : "";
+        } else {
+            $this.noRecordsMessage = "No records found";
+        }
+    };
     this.displayData = function (queryType) {
+        this.hasDrugName = this.drugName.value !== defaultListItem.value;
+        this.dataSet = defaultDataSet;
+        this.noRecordsMessage = "";
         switch (queryType) {
             case 1:
                 var query = new Query({
@@ -103,7 +122,15 @@
                     if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
                         var results = data.results;
                         var enumerable = exoTools.collections.asEnumerable(results);
-                        var orderByIncidence = enumerable.orderBy('count', 'asc').reverse();
+                        var names = new exoTools.collections.list();
+                        var orderByIncidence = enumerable.orderBy('count', 'desc').take(10).select(function (item) {
+                            if (item.term.length > 25) {
+                                var format = "{0}...";
+                                var string = exoTools.stringFormatter(format, item.term.substring(0, 25).trim());
+                                item.term = string;
+                            }
+                            return item;
+                        });
                         $this.dataSet = {
                             _type: 'terms',
                             other: 0,
@@ -111,9 +138,11 @@
                             terms: orderByIncidence.toArray(),
                             total: orderByIncidence.count()
                         };
+                        updateNoRecords(orderByIncidence);
                     }
                 }).error(function (data, status, headers, config) {
                     $log.log(data);
+                    updateNoRecords();
                 });
                 break;
             case 2:
@@ -130,7 +159,14 @@
                         if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
                             var results = data.results;
                             var enumerable = exoTools.collections.asEnumerable(results);
-                            var orderByIncidence = enumerable.orderBy('count', 'asc').reverse();
+                            var orderByIncidence = enumerable.orderBy('count', 'desc').take(10).select(function (item) {
+                                if (item.term.length > 25) {
+                                    var format = "{0}...";
+                                    var string = exoTools.stringFormatter(format, item.term.substring(0, 25).trim());
+                                    item.term = string;
+                                }
+                                return item;
+                            });;
                             $this.dataSet = {
                                 _type: 'terms',
                                 other: 0,
@@ -138,9 +174,11 @@
                                 terms: orderByIncidence.toArray(),
                                 total: orderByIncidence.count()
                             };
+                            updateNoRecords(orderByIncidence);
                         }
                     }).error(function (data, status, headers, config) {
                         $log.log(data);
+                        updateNoRecords();
                     });
                 }
                 break;
@@ -176,7 +214,7 @@
         new exoTools.keyValuePair(1, 'Nausea'),
         new exoTools.keyValuePair(2, 'Death'),
         new exoTools.keyValuePair(3, 'Headache'),
-        new exoTools.keyValuePair(4, 'Dysponea'),
+        new exoTools.keyValuePair(4, 'Dyspnoea'),
         new exoTools.keyValuePair(5, 'Pain'),
         new exoTools.keyValuePair(6, 'Dizziness'),
         new exoTools.keyValuePair(7, 'Vomiting'),
