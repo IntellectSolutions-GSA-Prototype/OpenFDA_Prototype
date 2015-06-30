@@ -25,7 +25,7 @@ var queryFilterType1Query = [
   "patient.reaction.reactionmeddrapt:nausea",
   "patient.reaction.reactionmeddrapt:death",
   "patient.reaction.reactionmeddrapt:headache",
-  "patient.reaction.reactionmeddrapt:dysponea",
+  "patient.reaction.reactionmeddrapt:dyspnoea",
   "patient.reaction.reactionmeddrapt:pain",
   "patient.reaction.reactionmeddrapt:dizziness",
   "patient.reaction.reactionmeddrapt:vomiting",
