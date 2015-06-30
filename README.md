@@ -1,11 +1,8 @@
-﻿URL of the Prototype: http://openfda.intellectsolutions.com 
-
+URL of the Prototype: http://openfda.intellectsolutions.com 
 
 URL of the Source Code Repository: https://github.com/IntellectSolutions-GSA-Prototype/OpenFDA_Prototype 
 
-
 All the source files, installation documentation, readme.md file, supporting documentation, license file, evidence, etc. are uploaded here.
-
 
 Approach:
 
