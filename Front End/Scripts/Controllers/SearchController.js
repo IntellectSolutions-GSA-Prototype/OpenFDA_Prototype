@@ -46,6 +46,7 @@
                     output = output.add(listItem);
                 });
                 $this.listItems = output.toArray();
+                $this.displayData(1);
             }
         };
         if (this.drugTypeToNumber() === this.drugTypes.brand.toNumber() && this.drugSourceToNumber() === this.drugSources.OTC.toNumber()) {
@@ -98,13 +99,35 @@
         missing: 0
     };
     this.dataSet = defaultDataSet;
+    this.hasNoRecords = false;
     this.hasDrugName = false;
     var updateNoRecords = function (query) {
         if (exoTools.isDefined(query)) {
             $this.noRecordsMessage = query.count() <= 0 ? "No records found" : "";
+            $this.hasNoRecords = query.count() <= 0 ? true : false;
         } else {
             $this.noRecordsMessage = "No records found";
+            $this.hasNoRecords = true;
         }
+    };
+    this.setTableHeight = function () {
+        return {
+            'min-height': this.hasNoRecords ? 'initial' : '500px',
+            'padding-left': this.hasNoRecords ? '25px' : 'inherit'
+        };
+    };
+    this.calculateStyle = function (term) {
+        if (term.count) {
+            var width = 0,
+                count = term.count,
+                maxWidth = this.isMobile() ? ($(window).width() * .95) : 800,
+                maxCount = this.dataSet.terms[0].count,
+                width = (count / maxCount) * maxWidth;
+            return {
+                'width': exoTools.stringFormatter('{0}px', width)
+            };
+        }
+        return {};
     };
     this.displayData = function (queryType) {
         this.hasDrugName = this.drugName.value !== defaultListItem.value;
@@ -177,7 +200,6 @@
                             updateNoRecords(orderByIncidence);
                         }
                     }).error(function (data, status, headers, config) {
-                        $log.log(data);
                         updateNoRecords();
                     });
                 }
@@ -194,11 +216,13 @@
                         if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
                             var results = data.results;
                             var enumerable = exoTools.collections.asEnumerable(results);
-                            $this.dataSet = results;
+                            $this.displayData(2);
                         }
                     }).error(function (data, status, headers, config) {
                         $log.log(data);
                     });
+                } else {
+                    this.displayData(1);
                 }
                 break;
             default:

@@ -120,6 +120,7 @@ Classes
     height: 330px;
     position: absolute;
     left: 0;
+    top: 70px;
     background-image: url('../../Images/RF_StockArt_Comp.jpg');
     background-repeat: no-repeat;
     background-position: top;
@@ -130,6 +131,12 @@ Classes
     .banner img {
         display: none;
     }
+
+.view-area {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 70px;
+}
 
 /* *
  *
@@ -145,12 +152,9 @@ Classes
 }
 
 #content {
-    padding-top: 350px;
     min-height: 100%;
     position: relative;
     padding-bottom: 140px;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 #footer {
@@ -196,6 +200,7 @@ Mobile Styles
     }
 
     .view-area {
+        padding-top: 50px;
         padding-left: 15px;
         padding-right: 15px;
         position: initial;

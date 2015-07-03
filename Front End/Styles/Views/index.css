@@ -67,11 +67,15 @@ Mobile Styles
         margin: 0 auto;
         margin-top: 50px;
         max-width: initial;
+        border-radius: 0;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 1000px) {
     .beta-disclaimer {
         margin-top: 0;
+        
     }
 }

@@ -1,4 +1,4 @@
-﻿var app = angular.module('OpenFDAPrototype', ['ngRoute','dangle']);
+﻿var app = angular.module('OpenFDAPrototype', ['ngRoute']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     var urlFormat = "../../Views/{0}";
     var createUrl = function (viewName) {
@@ -56,6 +56,7 @@ app.controller('MainController', ['$route', '$routeParams', '$location', '$scope
     };
     this.menuItems = [
         new imageMenuItem('../../Images/openFDALogo.png', 'Open FDA Logo', '/#/', true, true, 'openFdaLogo'),
+        new menuItem('Home', '/#/', false, true),
         new menuItem('Drug Search', '#/Search', false, true),
         new menuItem('Video Introduction', '#/Video', false, true),
         new menuItem('About Us', '#/About', false, true),

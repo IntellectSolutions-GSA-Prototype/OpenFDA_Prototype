@@ -11,8 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
     <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <!--Site Dependencies-->
     <!--Styles-->
     <!--Style Overrides-->
@@ -21,7 +21,7 @@
     <link href="Styles/Master/menu.css" rel="stylesheet" />
     <link href="Styles/Views/index.css" rel="stylesheet" />
     <link href="Styles/Views/search.css" rel="stylesheet" />
-    <link href="Modules/Dangle/dangle.css" rel="stylesheet" />
+    <link href="Styles/Views/landing.css" rel="stylesheet" />
     <!--Begin Script References-->
     <!--CDN References-->
     <!--Scripts-->
@@ -39,7 +39,6 @@
     <script src="Scripts/Master/menu.js"></script>
     <script src="Scripts/Master/master.js"></script>
     <script src="Scripts/Master/types.js"></script>
-    <script src="Modules/Dangle/dangle.min.js"></script>
     <script src="Scripts/Master/Angular-Init.js"></script>
 </head>
 <body ng-controller="MainController as main" ng-init="main.setPageTitle()">
@@ -72,25 +71,10 @@
     </div>
     <div id="wrapper">
         <div id="header">
-            <div class="banner">
-                <img src="Images/RF_StockArt_Comp.jpg" class="img-responsive" />
-            </div>
-            <div class="beta-disclaimer" ng-show="!main.isMobile()">
-                <div class="heading-medium beta-disclaimer-heading beta-disclaimer-yellow text-center">
-                    Beta Usage &amp; API Alert
-                </div>
-                <div class="beta-disclaimer-text">
-                    <div class="para">
-                        <b>openFDA</b> is a beta research project and is not for clinical use.
-                    </div>
-                    <div class="para">
-                        We may limit or otherwise restrict your access according to our <a href="#" class="beta-disclaimer-yellow">Terms of Use</a>.
-                    </div>
-                </div>
-            </div>
+           
         </div>
         <div id="content">
-            <div class="view-area">
+            <div>
                 <div ng-view>
                     <!--View Content Injected Here-->
                 </div>
@@ -147,9 +131,6 @@
     <!--Controllers-->
     <!--Views/Search.html-->
     <script src="Scripts/Controllers/SearchController.js" type="text/javascript"></script>
-    <script src="Scripts/Controllers/PrescriptionLabelsController.js" type="text/javascript"></script>
-    <script src="Scripts/Controllers/DrugSearchController.js" type="text/javascript"></script>
-    <script src="Scripts/Controllers/FoodSearchController.js" type="text/javascript"></script>
     <!--Views/Disclosure.html-->
     <script src="Scripts/Controllers/DisclosureController.js" type="text/javascript"></script>
     <!--Views/About.html-->
@@ -157,6 +138,6 @@
     <!--Views/Video.html-->
     <script src="Scripts/Controllers/VideoController.js"></script>
     <!--Views/Landing.html-->
-    <script src="Scripts/Controllers/Shared/LandingController.js"></script>
+    <script src="Scripts/Controllers/LandingController.js"></script>
 </body>
 </html>
