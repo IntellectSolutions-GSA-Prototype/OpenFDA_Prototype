@@ -9,7 +9,7 @@ To build the docker component (assumes a docker environment is already installed
 	git clone --depth 1 git://github.com/IntellectSolutions-GSA-Prototype/OpenFDA_Prototype.git ~/gitRepository/ -b 1.0
 	cd ~/gitRepository
 	git fetch && git reset --hard origin/1.0
-	cd ~/gitRepository/Back\ End/
+	cd ~/gitRepository/Back\ End/NodeJS\ Files
 	docker build --tag=openfda_nodejs .
 
 Note: Authorized contributors should tag the docker image as intellectsolutionsllc/openfda_nodejs
