@@ -22,7 +22,7 @@ queryjs = {
    * Default Values and Parameters for OpenFDA Queries
    */
   openFDA_host: 'api.fda.gov',
-  apiKey: null,
+  apiKey: '',
 
   /**
    *  Establish a Cache for the List Queries that do not change
@@ -88,7 +88,7 @@ queryjs = {
    */
   queryListBrandNameOTC: {
     sPath: '/drug/label.json',
-    sQuery: '&search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.brand_name.exact'
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.brand_name.exact'
   },
 
   /**
@@ -96,7 +96,7 @@ queryjs = {
    */
   queryListBrandNamePres: {
     sPath: '/drug/label.json',
-    sQuery: '&search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.brand_name.exact'
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.brand_name.exact'
   },
 
   /**
@@ -104,7 +104,7 @@ queryjs = {
    */
   queryListGenericOTC: {
     sPath: '/drug/label.json',
-    sQuery: '&search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.generic_name.exact'
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=OTC&count=openfda.generic_name.exact'
   },
 
   /**
@@ -112,7 +112,7 @@ queryjs = {
    */
   queryListGenericPres: {
     sPath: '/drug/label.json',
-    sQuery: '&search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.generic_name.exact'
+    sQuery: 'search=_exists_:adverse_reactions+AND+openfda.product_type=PRESCRIPTION&count=openfda.generic_name.exact'
   }
 };
 
@@ -120,11 +120,13 @@ queryjs = {
  * Populate the queryjs Cache Parameters with the OpenFDA result sets used to generate the web interface list drop downs
  */
 
-queryjs.apiKey = 'api_key=' + queryjs.fs.readFileSync('/var/certs/api.key').toString().replace(/(\r\n|\n|\r)/gm,"");
-queryjs.queryListBrandNameOTC.sQuery = queryjs.apiKey + queryjs.queryListBrandNameOTC.sQuery;
-queryjs.queryListBrandNamePres.sQuery = queryjs.apiKey + queryjs.queryListBrandNamePres.sQuery;
-queryjs.queryListGenericOTC.sQuery = queryjs.apiKey + queryjs.queryListGenericOTC.sQuery;
-queryjs.queryListGenericPres.sQuery = queryjs.apiKey + queryjs.queryListGenericPres.sQuery;
+if (queryjs.fs.existsSync('/var/certs/api.key')) {
+  queryjs.apiKey = 'api_key=' + queryjs.fs.readFileSync('/var/certs/api.key').toString().replace(/(\r\n|\n|\r)/gm,"") + '&';
+  queryjs.queryListBrandNameOTC.sQuery = queryjs.apiKey + queryjs.queryListBrandNameOTC.sQuery;
+  queryjs.queryListBrandNamePres.sQuery = queryjs.apiKey + queryjs.queryListBrandNamePres.sQuery;
+  queryjs.queryListGenericOTC.sQuery = queryjs.apiKey + queryjs.queryListGenericOTC.sQuery;
+  queryjs.queryListGenericPres.sQuery = queryjs.apiKey + queryjs.queryListGenericPres.sQuery;
+}
 
 performRequest(queryjs.queryListBrandNameOTC, function(responseData) { 
   if(responseData) {
@@ -226,7 +228,7 @@ function parseParameters(queryParams) {
     switch(queryParams.queryType) {
       case 1:  // Drugs listed for selected adverse effect
         qParams.sPath = '/drug/event.json';
-        qParams.sQuery = queryjs.apiKey + '&search=' + queryjs.queryFilterType1Query[queryParams.filterIndex];
+        qParams.sQuery = queryjs.apiKey + 'search=' + queryjs.queryFilterType1Query[queryParams.filterIndex];
         qParams.sQuery += '+AND+' + queryjs.queryDrugProductType[queryParams.drugSource];
         qParams.sQuery += '&count=' + queryjs.queryDrugNameField[queryParams.drugType];
       break;
@@ -237,9 +239,9 @@ function parseParameters(queryParams) {
         }
         qParams.sPath = '/drug/event.json';
         if(queryParams.drugType === 0) {
-          qParams.sQuery = queryjs.apiKey + '&search=patient.drug.openfda.brand_name:' + (queryParams.drugName).replace(/\s+/g,"+");
+          qParams.sQuery = queryjs.apiKey + 'search=patient.drug.openfda.brand_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         } else {
-          qParams.sQuery = queryjs.apiKey + '&search=patient.drug.openfda.generic_name:' + (queryParams.drugName).replace(/\s+/g,"+");
+          qParams.sQuery = queryjs.apiKey + 'search=patient.drug.openfda.generic_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         }
         if(queryParams.filterIndex > 0 && queryParams.filterIndex < queryjs.queryFilterType2Query.length) {
           qParams.sQuery += '+AND+' + queryjs.queryFilterType2Query[queryParams.filterIndex];
@@ -253,9 +255,9 @@ function parseParameters(queryParams) {
         }
         qParams.sPath = '/drug/label.json';
         if(queryParams.drugType === 0) {
-          qParams.sQuery = queryjs.apiKey + '&search=openfda.brand_name:' + (queryParams.drugName).replace(/\s+/g,"+");
+          qParams.sQuery = queryjs.apiKey + 'search=openfda.brand_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         } else {
-          qParams.sQuery = queryjs.apiKey + '&search=openfda.generic_name:' + (queryParams.drugName).replace(/\s+/g,"+");
+          qParams.sQuery = queryjs.apiKey + 'search=openfda.generic_name:' + (queryParams.drugName).replace(/\s+/g,"+");
         }
         break;
       default:
