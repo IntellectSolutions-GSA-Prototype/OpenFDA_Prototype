@@ -13,9 +13,9 @@ var appHttps = express();
 
 // Activate Server
 console.log("Starting Server...");
-var privateKey = fs.readFileSync('/etc/pki/tls/private/myserver.key');
-var certificate = fs.readFileSync('/etc/pki/tls/certs/server.crt');
-var ca = fs.readFileSync("/etc/pki/tls/certs/comodo-bundle.crt").toString().split("\n");
+var privateKey = fs.readFileSync('/var/certs/server.key');
+var certificate = fs.readFileSync('/var/certs/server.crt');
+var ca = fs.readFileSync("/var/certs/server-ca.crt").toString().split("\n");
 
 var httpsOptions = {
   ca: ca,
