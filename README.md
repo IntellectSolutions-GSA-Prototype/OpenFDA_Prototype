@@ -1,5 +1,7 @@
 ﻿URL of the Prototype: https://openfda.intellectsolutions.com
 
+The URL is hosted on an Amazon Web Service (AWS) EC2 Linux instance and operated in accordance with AWS terms of services <<http://aws.amazon.com/legal/>>
+
 
 URL of the Source Code Repository: https://github.com/IntellectSolutions-GSA-Prototype/OpenFDA_Prototype 
 
