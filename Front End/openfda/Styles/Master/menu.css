@@ -80,6 +80,10 @@ Classes
     box-shadow: none;
 }
 
+    .menu-logo img {
+        zoom: 70%;
+    }
+
     .menu-logo:hover {
         text-shadow: 2px 2px 5px black;
         text-decoration: none;
@@ -161,7 +165,7 @@ Mobile Styles
     .site-menu-list {
         display: block;
         padding: 10px 0 10px 0;
-        margin-top: 55px;
+        margin-top: 65px;
     }
 
     .menu-item {
@@ -187,14 +191,14 @@ Mobile Styles
         display: block;
         position: absolute;
         top: 10px;
-        left: 10px;
+        left: 0;
         border: none;
         font-size: 2em;
     }
 
-    .menu-logo img {
-        zoom: 90%;
-    }
+        .menu-logo img {
+            zoom: 70%;
+        }
 
         .menu-logo:hover {
             background-color: inherit;

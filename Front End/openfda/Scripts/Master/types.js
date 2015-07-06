@@ -1,20 +1,4 @@
-﻿/****************************************************************************
-*****************************************************************************
-*****************************************************************************
-{
-    Summary: ExoTools.Document.JS - An extension of the ExoTools.JS library that offers a
-             high-level API for working with the DOM and selecting HTML elements on the page.
-             It makes cross-browser compatibility a non-issue and traversing the DOM easier than
-             ever because of the utilization of the ExoTools.Collections.JS library for quickly
-             filtering through DOM elements.
-    Author: Jacob Heater,
-    Dependencies: ExoTools.JS & ExoTools.Collections.JS, 
-    Questions/Comments: jacobheater@gmail.com
-}
-****************************************************************************
-*****************************************************************************
-*****************************************************************************/
-
+﻿//The types to be used throughout the app, like in the queries, etc.
 (function (global) {
     //Enum class that will contain enum members
     var Enum = exoTools.$class('Enum', function (members) {

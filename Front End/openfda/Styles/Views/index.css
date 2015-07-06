@@ -41,24 +41,24 @@ Classes
 }
 
 caption {
-  display: none;
+    display: none;
 }
 
 .beta-disclaimer-yellow {
-    // color: #ffd800;
+    /*color: #ffd800;*/
     color: #000000;
 }
 
 .beta-disclaimer a, .beta-disclaimer a:hover, .beta-disclaimer a:active, .beta-disclaimer a:visited {
-    // color: #ffd800;
+    /*color: #ffd800;*/
     color: #000000;
 }
 
 .feedback {
-  width: 800px; 
-  height: 900px; 
-  border: 0;
-  background-color: #DDDDDD;
+    width: 800px;
+    height: 900px;
+    border: 0;
+    background-color: #DDDDDD;
 }
 /*****************************************************
 ******************************************************
@@ -83,16 +83,16 @@ Mobile Styles
         margin-left: 10px;
         margin-right: 10px;
     }
-  .feedback {
-    width: 350px; 
-    height: 1000px; 
-    border:2px dotted red;
-  }
+
+    .feedback {
+        width: 350px;
+        height: 1000px;
+        border: 2px dotted red;
+    }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 1000px) {
     .beta-disclaimer {
         margin-top: 0;
-        
     }
 }

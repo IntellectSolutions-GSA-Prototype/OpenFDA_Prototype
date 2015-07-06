@@ -1,30 +1,24 @@
-﻿/****************************************************************************
-*****************************************************************************
-*****************************************************************************
-{
-    Summary: ExoTools.Document.JS - An extension of the ExoTools.JS library that offers a
-             high-level API for working with the DOM and selecting HTML elements on the page.
-             It makes cross-browser compatibility a non-issue and traversing the DOM easier than
-             ever because of the utilization of the ExoTools.Collections.JS library for quickly
-             filtering through DOM elements.
-    Author: Jacob Heater,
-    Dependencies: ExoTools.JS & ExoTools.Collections.JS, 
-    Questions/Comments: jacobheater@gmail.com
-}
-****************************************************************************
-*****************************************************************************
-*****************************************************************************/
-
+﻿//Controls the menu in mobile mode.
 $(function () {
+    //The menu button object.
     var icon = $('.site-menu-mobile-icon'),
+        //The menu list container.
         menu = $('.site-menu'),
+        //The default return position of the menu button.
         iconDefaultLeft = icon.position().left,
+        //The default return position of the menu.
         menuDefaultLeft = menu.position().left,
+        //The padding to add between the button and the menu
         offset = 10,
+        //The delay time to animate the button after the menu has been animated.
         delay = 200,
+        //The speed to animate the menu
         speed = 'fast',
+        //The class name to apply to the menu
         className = '.flex-menu',
+        //The distance the menu should ne animated in px
         dest = 200;
+    //Closes the menu
     function close() {
         var left = menu.position().left;
         var degree;
@@ -52,6 +46,7 @@ $(function () {
             }, delay);
         }
     }
+    //Opens the menu
     function open() {
         var left = menu.position().left;
         var degree;
@@ -73,6 +68,7 @@ $(function () {
             }, delay);
         }
     }
+    //Set icon event handlers.
     icon.click(function () {
         var left = menu.position().left;
         if (left < 0) {
@@ -81,6 +77,7 @@ $(function () {
             close();
         }
     });
+    //Expose the meny functions globally.
     window.$menu = {
         open: function () {
             open();
@@ -89,6 +86,7 @@ $(function () {
             close();
         }
     };
+    //Init mouse events.
     $(document).click(function (e) {
         var $target = $(e.target);
         if (!$target.is(className)) {

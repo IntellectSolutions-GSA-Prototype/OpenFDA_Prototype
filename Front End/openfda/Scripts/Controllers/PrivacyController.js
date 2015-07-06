@@ -1,15 +1,5 @@
-﻿/****************************************************************************
-*****************************************************************************
-*****************************************************************************
-{
-    Summary: PrivacyController.JS - 
-    Author: Jacob Heater,
-    Questions/Comments: jacobheater@gmail.com
-}
-****************************************************************************
-*****************************************************************************
-*****************************************************************************/
-app.controller('PrivacyController', ['$routeParams', '$http', function ($routeParams, $http) {
+﻿app.controller('PrivacyController', ['$routeParams', '$http', function ($routeParams, $http) {
+    //Indicates if the application is operating in mobile mode or not.
     this.isMobile = function () {
         return window.isMobile();
     };

@@ -14,12 +14,15 @@
 ****************************************************************************
 *****************************************************************************
 *****************************************************************************/
+//Initialize Angular app.
 var app = angular.module('OpenFDAPrototype', ['ngRoute']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     var urlFormat = "/Views/{0}";
+    //Creates a route compliant URL for angular routing.
     var createUrl = function (viewName) {
         return exoTools.stringFormatter(urlFormat, viewName);
     };
+    //Set up the routes.
     $routeProvider.when('/', {
         templateUrl: createUrl('Landing.html'),
         controller: 'LandingController',
@@ -54,6 +57,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         controllerAs: 'video'
     });
 }]);
+//Represents a menu item for the application menu.
 var menuItem = exoTools.$class('Prototype.MenuItem', function (text, url, isLogo, show, classes) {
     this.text = text;
     this.url = url;
@@ -62,28 +66,34 @@ var menuItem = exoTools.$class('Prototype.MenuItem', function (text, url, isLogo
     this.show = show;
     this.classes = classes || '';
 });
-var imageMenuItem = exoTools.$class('Prototype.ImageMenuItem', function (src, alt, url, isLogo, show, classes) {
+//Represents a menu item as an image. Inherits from the Prototype.MenuItem class.
+var imageMenuItem = exoTools.$class('Prototype.ImageMenuItem << Prototype.MenuItem', function (src, alt, url, isLogo, show, classes) {
     this.initializeBase('', url, isLogo, show, classes);
     this.src = src;
     this.alt = alt;
     this.isImage = true;
 }, menuItem);
+//The main placeholder controller for the application.
 app.controller('MainController', ['$route', '$routeParams', '$location', '$scope', function ($route, $routeParams, $location, $scope) {
     this.$route = $route;
     this.$routeParams = $routeParams;
     this.$location = $location;
+    //Close a menu item for mobile interface.
     this.closeMenu = function () {
         window.$menu.close();
         this.setPageTitle();
     };
+    //Indicates if the application is operating in mobile mode or not.
     this.isMobile = function () {
         return window.isMobile();
     };
+    //Set the page title.
     this.setPageTitle = function () {
         window.setPageTitle('ADERS');
     };
+    //The menu items for the application menu.
     this.menuItems = [
-        new imageMenuItem('/Images/Aders-v3_34wide-Sml.png', 'Open FDA Logo', '/#/', true, true, 'ADERSlogo'),
+        new imageMenuItem('/Images/ADERS_logo-white-v3.png', 'Open FDA Logo', '/#/', true, true, 'ADERSlogo'),
         new menuItem('Home', '/#/', false, true),
         new menuItem('Our Solution', '#/Video', false, true),
         new menuItem('Drug Search', '#/Search', false, true),

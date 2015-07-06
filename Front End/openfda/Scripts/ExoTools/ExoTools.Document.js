@@ -9,6 +9,7 @@
              filtering through DOM elements.
     Author: Jacob Heater,
     Dependencies: ExoTools.JS & ExoTools.Collections.JS, 
+    License: Open Source under MIT License @ https://github.com/JacobHeater/ExoTools.js/blob/Version-2.0/LICENSE,
     Questions/Comments: jacobheater@gmail.com
 }
 ****************************************************************************

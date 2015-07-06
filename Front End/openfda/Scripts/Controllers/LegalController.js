@@ -1,15 +1,5 @@
-﻿/****************************************************************************
-*****************************************************************************
-*****************************************************************************
-{
-    Summary: LegalController.js - Summary
-    Author: Jacob Heater,
-    Questions/Comments: jacobheater@gmail.com
-}
-****************************************************************************
-*****************************************************************************
-*****************************************************************************/
-app.controller('LegalController', ['$routeParams', '$http', function ($routeParams, $http) {
+﻿app.controller('LegalController', ['$routeParams', '$http', function ($routeParams, $http) {
+    //Indicates if the application is operating in mobile mode or not.
     this.isMobile = function () {
         return window.isMobile();
     };
