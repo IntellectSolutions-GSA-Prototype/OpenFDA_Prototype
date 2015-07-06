@@ -13,7 +13,7 @@ All the source files, installation documentation, readme.md file, supporting doc
 URL of the Docker Container Hub: https://hub.docker.com/u/intellectsolutionsllc/ 
 
 
-Approach:
+Approach (750 words limit):
 
 Introduction: After reviewing the available APIs, we interviewed sample users and came up a use case that will be useful to our users. Intellect’s prototype is called - Adverse Drug Effects Research System (ADERS). It is designed to provide users with ability to research on adverse side effects of the branded and generic drugs and medical devices. While building the prototype, Intellect followed all the 13 plays from the US Digital Services Playbook to ensure we deliver successful Agile Service prototype to GSA 18F. Each phase below addresses specific plays.
 
