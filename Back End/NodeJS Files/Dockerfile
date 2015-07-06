@@ -5,7 +5,7 @@ RUN apt-get update -y
 RUN apt-get install apt-utils -y
 RUN apt-get upgrade -y
 
-# Install OpenFDA Application
+# Install OpenFDA ADERS Application
 COPY ./openfda/ /usr/src/myapp
 
 EXPOSE 8000
