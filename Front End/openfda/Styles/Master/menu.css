@@ -61,6 +61,9 @@ Classes
     padding: 5px 10px 5px 10px;
     border-radius: 4px;
     box-shadow: 1px 1px 5px black;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
     .menu-item:hover {
@@ -91,6 +94,11 @@ Classes
 
     .menu-logo a:hover {
         text-decoration: none;
+    }
+
+    /*Solution to remove border from hyperlinks in IE*/
+    .menu-logo a, .menu-item a {
+        outline: none;
     }
 
 
