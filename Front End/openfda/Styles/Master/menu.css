@@ -81,7 +81,7 @@ Classes
 }
 
     .menu-logo img {
-        zoom: 70%;
+        height: 55px;
     }
 
     .menu-logo:hover {
@@ -197,7 +197,7 @@ Mobile Styles
     }
 
         .menu-logo img {
-            zoom: 70%;
+            width: 190px;
         }
 
         .menu-logo:hover {
