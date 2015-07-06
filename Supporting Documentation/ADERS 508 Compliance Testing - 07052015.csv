@@ -1,0 +1,220 @@
+"URL","Frame URL (if different from Page)","Grouping","Category","Rule Id","Weight","Severity","Description","Additional Information","Xpath Array","Frame Xpath Array","Date","Element source code","Manual?","WCAG 2 Level","WCAG 2 Success Criteria","Section 508 Paragraph","HTML element","Help"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","040301-A","null","3","Violation","The primary language of this document has not been set.","null","/html","null","7/5/2015, 8:14:41 PM","<html style="""" xmlns=""http://www.w3.org/1999/xhtml"" class=""js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ng-scope"" ng-app=""OpenFDAPrototype""><head><style type=""text/css"">@charset ""UTF-8"";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset=""utf-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1, maximum-scale=1"">
+    <link rel=""shortcut icon"" href=""favicon.ico"">
+    <title></title>
+    <!--Begin Style References-->
+    <!--CDN References-->
+    <!--Styles-->
+    <link href=""https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css"" rel=""stylesheet"">
+    <link href=""https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css"" rel=""stylesheet"">
+    <!--Fonts-->
+    <link href=""https://fonts.googleapis.com/css?family=Questrial"" rel=""stylesheet"" type=""text/css"">
+    <link href=""https://fonts.googleapis.com/css?family=Ubuntu"" rel=""stylesheet"" type=""text/css"">
+    <!--Site Dependencies-->
+    <!--Styles-->
+    <!--Style Overrides-->
+    <link href=""Styles/Master/banner.css"" rel=""stylesheet"">
+    <link href=""Styles/Master/master.css"" rel=""stylesheet"">
+    <link href=""Styles/Master/menu.css"" rel=""stylesheet"">
+    <link href=""Styles/Views/index.css"" rel=""stylesheet"">
+    <link href=""Styles/Views/search.css"" rel=""stylesheet"">
+    <link href=""Styles/Views/landing.css"" rel=""stylesheet"">
+    <!--Begin Script References-->
+    <!--CDN References--> ...  <span>CONTACT US</span>
+                                <br>
+                                Phone: 877-691-7477
+                                <br>
+                                <span>Fax: 703-991-7785</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class=""footer-address"">
+                                Intellect Solutions, LLC
+                                <br>
+                                <span>5602 Pickwick Road</span>
+                                <br>
+                                <span>Centerville, VA 20120</span>
+                            </div>
+                        </td>
+                        <td>
+                            <a href=""#/Privacy"">Privacy Policy</a><br>
+                            <a href=""#/Legal"">Legal Notice</a><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class=""ng-hide"" ng-show=""main.isMobile()"">
+                <table class=""table-center"">
+                    <tbody>
+                        <tr>
+                            <td>
+                                ©<img src=""Images/IntellectSolutions-Logo.png"" alt=""Intellect Solutions Logo"" class=""intellLogo"">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--Controllers-->
+    <!--Views/Search.html-->
+    <script src=""Scripts/Controllers/SearchController.js"" type=""text/javascript""></script>
+    <!--Views/Disclosure.html-->
+    <script src=""Scripts/Controllers/DisclosureController.js"" type=""text/javascript""></script>
+    <!--Views/About.html-->
+    <script src=""Scripts/Controllers/AboutController.js"" type=""text/javascript""></script>
+    <!--Views/Video.html-->
+    <script src=""Scripts/Controllers/VideoController.js""></script>
+    <!--Views/Landing.html-->
+    <script src=""Scripts/Controllers/LandingController.js""></script>
+
+
+</body></html>","FALSE","Level A","3.1.1 - Language of Page","N/A","html","http://worldspace.deque.com/FireEyes/issue/help?code=040301-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","130201-C","null","0","Violation","Supply a valid title element for this document that is non-empty and useful.","null","/html/head/title","null","7/5/2015, 8:14:41 PM","<title></title>","FALSE","Level A","2.4.2 - Page Titled","N/A","title","http://worldspace.deque.com/FireEyes/issue/help?code=130201-C&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","020201-A","null","2","Violation","Poor visibility between text and background colors.","#DC7024;8;/html/body/div[3]/div[2]/div/div/div[2];.beta-disclaimer;24;https://openfda.intellectsolutions.com/Styles/Views/index.css;;#FFD800;8;/html/body/div[3]/div[2]/div/div/div[2]/div[1];.beta-disclaimer-yellow;42;https://openfda.intellectsolutions.com/Styles/Views/index.css;#DC7024;font-size: 17.5px;font-weight: 700;text: ;2.36","/html/body/div[3]/div[2]/div/div/div[2]/div","null","7/5/2015, 8:14:41 PM","<div class=""heading-medium beta-disclaimer-heading beta-disclaimer-yellow text-center"">
+      Beta Usage
+  </div>","FALSE","Level AA","1.4.3 - Contrast (Minimum)","N/A","div","http://worldspace.deque.com/FireEyes/issue/help?code=020201-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","020201-A","null","2","Violation","Poor visibility between text and background colors.","#DC7024;8;/html/body/div[3]/div[2]/div/div/div[2];.beta-disclaimer;24;https://openfda.intellectsolutions.com/Styles/Views/index.css;;white;8;/html/body/div[3]/div[2]/div/div/div[2];.beta-disclaimer;24;https://openfda.intellectsolutions.com/Styles/Views/index.css;#DC7024;font-size: 14px;font-weight: 400;text: ;3.29","/html/body/div[3]/div[2]/div/div/div[2]/div[2]/div","null","7/5/2015, 8:14:41 PM","<div class=""para"">
+          <b>ADERS and openFDA</b> are beta research project and not for clinical use.
+          We may limit or otherwise restrict your access in accordance with&nbsp;<a href=""https://open.fda.gov/terms/"" target=""_blank"" class=""beta-disclaimer-yellow"">FDA Terms of Use</a>.
+      </div>","FALSE","Level AA","1.4.3 - Contrast (Minimum)","N/A","div","http://worldspace.deque.com/FireEyes/issue/help?code=020201-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","020201-A","null","2","Violation","Poor visibility between text and background colors.","#DC7024;8;/html/body/div[3]/div[2]/div/div/div[2];.beta-disclaimer;24;https://openfda.intellectsolutions.com/Styles/Views/index.css;;white;8;/html/body/div[3]/div[2]/div/div/div[2];.beta-disclaimer;24;https://openfda.intellectsolutions.com/Styles/Views/index.css;#DC7024;font-size: 14px;font-weight: 700;text: ;3.29","/html/body/div[3]/div[2]/div/div/div[2]/div[2]/div/b","null","7/5/2015, 8:14:41 PM","<b>ADERS and openFDA</b>","FALSE","Level AA","1.4.3 - Contrast (Minimum)","N/A","b","http://worldspace.deque.com/FireEyes/issue/help?code=020201-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","020201-A","null","2","Violation","Poor visibility between text and background colors.","#DC7024;8;/html/body/div[3]/div[2]/div/div/div[2];.beta-disclaimer;24;https://openfda.intellectsolutions.com/Styles/Views/index.css;;#FFD800;8;/html/body/div[3]/div[2]/div/div/div[2]/div[2]/div/a;.beta-disclaimer a, .beta-disclaimer a:hover, .beta-disclaimer a:active, .beta-disclaimer a:visited;46;https://openfda.intellectsolutions.com/Styles/Views/index.css;#DC7024;font-size: 14px;font-weight: 400;text: ;2.36","/html/body/div[3]/div[2]/div/div/div[2]/div[2]/div/a","null","7/5/2015, 8:14:41 PM","<a href=""https://open.fda.gov/terms/"" target=""_blank"" class=""beta-disclaimer-yellow"">FDA Terms of Use</a>","FALSE","Level AA","1.4.3 - Contrast (Minimum)","N/A","a","http://worldspace.deque.com/FireEyes/issue/help?code=020201-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","N030504-A","null","3","Violation","This page does not have enough headings.","null","/html","null","7/5/2015, 8:14:41 PM","<html style="""" xmlns=""http://www.w3.org/1999/xhtml"" class=""js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ng-scope"" ng-app=""OpenFDAPrototype""><head><style type=""text/css"">@charset ""UTF-8"";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset=""utf-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1, maximum-scale=1"">
+    <link rel=""shortcut icon"" href=""favicon.ico"">
+    <title></title>
+    <!--Begin Style References-->
+    <!--CDN References-->
+    <!--Styles-->
+    <link href=""https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css"" rel=""stylesheet"">
+    <link href=""https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css"" rel=""stylesheet"">
+    <!--Fonts-->
+    <link href=""https://fonts.googleapis.com/css?family=Questrial"" rel=""stylesheet"" type=""text/css"">
+    <link href=""https://fonts.googleapis.com/css?family=Ubuntu"" rel=""stylesheet"" type=""text/css"">
+    <!--Site Dependencies-->
+    <!--Styles-->
+    <!--Style Overrides-->
+    <link href=""Styles/Master/banner.css"" rel=""stylesheet"">
+    <link href=""Styles/Master/master.css"" rel=""stylesheet"">
+    <link href=""Styles/Master/menu.css"" rel=""stylesheet"">
+    <link href=""Styles/Views/index.css"" rel=""stylesheet"">
+    <link href=""Styles/Views/search.css"" rel=""stylesheet"">
+    <link href=""Styles/Views/landing.css"" rel=""stylesheet"">
+    <!--Begin Script References-->
+    <!--CDN References--> ...  <span>CONTACT US</span>
+                                <br>
+                                Phone: 877-691-7477
+                                <br>
+                                <span>Fax: 703-991-7785</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class=""footer-address"">
+                                Intellect Solutions, LLC
+                                <br>
+                                <span>5602 Pickwick Road</span>
+                                <br>
+                                <span>Centerville, VA 20120</span>
+                            </div>
+                        </td>
+                        <td>
+                            <a href=""#/Privacy"">Privacy Policy</a><br>
+                            <a href=""#/Legal"">Legal Notice</a><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class=""ng-hide"" ng-show=""main.isMobile()"">
+                <table class=""table-center"">
+                    <tbody>
+                        <tr>
+                            <td>
+                                ©<img src=""Images/IntellectSolutions-Logo.png"" alt=""Intellect Solutions Logo"" class=""intellLogo"">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--Controllers-->
+    <!--Views/Search.html-->
+    <script src=""Scripts/Controllers/SearchController.js"" type=""text/javascript""></script>
+    <!--Views/Disclosure.html-->
+    <script src=""Scripts/Controllers/DisclosureController.js"" type=""text/javascript""></script>
+    <!--Views/About.html-->
+    <script src=""Scripts/Controllers/AboutController.js"" type=""text/javascript""></script>
+    <!--Views/Video.html-->
+    <script src=""Scripts/Controllers/VideoController.js""></script>
+    <!--Views/Landing.html-->
+    <script src=""Scripts/Controllers/LandingController.js""></script>
+
+
+</body></html>","FALSE","Level A","1.3.1 - Info and Relationships","N/A","html","http://worldspace.deque.com/FireEyes/issue/help?code=N030504-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","050502-A","null","0","Violation","Table does not have a caption element.","null","/html/body/div[3]/div[2]/div/div/div/div/div/div/div[5]/table","null","7/5/2015, 8:17:31 PM","<table>
+                        <tbody><!-- ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+                                <input class=""ng-pristine ng-untouched ng-valid"" name=""patient_demograph"" id=""patient_demograph0"" value=""0"" ng-model=""search.selectedDemograph"" ng-click=""search.displayData(2)"" type=""radio"">
+                            </td>
+                            <td>
+                                <label class=""ng-binding"" for=""patient_demograph0"">Any</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+                                <input class=""ng-pristine ng-untouched ng-valid"" name=""patient_demograph"" id=""patient_demograph1"" value=""1"" ng-model=""search.selectedDemograph"" ng-click=""search.displayData(2)"" type=""radio"">
+                            </td>
+                            <td>
+                                <label class=""ng-binding"" for=""patient_demograph1"">Females &lt; 21</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+                                <input class=""ng-pristine ng-untouched ng-valid"" name=""patient_demograph"" id=""patient_demograph2"" value=""2"" ng-model=""search.selectedDemograph"" ng-click=""search.displayData(2)"" type=""radio"">
+                            </td>
+                            <td>
+                                <label class=""ng-binding"" for=""patient_demograph2"">Females 22 - 60</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+  ... emograph5"">Males &lt; 21</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+                                <input class=""ng-pristine ng-untouched ng-valid"" name=""patient_demograph"" id=""patient_demograph6"" value=""6"" ng-model=""search.selectedDemograph"" ng-click=""search.displayData(2)"" type=""radio"">
+                            </td>
+                            <td>
+                                <label class=""ng-binding"" for=""patient_demograph6"">Males 22 - 60</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+                                <input class=""ng-pristine ng-untouched ng-valid"" name=""patient_demograph"" id=""patient_demograph7"" value=""7"" ng-model=""search.selectedDemograph"" ng-click=""search.displayData(2)"" type=""radio"">
+                            </td>
+                            <td>
+                                <label class=""ng-binding"" for=""patient_demograph7"">Males 61 - 90</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList --><tr class=""ng-scope"" ng-repeat=""r in search.patientDemographicsList"">
+                            <td>
+                                <input class=""ng-pristine ng-untouched ng-valid"" name=""patient_demograph"" id=""patient_demograph8"" value=""8"" ng-model=""search.selectedDemograph"" ng-click=""search.displayData(2)"" type=""radio"">
+                            </td>
+                            <td>
+                                <label class=""ng-binding"" for=""patient_demograph8"">Males &gt; 90</label>
+                            </td>
+                        </tr><!-- end ngRepeat: r in search.patientDemographicsList -->
+                    </tbody></table>","FALSE","Level A","1.3.1 - Info and Relationships","Paragraph G - Row and column headers for data tables","table","http://worldspace.deque.com/FireEyes/issue/help?code=050502-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","120101-A","null","2","Violation","Missing title for this frame or iframe element.","null","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","null","7/5/2015, 8:18:04 PM","<iframe class=""feedback"" src=""https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform""></iframe>","FALSE","Level A","2.4.1 - Bypass Blocks","Paragraph I - Title frames/iframes to facilitate frame identification and navigation","iframe","http://worldspace.deque.com/FireEyes/issue/help?code=120101-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","020201-A","null","2","Violation","Poor visibility between text and background colors.","#D9D9D9;7;/html/body/div/div;.ss-form-container, .ss-resp-card;/html/head/style;;;#FFFFFF;8;//*[@id=""ss-submit""];.jfk-button-action;1;https://docs.google.com/static/forms/client/css/2261239911-formview_st_ltr.css;#D9D9D9;font-size: 11px;font-weight: 700;text: ;1.41","/html/body/div/div/div[3]/form/ol/div[4]/table/tbody/tr/td/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""submit"" value=""Submit"" id=""ss-submit"" class=""jfk-button jfk-button-action "" type=""submit"">","FALSE","Level AA","1.4.3 - Contrast (Minimum)","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=020201-A&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ATTRIBUTE_VALUES","null","0","Violation","The value of an ARIA attribute was invalid or of the wrong type. If you are using an id reference, make sure the id exists.","aria-atomic=""""","/html/body/div/div/div[5]","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<div id=""docs-aria-speakable"" class=""docs-a11y-ariascreenreader-speakable docs-offscreen"" aria-live=""assertive"" role=""region"" aria-atomic="""">Screen reader support enabled. </div>","FALSE","Level A","4.1.1 - Parsing","N/A","div","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ATTRIBUTE_VALUES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div/div/div/ul/li/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.152152925"" value=""1"" id=""group_152152925_1"" role=""radio"" class=""ss-q-radio"" aria-label=""1"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div/div/div/ul/li[2]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.152152925"" value=""2"" id=""group_152152925_2"" role=""radio"" class=""ss-q-radio"" aria-label=""2"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div/div/div/ul/li[3]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.152152925"" value=""3"" id=""group_152152925_3"" role=""radio"" class=""ss-q-radio"" aria-label=""3"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div/div/div/ul/li[4]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.152152925"" value=""4"" id=""group_152152925_4"" role=""radio"" class=""ss-q-radio"" aria-label=""4"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div/div/div/ul/li[5]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.152152925"" value=""5"" id=""group_152152925_5"" role=""radio"" class=""ss-q-radio"" aria-label=""5"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div[2]/div/div/ul/li/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.1136354897"" value=""1"" id=""group_1136354897_1"" role=""radio"" class=""ss-q-radio"" aria-label=""1"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div[2]/div/div/ul/li[2]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.1136354897"" value=""2"" id=""group_1136354897_2"" role=""radio"" class=""ss-q-radio"" aria-label=""2"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div[2]/div/div/ul/li[3]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.1136354897"" value=""3"" id=""group_1136354897_3"" role=""radio"" class=""ss-q-radio"" aria-label=""3"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div[2]/div/div/ul/li[4]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.1136354897"" value=""4"" id=""group_1136354897_4"" role=""radio"" class=""ss-q-radio"" aria-label=""4"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://docs.google.com/forms/d/1Hfkx9HmSx-vjw2nzaLQRhIaQ0EyAxrER3-slhlpknv4/viewform","null","ARIA_ROLE_REQUIRED_ATTRIBUTES","null","0","Violation","A required ARIA attribute is missing","aria-checked","/html/body/div/div/div[3]/form/ol/div[2]/div/div/ul/li[5]/label/span/input","/html/body/div[3]/div[2]/div/div/div/div[2]/iframe","7/5/2015, 8:18:04 PM","<input name=""entry.1136354897"" value=""5"" id=""group_1136354897_5"" role=""radio"" class=""ss-q-radio"" aria-label=""5"" type=""radio"">","FALSE","Level A","4.1.2 - Name, Role, Value","N/A","input","http://worldspace.deque.com/FireEyes/issue/help?code=ARIA_ROLE_REQUIRED_ATTRIBUTES&projectid=default"
+"https://openfda.intellectsolutions.com/","https://openfda.intellectsolutions.com/","null","IMG_NO_ALT","null","2","Violation","Images must have an alt attribute","https://openfda.intellectsolutions.com/Images/about_image.png","/html/body/div[3]/div[2]/div/div/div/img","null","7/5/2015, 8:18:19 PM","<img style=""margin: 10px; float: right;"" src=""/Images/about_image.png"" ng-show=""!main.isMobile()"" height=""178"" width=""259"">","FALSE","Level A","1.1.1 - Non-text Content","Paragraph A - Equivalent alternatives for non-text elements","img","http://worldspace.deque.com/FireEyes/issue/help?code=IMG_NO_ALT&projectid=default"
