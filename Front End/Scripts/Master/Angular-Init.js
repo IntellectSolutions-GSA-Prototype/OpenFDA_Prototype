@@ -1,6 +1,22 @@
-﻿var app = angular.module('OpenFDAPrototype', ['ngRoute']);
+﻿/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+{
+    Summary: ExoTools.Document.JS - An extension of the ExoTools.JS library that offers a
+             high-level API for working with the DOM and selecting HTML elements on the page.
+             It makes cross-browser compatibility a non-issue and traversing the DOM easier than
+             ever because of the utilization of the ExoTools.Collections.JS library for quickly
+             filtering through DOM elements.
+    Author: Jacob Heater,
+    Dependencies: ExoTools.JS & ExoTools.Collections.JS, 
+    Questions/Comments: jacobheater@gmail.com
+}
+****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+var app = angular.module('OpenFDAPrototype', ['ngRoute']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    var urlFormat = "../../Views/{0}";
+    var urlFormat = "/Views/{0}";
     var createUrl = function (viewName) {
         return exoTools.stringFormatter(urlFormat, viewName);
     };
@@ -12,10 +28,22 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         templateUrl: createUrl('Search.html'),
         controller: 'SearchController',
         controllerAs: 'search'
+    }).when('/Legal', {
+        templateUrl: createUrl('Legal.html'),
+        controller: 'LegalController',
+        controllerAs: 'legal'
+    }).when('/Privacy', {
+        templateUrl: createUrl('Privacy.html'),
+        controller: 'PrivacyController',
+        controllerAs: 'privacy'
     }).when('/Disclosure', {
         templateUrl: createUrl('Disclosure.html'),
         controller: 'DisclosureController',
         controllerAs: 'disclosure'
+    }).when('/Feedback', {
+        templateUrl: createUrl('Feedback.html'),
+        controller: 'FeedbackController',
+        controllerAs: 'feedback'
     }).when('/About', {
         templateUrl: createUrl('About.html'),
         controller: 'AboutController',
@@ -52,13 +80,14 @@ app.controller('MainController', ['$route', '$routeParams', '$location', '$scope
         return window.isMobile();
     };
     this.setPageTitle = function () {
-        window.setPageTitle('openFDA Home');
+        window.setPageTitle('ADERS');
     };
     this.menuItems = [
-        new imageMenuItem('../../Images/openFDALogo.png', 'Open FDA Logo', '/#/', true, true, 'openFdaLogo'),
+        new imageMenuItem('/Images/Aders-v3_34wide-Sml.png', 'Open FDA Logo', '/#/', true, true, 'ADERSlogo'),
         new menuItem('Home', '/#/', false, true),
+        new menuItem('Our Solution', '#/Video', false, true),
         new menuItem('Drug Search', '#/Search', false, true),
-        new menuItem('Video Introduction', '#/Video', false, true),
+        new menuItem('Feedback', '#/Feedback', false, true),
         new menuItem('About Us', '#/About', false, true),
         new menuItem('Beta Disclosure', '#/Disclosure', false, this.isMobile(), 'beta-menu')
     ];

@@ -1,5 +1,16 @@
-﻿app.controller('LandingController', ['$routeParams', '$http', function ($routeParams, $http) {
+﻿/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+{
+    Summary: LandingController.JS - .
+    Author: Jacob Heater,
+    Questions/Comments: jacobheater@gmail.com
+}
+****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+app.controller('LandingController', ['$routeParams', '$http', function ($routeParams, $http) {
     this.setPageTitle = function () {
-        window.setPageTitle('openFDA Video Intro');
+        window.setPageTitle('ADERS');
     };
 }]);

@@ -28,6 +28,7 @@ Classes
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 1000px;
     padding-top: 10px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -100,8 +101,8 @@ Classes
 }
 
 .menu-blue {
-    background-color: rgb(94, 146, 241);
-    border-bottom: 1px solid rgb(45, 124, 222);
+    background-color: rgba(0, 49, 82, 1);
+    border-bottom: 1px solid rgba(0, 49, 82, 1);
 }
 
 .site-menu-mobile-icon {
@@ -120,6 +121,7 @@ Mobile Styles
         left: -200px;
         top: 0;
         width: 200px;
+        min-width: 0px;
         height: 100%;
         padding: 0;
         margin: 0;

@@ -27,7 +27,8 @@ Classes
     left: 0;
     z-index: 1000;
     padding: 15px 10px 15px 25px;
-    background-color: #dc7024;
+    //background-color: #dc7024;
+    background-color: #DF9143;
     opacity: 1;
     border-bottom-right-radius: 4px;
     border: 1px solid #9b4000;
@@ -35,19 +36,30 @@ Classes
     -webkit-box-shadow: 0 1px 7px 1px black;
     -moz-box-shadow: 0 1px 7px 1px black;
     box-shadow: 0 1px 7px 1px black;
-    color: white;
+    color: #000000;
     max-width: 450px;
 }
 
+caption {
+  display: none;
+}
+
 .beta-disclaimer-yellow {
-    color: #ffd800;
+    // color: #ffd800;
+    color: #000000;
 }
 
 .beta-disclaimer a, .beta-disclaimer a:hover, .beta-disclaimer a:active, .beta-disclaimer a:visited {
-    color: #ffd800;
+    // color: #ffd800;
+    color: #000000;
 }
 
-
+.feedback {
+  width: 800px; 
+  height: 900px; 
+  border: 0;
+  background-color: #DDDDDD;
+}
 /*****************************************************
 ******************************************************
 ******************************************************
@@ -71,6 +83,11 @@ Mobile Styles
         margin-left: 10px;
         margin-right: 10px;
     }
+  .feedback {
+    width: 350px; 
+    height: 1000px; 
+    border:2px dotted red;
+  }
 }
 
 @media only screen and (orientation: landscape) and (max-width: 1000px) {

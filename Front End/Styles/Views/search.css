@@ -23,29 +23,29 @@ Classes
 ******************************************************/
 .screen-left {
     width: 30%;
+    min-width: 310px;
     display: inline-block;
     float: left;
 }
 
 .screen-right {
     width: 70%;
+    min-width: 720px;
     display: inline-block;
-    float: left;
-    padding-top: 30px;
-    padding-left: 30px;
 }
 
 .data-row {
     background-color: #006eae;
-    height: 40px;
     display: inline-block;
     border-radius: 4px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    margin-top: 10px;
-    padding-top: 5px;
+    margin-top: 5px;
+    padding-top: 2px;
     font-size: .8em;
-    line-height: 2.5em;
+    line-height: 1.25em;
+    min-height: 20px;
+    height:auto;
 }
 
 
@@ -59,12 +59,14 @@ Mobile Styles
 @media only screen and (max-device-width : 800px), only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
     .screen-left {
         width: initial;
+        min-width: 0px;
         display: initial;
         float: initial;
     }
 
     .screen-right {
         width: initial;
+        min-width: 0px;
         display: initial;
         float: initial;
         padding: 0;

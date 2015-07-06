@@ -1,5 +1,16 @@
-﻿app.controller('VideoController', ['$routeParams', '$http', function ($routeParams, $http) {
+﻿/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+{
+    Summary: VideoController.JS - 
+    Author: Jacob Heater,
+    Questions/Comments: jacobheater@gmail.com
+}
+****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+app.controller('VideoController', ['$routeParams', '$http', function ($routeParams, $http) {
     this.setPageTitle = function () {
-        window.setPageTitle('openFDA Video Intro');
+        window.setPageTitle('ADERS');
     };
 }]);

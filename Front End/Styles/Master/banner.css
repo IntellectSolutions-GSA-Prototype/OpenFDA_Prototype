@@ -9,7 +9,6 @@ body
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 }
 /* redefine a href links to not show underlines */
 a 
@@ -40,7 +39,6 @@ Additive styles that can be added to any element to sync / centralize shared att
 .ofda-brand-pms-darkblue 
 {
 	color : #003152;
-	color : rgba(0, 49, 82, 1);
 }
 
 .ofda-page-container

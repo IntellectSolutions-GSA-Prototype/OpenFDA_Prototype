@@ -1,27 +1,39 @@
-﻿app.controller('SearchController', ['$routeParams', '$http', '$log', function ($routeParams, $http, $log) {
+﻿/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+{
+    Summary: SearchController.JS - 
+    Author: Jacob Heater,
+    Questions/Comments: jacobheater@gmail.com
+}
+****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+app.controller('SearchController', ['$routeParams', '$http', '$log', function ($routeParams, $http, $log) {
     var $this = this;
-    this.title = "openFDA Search";
+    this.title = "ADERS";
     this.context = null;
     this.setPageTitle = function () {
-        window.setPageTitle('openFDA Search');
+        window.setPageTitle('ADERS');
     };
+    this.testText;
     this.drugType = 0;
     this.drugTypeToNumber = function () {
         return exoTools.convert.toNumber(this.drugType);
     };
-    this.drugSource = 0;
+    this.drugSource = 1;
     this.drugSourceToNumber = function () {
         return exoTools.convert.toNumber(this.drugSource);
     };
     var defaultListItem = {
         id: -1,
-        value: 'Select a Drug Name'
+        value: 'Select a Medicine Name'
     };
     this.isMobile = function () {
         return window.isMobile();
     };
     //Chart height and width
-    this.chartWidth = this.isMobile() ? 300 : 1000;
+    this.chartWidth = this.isMobile() ? 300 : ($(window).width() * .70 * .95);
     this.chartHeight = this.isMobile() ? 100 : 300;
     //End chart height and width
     this.drugName = defaultListItem;
@@ -91,6 +103,13 @@
         OTC: new EnumMember(0, 'Over the Counter'),
         prescription: new EnumMember(1, 'Prescription'),
     });
+    var defaultLabelSet = {
+      _type: 'label',
+      description_label: '',
+      precautions_label: '',
+      package_label: '',
+      warning_label: ''
+    };
     var defaultDataSet = {
         terms: [],
         _type: 'terms',
@@ -98,6 +117,7 @@
         total: 0,
         missing: 0
     };
+    this.labelSet = defaultLabelSet;
     this.dataSet = defaultDataSet;
     this.hasNoRecords = false;
     this.hasDrugName = false;
@@ -112,7 +132,7 @@
     };
     this.setTableHeight = function () {
         return {
-            'min-height': this.hasNoRecords ? 'initial' : '500px',
+            'min-height': this.hasNoRecords ? 'initial' : '400px',
             'padding-left': this.hasNoRecords ? '25px' : 'inherit'
         };
     };
@@ -120,7 +140,7 @@
         if (term.count) {
             var width = 0,
                 count = term.count,
-                maxWidth = this.isMobile() ? ($(window).width() * .95) : 800,
+                maxWidth = this.isMobile() ? ($(window).width() * .95) : ($(window).width() * .70 * .95),
                 maxCount = this.dataSet.terms[0].count,
                 width = (count / maxCount) * maxWidth;
             return {
@@ -129,6 +149,7 @@
         }
         return {};
     };
+    
     this.displayData = function (queryType) {
         this.hasDrugName = this.drugName.value !== defaultListItem.value;
         this.dataSet = defaultDataSet;
@@ -146,7 +167,7 @@
                         var results = data.results;
                         var enumerable = exoTools.collections.asEnumerable(results);
                         var names = new exoTools.collections.list();
-                        var orderByIncidence = enumerable.orderBy('count', 'desc').take(10).select(function (item) {
+                        var orderByIncidence = enumerable.orderBy('count', 'desc').take(10).select(function (item) {                            
                             if (item.term.length > 25) {
                                 var format = "{0}...";
                                 var string = exoTools.stringFormatter(format, item.term.substring(0, 25).trim());
@@ -189,7 +210,7 @@
                                     item.term = string;
                                 }
                                 return item;
-                            });;
+                            });
                             $this.dataSet = {
                                 _type: 'terms',
                                 other: 0,
@@ -213,12 +234,26 @@
                         drugSource: (this.drugSourceToNumber() === this.drugSources.OTC.toNumber() ? this.drugSources.OTC : this.drugSources.prescription).toNumber(),
                     });
                     $http.post('https://openfda.intellectsolutions.com:8000/openfda/query', query).success(function (data, status, headers, config) {
-                        if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
-                            var results = data.results;
-                            var enumerable = exoTools.collections.asEnumerable(results);
-                            $this.displayData(2);
-                        }
+                      if (exoTools.isDefined(data) && exoTools.isArray(data.results)) {
+                        var results = data.results;
+                        var enumerable = exoTools.collections.asEnumerable(results);
+                        $this.labelSet = {
+                          _type: 'label',
+                          description_label: results[0].description[0],
+                          precautions_label: results[0].precautions[0],
+                          package_label: results[0].package_label_principal_display_panel[0],
+                          warning_label: results[0].warnings[0]
+                        };  
+                        $this.displayData(2);  // Submit the Type 2 Query as well to display result set of adverse reaction for selected medicine.
+                      }
                     }).error(function (data, status, headers, config) {
+                        $this.labelSet = {
+                          _type: 'label',
+                          description_label: 'No Description Returned. Please try again later.',
+                          precautions_label: 'No Precautions Returned. Please try again later',
+                          package_label: 'No Packaging Label Returned. Please try again later',
+                          warning_label: 'No Warning Label Returned. Please try again later'
+                        };  
                         $log.log(data);
                     });
                 } else {

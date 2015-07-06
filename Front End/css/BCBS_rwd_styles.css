@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* BCBS RWD Styles CSS Document */
+
+
+@media only screen and (min-width: 0px) and (max-width: 759px) {
+/* For mobile: */
+header #header .header {
+	background-color:rgba(255,255,255,1.00);
+	width: 100%;
+	height: 75px;
+}
+
+footer #footer .footer {
+	width: 100%;
+	height: 75px;
+	background-color:rgba(55,55,55,1.00);
+}	
+
+#View-container .View-container {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+	
+.col-left {
+	width: 100%; 
+	float: none;
+	}
+	
+.col-right {
+	width: 100%; 
+	float: none;
+	}
+}
+
+@media only screen and (min-width: 760px) {
+    /* For tablets: */
+header #header .header {
+	background-color:rgba(255,255,255,1.00);
+	width: 100%;
+	height: 100px;
+}
+
+footer #footer .footer {
+	width: 100%;
+	height: 75px;
+	background-color:rgba(55,55,55,1.00);
+}
+	
+.View-container {
+	width: 100%;
+	height:auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	}
+
+.col-left {width: 70%; float: left;}
+.col-right {width: 30%; float: left;}
+}
+
+@media only screen and (min-width: 801px)  {
+/* For desktop: */
+header #header .header {
+	background-color:rgba(255,255,255,1.00);
+	width: 100%;
+	height: 100px;
+}
+#View-container .View-container {
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+}
+footer #footer .footer {
+	width: 100%;
+	height: 200px;
+	background-color:rgba(55,55,55,1.00);
+	}
+		
+.col-left {width: 70%; float: left;}
+.col-right {width: 30%; float: left;}
+}
+
+
+footer header main section #footer #header .footer .header #View-container {
+	display: block;
+	/* */
+	position: relative;
+	
+}
+
+/* HTML Semantics elements defined */
+body {
+	background-color: rgba(231,231,231,1.00);
+	padding: 0px;
+	overflow: scroll;
+
+}
+
+/* Set Box sizing: assures padding and border are included in the total width and height of the elements.*/
+* {
+    box-sizing: border-box;
+}
+
+/* Col classes */
+ /* For View size elements - responsive: */
+.page-container-color { 
+	background-color: rgba(231,231,231,1.00);
+	width: 100%;
+	margin-left: auto !important; 
+	margin-right: auto !important;
+} 
+
+[class*="col-"] {
+	float: left;
+    padding: 15px;
+}
+.ContainerRow:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.white-content-container {
+	background-color: rgba(255,255,255,1.00);
+	width: 100%;
+}
+
+.gray-content-container {
+	background-color:rgba(215,211,211,1.00);
+	width: 100%;
+	height: auto;
+}
+
+.ltblue-content-container {
+	background-color:rgba(218,229,237,1.00);
+	width: 100%;
+	height: auto;	
+}
+
+.gray-content-border {
+	border: solid;
+	border: 1px solid rgba(215,211,211,1.00);
+}
+.border-radius5 {
+	border-radius: 3px;	
+}
+
+/* TextColumns Containers */
+.txt-3column {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+	/* Gap space */
+	-webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+}
+
+.column-deductable {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 20px; /* Firefox */
+    column-gap: 20px;
+    -webkit-column-rule: 1px solid lightgray; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid lightgray; /* Firefox */
+    column-rule: 1px solid lightgray;	
+}
+
+/* Flex box styling for non-text columns */
+.flex-element-container {
+    /* border: 1px solid #000000; */
+	width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around; 		
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-flow: row wrap; /* Safari 6.1+ */
+    -webkit-align-content: space-around; /* Safari 7.0+ */
+}
+.flex-h-align {
+    -webkit-align-self: center; /* Safari 7.0+ */
+    align-self: center;
+}
+
+/* RWD Image sizing defaults */
+img.rwd {
+    width: 100%;
+    height: auto;
+}
+
+/* Font setting */
+@font-face { 
+    font-family:"Arial", Arial, sans-serif
+}
+/* Text bottom rule */
+.text-bot-border-gray-dashed {
+    border-style: dashed;
+    border-bottom: thin dotted rgba(142,137,137,1.00);
+}	
+.text-bot-border-gray-solid {
+    border-style: solid;
+    border-bottom: thin dotted rgba(142,137,137,1.00);
+}	
+
+
+/* Button and links */
+.ButtonBlue
+{	
+  width: 120px;
+  max-height: 40px;
+  font-size:14px;
+  	text-align: center;
+	line-height: 14px;
+	padding: 8px;
+	padding-top: 9px;
+  margin-left: 10px;
+  margin-right: 10px;	
+  color: rgba(255,255,255,1.00);
+  border-style : Solid;
+  border-color : #397EE2;
+  border-color : rgba(57, 126, 226, 1);
+  border-width : 1px;
+  border-radius: 3px;
+background: -moz-linear-gradient(90deg, #103c6d 0%, #195eaa 40%);/* FF3.6+ */
+background: -webkit-gradient(linear, 90deg, color-stop(0%, #103c6d), color-stop(40%, #195eaa));/* Chrome,Safari4+ */
+background: -webkit-linear-gradient(90deg, #103c6d 0%, #195eaa 40%);/* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(90deg, #103c6d 0%, #195eaa 40%);/* Opera 11.10+ */
+background: -ms-linear-gradient(90deg, #103c6d 0%, #195eaa 40%);/* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#103c6d', endColorstr='#195eaa', GradientType='0'); /* for IE */
+background: linear-gradient(0deg, #103c6d 0%, #195eaa 40%);/* W3C */
+}
+
+/* BCBS PMS Colors */ 
+.BCBS-pms-blue-bg {
+  background : #3370C6;
+  background : rgba(51, 112, 198, 1);
+}
+
+.BCBS-pms-color {
+  color : #3370C6;
+  color : rgba(51, 112, 198, 1);
+}
+
+/* Layout spacing */
+.v-Margin-20 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

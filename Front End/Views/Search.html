@@ -2,95 +2,107 @@
     <div class="search-container view-area">
         <div class="screen-left">
             <div class="controls-group">
-                <div class="heading-large">
-                    Search Adverse Drug Effects
+                <h1 class="heading-large">Select Medicine</h1>
+                <div class="control">
+                    <select ng-model="search.drugName" ng-options="option.value for option in search.listItems" title="Medicine Names by Filter" ng-change="search.displayData(3)"></select>
+                    <input type="hidden" name="drug_types" value="0"> <!-- Default Search to Brand Name Drugs -->
+                    <input type="hidden" name="drug_source" value="1"> <!-- Default Search to Prescription Drugs -->
                 </div>
                 <div class="control">
-                    <select ng-model="search.drugName" ng-options="option.value for option in search.listItems" title="Drug Names by Filter" ng-change="search.displayData(3)"></select>
+                  <div class="reactions" ng-hide="search.hasDrugName">
+                    <div class="heading-large">Select Adverse Reaction</div>
+                  </div>
+                  <div class="reactions" ng-show="search.hasDrugName">
+                    <div class="heading-large">Select Demographic</div>
+                  </div>
                 </div>
-                <div class="control">
-                    <div class="heading-large">Select Search Criteria</div>
-                </div>
-                <div class="control drug-types">
+                 <div class="reactions" ng-hide="search.hasDrugName">
                     <table>
-                        <tr>
-                            <td ng-show="false">
-                                <input type="radio" value="{{ search.drugTypes.brand.Index }}" id="drug_types_1" name="drug_types" ng-model="search.drugType" ng-click="search.compileList()" ng-show="false" />
-                            </td>
-                            <td ng-show="false">
-                                <label for="drug_types_1" ng-show="false">{{ search.drugTypes.brand.Value }}</label>
-                            </td>
-                            <td><div class="inline-spacer"></div></td>
+                      <caption>Adverse Reactions Radio Button Options</caption>
+                        <tr ng-repeat="r in search.adverseReactionsList">
                             <td>
-                                <input type="radio" value="{{ search.drugSources.OTC.Index }}" id="drug_source_1" name="drug_source" ng-model="search.drugSource" ng-click="search.compileList()" />
+                                <input type="radio" name="adverse_reactions" id='{{ "adverse_reactions" + r.key }}' value="{{r.key}}" ng-checked="r.key === search.selectedReaction" ng-model="search.selectedReaction" ng-click="search.displayData(1)" />
                             </td>
                             <td>
-                                <label for="drug_source_1">{{ search.drugSources.OTC.Value }}</label>
+                                <label for='{{ "adverse_reactions" + r.key }}'>{{r.value}}</label>
                             </td>
                         </tr>
-                        <tr>
-                            <td ng-show="false">
-                                <input type="radio" value="{{ search.drugTypes.generic.Index }}" id="drug_types_2" name="drug_types" ng-model="search.drugType" ng-click="search.compileList()" ng-show="false" />
-                            </td>
-                            <td ng-show="false">
-                                <label for="drug_types_2" ng-show="false">{{ search.drugTypes.generic.Value }}</label>
-                            </td>
-                            <td><div class="inline-spacer"></div></td>
+                    </table>
+                </div>
+                <div class="demographics" ng-show="search.hasDrugName">
+                    <table>
+                      <caption>Demographics Radio Button Options</caption>
+                        <tr ng-repeat="r in search.patientDemographicsList">
                             <td>
-                                <input type="radio" value="{{ search.drugSources.prescription.Index }}" id="drug_source_2" name="drug_source" ng-model="search.drugSource" ng-click="search.compileList()"  />
+                                <input type="radio" name="patient_demograph" id='{{ "patient_demograph" + r.key }}' value="{{r.key}}" ng-model="search.selectedDemograph" ng-click="search.displayData(2)" />
                             </td>
                             <td>
-                                <label for="drug_source_2">{{ search.drugSources.prescription.Value }}</label>
+                                <label for='{{ "patient_demograph" + r.key }}'>{{r.value}}</label>
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <hr />
+       </div>
+       <div class="screen-right">
             <div class="reactions" ng-hide="search.hasDrugName">
-                <table>
-                    <tr ng-repeat="r in search.adverseReactionsList">
-                        <td>
-                            <input type="radio" name="adverse_reactions" id='{{ "adverse_reactions" + r.key }}' value="{{r.key}}" ng-checked="r.key === search.selectedReaction" ng-model="search.selectedReaction" ng-click="search.displayData(1)" />
-                        </td>
-                        <td>
-                            <label for='{{ "adverse_reactions" + r.key }}'>{{r.value}}</label>
-                        </td>
-                    </tr>
-                </table>
+                <h1 class="heading-large">Results for Selected Adverse Reaction</h1>
             </div>
             <div class="demographics" ng-show="search.hasDrugName">
-                <table>
-                    <tr ng-repeat="r in search.patientDemographicsList">
-                        <td>
-                            <input type="radio" name="patient_demograph" id='{{ "patient_demograph" + r.key }}' value="{{r.key}}" ng-model="search.selectedDemograph" ng-click="search.displayData(2)" />
-                        </td>
-                        <td>
-                            <label for='{{ "patient_demograph" + r.key }}'>{{r.value}}</label>
-                        </td>
-                    </tr>
-                </table>
+                <h1 class="heading-large">Results for Selected Medicine and Demographic</h1>
             </div>
-        </div>
-        <div class="screen-right">
             <div ng-style="search.setTableHeigh()">
                 <table class="data-table">
+                    <caption>Display Query Results</caption>
                     <tbody>
                         <tr ng-repeat="term in search.dataSet.terms">
                             <td>
                                 <div class="data-row" ng-style="search.calculateStyle(term)">
                                     <div style="color: white; padding-left: 10px;" >
-                                        {{ (term.term + " (" + term.count + ")").trim() }}
+                                        {{ (term.term + ' (' + term.count + ')').trim() }}
                                     </div>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="demographics" ng-show="search.hasDrugName">
+                  <b>*Data from OpenFDA - Adverse Drug Events Reported Since 2004</b><br />
+                  <b>*Format: Adverse Reaction (Number of Events for Selected Medicine and Demographics)</b>
+                </div>
+                <div class="reactions" ng-hide="search.hasDrugName">
+                 <b>*Data from OpenFDA - Adverse Drug Events Reported Since 2004</b><br />
+                 <b>*Format: Medicine (Number of Events for Selected Adverse Reaction)</b>
+                </div>
             </div>
             <div ng-show="search.hasNoRecords">
                 <h3>No Records Matched That Query</h3>
             </div>
         </div>
     </div>
+</div>
+<div class="view-area">
+  <div class="demographics" ng-show="search.hasDrugName">
+      <h1 class="heading-large">Description</h1>
+    <div class="para">
+      {{ search.labelSet.description_label }}
+    </div>
+    <h1 class="heading-large">Precautions</h1>
+    <div class="para">
+      {{ search.labelSet.precautions_label }}
+    </div>
+    <h1 class="heading-large">Package Label</h1>
+    <div class="para">
+      {{ search.labelSet.package_label }}
+    </div>
+    <h1 class="heading-large">Warning Label</h1>
+    <div class="para">
+      {{ search.labelSet.warning_label }}
+    </div>
+  </div>
+  <div class="reactions" ng-hide="search.hasDrugName">
+     <div class="para">
+      <b>Select a Medicine To Display Label Information</b>
+    </div>
+  </div>
 </div>

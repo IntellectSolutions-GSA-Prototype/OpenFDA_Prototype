@@ -1,4 +1,15 @@
-﻿app.controller('DisclosureController', ['$routeParams', '$http', function ($routeParams, $http) {
+﻿/****************************************************************************
+*****************************************************************************
+*****************************************************************************
+{
+    Summary: DisclosureController.JS - 
+    Author: Jacob Heater,
+    Questions/Comments: jacobheater@gmail.com
+}
+****************************************************************************
+*****************************************************************************
+*****************************************************************************/
+app.controller('DisclosureController', ['$routeParams', '$http', function ($routeParams, $http) {
     this.isMobile = function () {
         return window.isMobile();
     };

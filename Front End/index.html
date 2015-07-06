@@ -1,18 +1,18 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" ng-app="OpenFDAPrototype">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="no-js" ng-app="OpenFDAPrototype">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="favicon.ico" />
-    <title></title>
+    <title>ADERS</title>
     <!--Begin Style References-->
     <!--CDN References-->
     <!--Styles-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
     <!--Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <!--Site Dependencies-->
     <!--Styles-->
     <!--Style Overrides-->
@@ -84,33 +84,33 @@
             <table class="footer-content">
                 <tbody>
                     <tr>
-                        <td>
-                            <div class="footer-logo">
-                                <img src="Images/FDA-logo.png" alt="FDA Logo" />
+                         <td ng-show="!main.isMobile()">
+                            <div class="intellLogoContainer">
+                                <img src="Images/IntellectSolutions-Logo.png" alt="Intellect Solutions Logo" class="intellLogo" /><br />
+                                <a href="http://www.intellectsolutions.com" target="_blank">www.intellectsolutions.com</a>
                             </div>
                         </td>
                         <td>
                             <div class="footer-contact">
                                 <span>CONTACT US</span>
                                 <br />
-                                <b>1-888-INFO-FDA</b>
+                                Phone: 877-691-7477
                                 <br />
-                                <span>(1-888-463-6332)</span>
+                                <span>Fax: 703-991-7785</span>
                             </div>
                         </td>
                         <td>
                             <div class="footer-address">
-                                <b>U.S. Food and Drug Administration</b>
+                                Intellect Solutions, LLC
                                 <br />
-                                <span>10903 New Hampshire Avenue</span>
+                                <span>5602 Pickwick Road</span>
                                 <br />
-                                <span>Silver Spring, MD 20993</span>
+                                <span>Centerville, VA 20120</span>
                             </div>
                         </td>
-                        <td ng-show="!main.isMobile()">
-                            <div class="intellLogoContainer">
-                                &copy;<img src="Images/IntellectSolutions-Logo.png" alt="Intellect Solutions Logo" class="intellLogo" />
-                            </div>
+                        <td>
+                            <a href="#/Privacy">Privacy Policy</a><br />
+                            <a href="#/Legal">Legal Notice</a><br />
                         </td>
                     </tr>
                 </tbody>
