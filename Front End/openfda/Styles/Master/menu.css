@@ -141,7 +141,7 @@ Mobile Styles
     }
 
     .site-menu-mobile-text {
-        background-color: rgb(86, 133, 217);
+        background-color: rgba(0, 49, 82, 1);
         color: white;
         padding: 4px 9px 4px 9px;
         border: 2px solid #efefef;
