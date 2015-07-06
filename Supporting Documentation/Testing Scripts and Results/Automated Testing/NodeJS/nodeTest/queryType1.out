@@ -1,0 +1,172 @@
+17:01:41.830997 == Info:   Trying 54.172.240.70...
+17:01:41.831554 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 8000 (#0)
+17:01:41.831582 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+17:01:41.882021 == Info: skipping SSL peer certificate verification
+17:01:41.885866 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+17:01:41.885876 == Info: Server certificate:
+17:01:41.885893 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+17:01:41.885913 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+17:01:41.885917 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+17:01:41.885921 == Info: 	common name: openfda.intellectsolutions.com
+17:01:41.885925 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+17:01:41.885969 => Send header, 165 bytes (0xa5)
+0000: POST /openfda/query HTTP/1.1
+001e: User-Agent: curl/7.40.0
+0037: Host: openfda.intellectsolutions.com:8000
+0062: Accept: */*
+006f: Content-Type: application/json
+008f: Content-Length: 99
+00a3: 
+17:01:41.886013 => Send data, 99 bytes (0x63)
+0000: {"QueryParameters":{"drugType":0,"drugSource":1,"drugName":"BYET
+0040: TA","filterIndex":4,"queryType":1}}
+17:01:41.886027 == Info: upload completely sent off: 99 out of 99 bytes
+17:01:41.959242 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+17:01:41.959296 <= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: Express
+17:01:41.959320 <= Recv header, 32 bytes (0x20)
+0000: Access-Control-Allow-Origin: *
+17:01:41.959328 <= Recv header, 78 bytes (0x4e)
+0000: Access-Control-Allow-Headers: Origin, X-Requested-With, Content-
+0040: Type, Accept
+17:01:41.959338 <= Recv header, 40 bytes (0x28)
+0000: Access-Control-Allow-Methods: POST,GET
+17:01:41.959347 <= Recv header, 47 bytes (0x2f)
+0000: Content-Type: application/json; charset=utf-8
+17:01:41.959355 <= Recv header, 22 bytes (0x16)
+0000: Content-Length: 7781
+17:01:41.959362 <= Recv header, 39 bytes (0x27)
+0000: ETag: W/"1e65-50bvYiJyrOGRiJ3r+4k8VQ"
+17:01:41.959369 <= Recv header, 23 bytes (0x17)
+0000: Vary: Accept-Encoding
+17:01:41.959376 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 17:01:41 GMT
+17:01:41.959384 <= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+17:01:41.959391 <= Recv header, 2 bytes (0x2)
+0000: 
+17:01:41.959397 <= Recv data, 7781 bytes (0x1e65)
+0000: {.  "meta": {.    "disclaimer": "openFDA is a beta research proj
+0040: ect and not for clinical use. While we make every effort to ensu
+0080: re that data is accurate, you should assume all results are unva
+00c0: lidated.",.    "license": "http://open.fda.gov/license",.    "la
+0100: st_updated": "2015-01-21".  },.  "results": [.    {.      "term"
+0140: : "REGULAR STRENGTH PAIN RELIEF",.      "count": 11252.    },.  
+0180:   {.      "term": "ECOTRIN",.      "count": 9834.    },.    {.  
+01c0:     "term": "BUFFERIN LOW DOSE BUFFERED ASPIRIN",.      "count":
+0200:  9752.    },.    {.      "term": "BUFFERIN",.      "count": 9752
+0240: .    },.    {.      "term": "ENTERIC ASPIRIN",.      "count": 97
+0280: 35.    },.    {.      "term": "BAYER LOW DOSE",.      "count": 9
+02c0: 731.    },.    {.      "term": "BAYER FAST RELEASE",.      "coun
+0300: t": 9731.    },.    {.      "term": "BAYER ADVANCED ASPIRIN REGU
+0340: LAR STRENGTH",.      "count": 9731.    },.    {.      "term": "B
+0380: AYER ADVANCED ASPIRIN EXTRA STRENGTH",.      "count": 9731.    }
+03c0: ,.    {.      "term": "BAYER",.      "count": 9731.    },.    {.
+0400:       "term": "LOW DOSE ASPIRIN ENTERIC SAFETY COATED",.      "c
+0440: ount": 9725.    },.    {.      "term": "LOW DOSE ASPIRIN",.     
+0480:  "count": 9725.    },.    {.      "term": "ZEE ASPIRIN",.      "
+04c0: count": 9721.    },.    {.      "term": "VALUE PHARMAPAIN RELIEV
+0500: ER EXTRA STRENGTH",.      "count": 9721.    },.    {.      "term
+0540: ": "VALUE PHARMA ASPIRIN PAIN RELIEVER",.      "count": 9721.   
+0580:  },.    {.      "term": "UP AND UP ASPIRIN",.      "count": 9721
+05c0: .    },.    {.      "term": "UNCOATED ASPIRIN",.      "count": 9
+0600: 721.    },.    {.      "term": "TRI-BUFFERED ASPIRIN",.      "co
+0640: unt": 9721.    },.    {.      "term": "TOPCARE ASPIRIN",.      "
+0680: count": 9721.    },.    {.      "term": "SUNMARK ASPIRIN REGULAR
+06c0:  STRENGTH",.      "count": 9721.    },.    {.      "term": "SUNM
+0700: ARK ASPIRIN LOW DOSE",.      "count": 9721.    },.    {.      "t
+0740: erm": "SUNMARK ASPIRIN ADULT LOW STRENGTH",.      "count": 9721.
+0780:     },.    {.      "term": "SUNMARK ASPIRIN",.      "count": 972
+07c0: 1.    },.    {.      "term": "ST. JOSEPH SAFETY COATED ASPIRIN",
+0800: .      "count": 9721.    },.    {.      "term": "ST. JOSEPH CHEW
+0840: ABLE ASPIRIN",.      "count": 9721.    },.    {.      "term": "S
+0880: OLVES - ASPIRIN CHERRY",.      "count": 9721.    },.    {.      
+08c0: "term": "SMART SENSE ASPIRIN",.      "count": 9721.    },.    {.
+0900:       "term": "SMART HEALTH ASPIRIN REGULAR STRENGTH",.      "co
+0940: unt": 9721.    },.    {.      "term": "SAFETY COATED ENTERIC ASP
+0980: IRIN",.      "count": 9721.    },.    {.      "term": "SAFETY CO
+09c0: ATED ASPIRIN",.      "count": 9721.    },.    {.      "term": "R
+0a00: X ACT ASPIRIN",.      "count": 9721.    },.    {.      "term": "
+0a40: RUGBY ASPIRIN",.      "count": 9721.    },.    {.      "term": "
+0a80: REXALL ASPIRIN",.      "count": 9721.    },.    {.      "term": 
+0ac0: "REGULAR STRENGTH TRI-BUFFERED ASPIRIN",.      "count": 9721.   
+0b00:  },.    {.      "term": "REGULAR STRENGTH ENTERIC COATED ASPIRIN
+0b40: ",.      "count": 9721.    },.    {.      "term": "REGULAR STREN
+0b80: GTH ENTERIC ASPIRIN",.      "count": 9721.    },.    {.      "te
+0bc0: rm": "REGULAR STRENGTH BUFFERED ASPIRIN",.      "count": 9721.  
+0c00:   },.    {.      "term": "REGULAR STRENGTH ASPIRIN EC",.      "c
+0c40: ount": 9721.    },.    {.      "term": "REGULAR STRENGTH ASPIRIN
+0c80: ",.      "count": 9721.    },.    {.      "term": "RAPID COMFORT
+0cc0:  ASPIRIN",.      "count": 9721.    },.    {.      "term": "PLUS 
+0d00: PHARMA NSAID 325 MG",.      "count": 9721.    },.    {.      "te
+0d40: rm": "PHARBEST REGULAR STRENGTH ASPIRIN",.      "count": 9721.  
+0d80:   },.    {.      "term": "PHARBEST ASPIRIN 325MG",.      "count"
+0dc0: : 9721.    },.    {.      "term": "PAIN RELIEF ASPIRIN",.      "
+0e00: count": 9721.    },.    {.      "term": "NORTH ASPIRIN",.      "
+0e40: count": 9721.    },.    {.      "term": "MINIPRIN",.      "count
+0e80: ": 9721.    },.    {.      "term": "MICRO-COATED ASPIRIN",.     
+0ec0:  "count": 9721.    },.    {.      "term": "MEDIQUE ASPIRIN",.   
+0f00:    "count": 9721.    },.    {.      "term": "MEDI-FIRST ASPIRIN"
+0f40: ,.      "count": 9721.    },.    {.      "term": "MEDI FIRST PLU
+0f80: S ASPIRIN",.      "count": 9721.    },.    {.      "term": "LOW-
+0fc0: DOSE ASPIRIN",.      "count": 9721.    },.    {.      "term": "L
+1000: OW STRENGTH CHEWABLE ASPIRIN",.      "count": 9721.    },.    {.
+1040:       "term": "LOW DOSE PAIN RELIEF ASPIRIN",.      "count": 972
+1080: 1.    },.    {.      "term": "LOW DOSE MINIPRIN ENTERIC SAFETY C
+10c0: OATED",.      "count": 9721.    },.    {.      "term": "LOW DOSE
+1100:  CHEWABLE ASPIRIN",.      "count": 9721.    },.    {.      "term
+1140: ": "LOW DOSE ASPRIN",.      "count": 9721.    },.    {.      "te
+1180: rm": "LOW DOSE ASPIRIN 81 MG SAFETY COATED",.      "count": 9721
+11c0: .    },.    {.      "term": "LOW DOSE ADULT ASPIRIN",.      "cou
+1200: nt": 9721.    },.    {.      "term": "LEADER LOW DOSE ASPIRIN",.
+1240:       "count": 9721.    },.    {.      "term": "LEADER CARDINAL 
+1280: HEALTH ASPIRIN",.      "count": 9721.    },.    {.      "term": 
+12c0: "LEADER ASPIRIN",.      "count": 9721.    },.    {.      "term":
+1300:  "KROGER VALUE ASPIRIN",.      "count": 9721.    },.    {.      
+1340: "term": "HENRY SCHEIN ASPIRIN",.      "count": 9721.    },.    {
+1380: .      "term": "HEALTHY ACCENTS ASPIRIN",.      "count": 9721.  
+13c0:   },.    {.      "term": "HEALTH MART REGULAR STRENGTH ENTERIC C
+1400: OATED ASPIRIN",.      "count": 9721.    },.    {.      "term": "
+1440: HEALTH MART ASPIRIN",.      "count": 9721.    },.    {.      "te
+1480: rm": "HANDY SOLUTIONS GENUINE ASPIRIN BAYER",.      "count": 972
+14c0: 1.    },.    {.      "term": "GOOD SENSE ASPIRIN ENTERIC SAFETY 
+1500: COATED",.      "count": 9721.    },.    {.      "term": "GOOD SE
+1540: NSE ASPIRIN",.      "count": 9721.    },.    {.      "term": "GO
+1580: OD NEIGHBOR PHARMACY ASPIRIN ORANGE FLAVOR CHEWABLE",.      "cou
+15c0: nt": 9721.    },.    {.      "term": "GOOD NEIGHBOR PHARMACY ASP
+1600: IRIN ENTERIC SAFETY COATED",.      "count": 9721.    },.    {.  
+1640:     "term": "GOOD NEIGHBOR PHARMACY ASPIRIN",.      "count": 972
+1680: 1.    },.    {.      "term": "GENUINE ASPIRIN",.      "count": 9
+16c0: 721.    },.    {.      "term": "FORMUCARE ASPIRIN",.      "count
+1700: ": 9721.    },.    {.      "term": "FLANAX ASPIRIN PAIN RELIEVER
+1740: ",.      "count": 9721.    },.    {.      "term": "FASPRIN",.   
+1780:    "count": 9721.    },.    {.      "term": "EQUATE ASPIRIN CHEW
+17c0: ABLE",.      "count": 9721.    },.    {.      "term": "EQUATE AS
+1800: PIRIN",.      "count": 9721.    },.    {.      "term": "EQUALINE
+1840:  ASPIRIN ADULT LOW DOSE",.      "count": 9721.    },.    {.     
+1880:  "term": "EQUALINE ASPIRIN",.      "count": 9721.    },.    {.  
+18c0:     "term": "ENTERIC SAFETY COATED ASPIRIN",.      "count": 9721
+1900: .    },.    {.      "term": "ENTERIC COATED LOW DOSE ASPIRIN",. 
+1940:      "count": 9721.    },.    {.      "term": "ENTERIC COATED AS
+1980: PRIN 81 MG",.      "count": 9721.    },.    {.      "term": "ENT
+19c0: ERIC COATED ASPIRIN REGULAR STRENGTH",.      "count": 9721.    }
+1a00: ,.    {.      "term": "ENTERIC COATED ASPIRIN",.      "count": 9
+1a40: 721.    },.    {.      "term": "ECOTRIN REGULAR STRENGTH",.     
+1a80:  "count": 9721.    },.    {.      "term": "DIRECT SAFETY ASPIRIN
+1ac0: ",.      "count": 9721.    },.    {.      "term": "DG HEALTH ASP
+1b00: IRIN",.      "count": 9721.    },.    {.      "term": "CVS ASPIR
+1b40: IN",.      "count": 9721.    },.    {.      "term": "CRITICAL CA
+1b80: RE ASPIRIN TO GO",.      "count": 9721.    },.    {.      "term"
+1bc0: : "CHEWABLE LOW DOSE ASPIRIN",.      "count": 9721.    },.    {.
+1c00:       "term": "CHEWABLE ASPIRIN",.      "count": 9721.    },.   
+1c40:  {.      "term": "CHEWABLE ADULT LOW DOSE ASPIRIN",.      "count
+1c80: ": 9721.    },.    {.      "term": "ASPRIN",.      "count": 8769
+1cc0: .    },.    {.      "term": "BUFFERED ASPIRIN",.      "count": 8
+1d00: 743.    },.    {.      "term": "CARE ONE ASPIRIN",.      "count"
+1d40: : 8742.    },.    {.      "term": "BERKLEY AND JENSEN ASPIRIN",.
+1d80:       "count": 8741.    },.    {.      "term": "BAYER GENUINE AS
+1dc0: PIRIN",.      "count": 7781.    },.    {.      "term": "ASPIRIN 
+1e00: LOW DOSE",.      "count": 5868.    },.    {.      "term": "ASPIR
+1e40: ING",.      "count": 4943.    }.  ].}
+17:01:41.961478 == Info: Connection #0 to host openfda.intellectsolutions.com left intact

@@ -1,0 +1,72 @@
+17:01:41.974447 == Info:   Trying 54.172.240.70...
+17:01:41.975014 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 8000 (#0)
+17:01:41.975035 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+17:01:42.028731 == Info: skipping SSL peer certificate verification
+17:01:42.032355 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+17:01:42.032365 == Info: Server certificate:
+17:01:42.032382 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+17:01:42.032404 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+17:01:42.032409 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+17:01:42.032413 == Info: 	common name: openfda.intellectsolutions.com
+17:01:42.032417 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+17:01:42.032463 => Send header, 165 bytes (0xa5)
+0000: POST /openfda/query HTTP/1.1
+001e: User-Agent: curl/7.40.0
+0037: Host: openfda.intellectsolutions.com:8000
+0062: Accept: */*
+006f: Content-Type: application/json
+008f: Content-Length: 99
+00a3: 
+17:01:42.032515 => Send data, 99 bytes (0x63)
+0000: {"QueryParameters":{"drugType":0,"drugSource":1,"drugName":"BYET
+0040: TA","filterIndex":4,"queryType":2}}
+17:01:42.032531 == Info: upload completely sent off: 99 out of 99 bytes
+17:01:42.323017 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+17:01:42.323082 <= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: Express
+17:01:42.323091 <= Recv header, 32 bytes (0x20)
+0000: Access-Control-Allow-Origin: *
+17:01:42.323100 <= Recv header, 78 bytes (0x4e)
+0000: Access-Control-Allow-Headers: Origin, X-Requested-With, Content-
+0040: Type, Accept
+17:01:42.323111 <= Recv header, 40 bytes (0x28)
+0000: Access-Control-Allow-Methods: POST,GET
+17:01:42.323135 <= Recv header, 47 bytes (0x2f)
+0000: Content-Type: application/json; charset=utf-8
+17:01:42.323143 <= Recv header, 22 bytes (0x16)
+0000: Content-Length: 1398
+17:01:42.323150 <= Recv header, 38 bytes (0x26)
+0000: ETag: W/"576-rqkjUYmxi3Rl54GasCDJ0A"
+17:01:42.323158 <= Recv header, 23 bytes (0x17)
+0000: Vary: Accept-Encoding
+17:01:42.323165 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 17:01:42 GMT
+17:01:42.323173 <= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+17:01:42.323194 <= Recv header, 2 bytes (0x2)
+0000: 
+17:01:42.323200 <= Recv data, 1398 bytes (0x576)
+0000: {.  "meta": {.    "disclaimer": "openFDA is a beta research proj
+0040: ect and not for clinical use. While we make every effort to ensu
+0080: re that data is accurate, you should assume all results are unva
+00c0: lidated.",.    "license": "http://open.fda.gov/license",.    "la
+0100: st_updated": "2015-01-21".  },.  "results": [.    {.      "term"
+0140: : "NAUSEA",.      "count": 2.    },.    {.      "term": "WEIGHT 
+0180: FLUCTUATION",.      "count": 1.    },.    {.      "term": "WEIGH
+01c0: T DECREASED",.      "count": 1.    },.    {.      "term": "SOMNO
+0200: LENCE",.      "count": 1.    },.    {.      "term": "PRURITUS",.
+0240:       "count": 1.    },.    {.      "term": "LISTLESS",.      "c
+0280: ount": 1.    },.    {.      "term": "HYPOTRICHOSIS",.      "coun
+02c0: t": 1.    },.    {.      "term": "HOSPITALISATION",.      "count
+0300: ": 1.    },.    {.      "term": "FATIGUE",.      "count": 1.    
+0340: },.    {.      "term": "ERUCTATION",.      "count": 1.    },.   
+0380:  {.      "term": "DYSPEPSIA",.      "count": 1.    },.    {.    
+03c0:   "term": "DRUG INEFFECTIVE",.      "count": 1.    },.    {.    
+0400:   "term": "DECREASED APPETITE",.      "count": 1.    },.    {.  
+0440:     "term": "CONSTIPATION",.      "count": 1.    },.    {.      
+0480: "term": "BLOOD GLUCOSE INCREASED",.      "count": 1.    },.    {
+04c0: .      "term": "BLOOD GLUCOSE DECREASED",.      "count": 1.    }
+0500: ,.    {.      "term": "ASTHENIA",.      "count": 1.    },.    {.
+0540:       "term": "ALOPECIA",.      "count": 1.    }.  ].}
+17:01:42.323368 == Info: Connection #0 to host openfda.intellectsolutions.com left intact

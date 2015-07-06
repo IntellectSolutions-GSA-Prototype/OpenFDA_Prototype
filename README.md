@@ -7,7 +7,7 @@ URL of the Prototype: https://openfda.intellectsolutions.com - the URL is hosted
 URL of the Source Code Repository: https://github.com/IntellectSolutions-GSA-Prototype/OpenFDA_Prototype 
 
 
-All the source files, installation documentation, readme.md file, supporting documentation, license file, evidence, etc. are uploaded here.
+All the source files, installation documentation, readme.md file, supporting documentation, license file, evidence, test results etc. are uploaded here.
 
 
 URL of the Docker Container Hub: https://hub.docker.com/u/intellectsolutionsllc/ 

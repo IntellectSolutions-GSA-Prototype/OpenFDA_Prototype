@@ -1,0 +1,147 @@
+17:01:41.382492 == Info:   Trying 54.172.240.70...
+17:01:41.383274 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 8000 (#0)
+17:01:41.383294 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+17:01:41.433699 == Info: skipping SSL peer certificate verification
+17:01:41.437332 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+17:01:41.437345 == Info: Server certificate:
+17:01:41.437362 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+17:01:41.437384 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+17:01:41.437389 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+17:01:41.437392 == Info: 	common name: openfda.intellectsolutions.com
+17:01:41.437396 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+17:01:41.437439 => Send header, 128 bytes (0x80)
+0000: GET /openfda/listBrandNameOTCDrugs HTTP/1.1
+002d: User-Agent: curl/7.40.0
+0046: Host: openfda.intellectsolutions.com:8000
+0071: Accept: */*
+007e: 
+17:01:41.463273 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+17:01:41.463298 <= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: Express
+17:01:41.463305 <= Recv header, 32 bytes (0x20)
+0000: Access-Control-Allow-Origin: *
+17:01:41.463313 <= Recv header, 78 bytes (0x4e)
+0000: Access-Control-Allow-Headers: Origin, X-Requested-With, Content-
+0040: Type, Accept
+17:01:41.463323 <= Recv header, 40 bytes (0x28)
+0000: Access-Control-Allow-Methods: POST,GET
+17:01:41.463331 <= Recv header, 47 bytes (0x2f)
+0000: Content-Type: application/json; charset=utf-8
+17:01:41.463340 <= Recv header, 22 bytes (0x16)
+0000: Content-Length: 6590
+17:01:41.463346 <= Recv header, 39 bytes (0x27)
+0000: ETag: W/"19be-/5jAOimRkTW0z70RgAqNDw"
+17:01:41.463354 <= Recv header, 23 bytes (0x17)
+0000: Vary: Accept-Encoding
+17:01:41.463360 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 17:01:41 GMT
+17:01:41.463368 <= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+17:01:41.463375 <= Recv header, 2 bytes (0x2)
+0000: 
+17:01:41.463381 <= Recv data, 6590 bytes (0x19be)
+0000: {.  "meta": {.    "disclaimer": "openFDA is a beta research proj
+0040: ect and not for clinical use. While we make every effort to ensu
+0080: re that data is accurate, you should assume all results are unva
+00c0: lidated.",.    "license": "http://open.fda.gov/license",.    "la
+0100: st_updated": "2015-05-31".  },.  "results": [.    {.      "term"
+0140: : "Naproxen",.      "count": 78.    },.    {.      "term": "Sert
+0180: raline Hydrochloride",.      "count": 62.    },.    {.      "ter
+01c0: m": "Diclofenac Sodium",.      "count": 49.    },.    {.      "t
+0200: erm": "Meloxicam",.      "count": 44.    },.    {.      "term": 
+0240: "Etodolac",.      "count": 38.    },.    {.      "term": "Dandru
+0280: ff",.      "count": 36.    },.    {.      "term": "Hand Sanitize
+02c0: r",.      "count": 34.    },.    {.      "term": "CELEBREX",.   
+0300:    "count": 31.    },.    {.      "term": "Antispetic",.      "c
+0340: ount": 30.    },.    {.      "term": "citroma",.      "count": 2
+0380: 9.    },.    {.      "term": "Ketorolac Tromethamine",.      "co
+03c0: unt": 29.    },.    {.      "term": "Antiseptic Mouth Rinse",.  
+0400:     "count": 28.    },.    {.      "term": "Indomethacin",.     
+0440:  "count": 27.    },.    {.      "term": "Antiseptic",.      "cou
+0480: nt": 22.    },.    {.      "term": "Anticavity Fluoride Rinse",.
+04c0:       "count": 21.    },.    {.      "term": "Hydrogen Peroxide"
+0500: ,.      "count": 20.    },.    {.      "term": "Anticavity",.   
+0540:    "count": 20.    },.    {.      "term": "Isopropyl Alcohol",. 
+0580:      "count": 19.    },.    {.      "term": "Piroxicam",.      "
+05c0: count": 18.    },.    {.      "term": "meloxicam",.      "count"
+0600: : 17.    },.    {.      "term": "Sulindac",.      "count": 17.  
+0640:   },.    {.      "term": "SERTRALINE HYDROCHLORIDE",.      "coun
+0680: t": 17.    },.    {.      "term": "NAPROXEN",.      "count": 17.
+06c0:     },.    {.      "term": "Everyday Clean Dandruff",.      "cou
+0700: nt": 17.    },.    {.      "term": "Witch Hazel",.      "count":
+0740:  16.    },.    {.      "term": "ibuprofen",.      "count": 15.  
+0780:   },.    {.      "term": "Tartar control plus",.      "count": 1
+07c0: 5.    },.    {.      "term": "Nabumetone",.      "count": 15.   
+0800:  },.    {.      "term": "KETOROLAC TROMETHAMINE",.      "count":
+0840:  15.    },.    {.      "term": "Body",.      "count": 15.    },.
+0880:     {.      "term": "Petroleum Skin Protectant",.      "count": 
+08c0: 13.    },.    {.      "term": "Petroleum",.      "count": 13.   
+0900:  },.    {.      "term": "Mineral Oil",.      "count": 12.    },.
+0940:     {.      "term": "Ketoprofen",.      "count": 12.    },.    {
+0980: .      "term": "Calamine",.      "count": 12.    },.    {.      
+09c0: "term": "Advanced Hand Sanitizer",.      "count": 12.    },.    
+0a00: {.      "term": "Therapeutic",.      "count": 11.    },.    {.  
+0a40:     "term": "Sertraline",.      "count": 11.    },.    {.      "
+0a80: term": "Ibuprofen",.      "count": 11.    },.    {.      "term":
+0ac0:  "Epsom Salt",.      "count": 11.    },.    {.      "term": "Dic
+0b00: lofenac Potassium",.      "count": 11.    },.    {.      "term":
+0b40:  "Daily Moisturizing",.      "count": 11.    },.    {.      "ter
+0b80: m": "Tartar Control Plus",.      "count": 10.    },.    {.      
+0bc0: "term": "Oxaprozin",.      "count": 10.    },.    {.      "term"
+0c00: : "Naproxen Sodium",.      "count": 10.    },.    {.      "term"
+0c40: : "Medicated Apricot Scrub",.      "count": 10.    },.    {.    
+0c80:   "term": "Diaper Rash",.      "count": 10.    },.    {.      "t
+0cc0: erm": "Hand Wash",.      "count": 9.    },.    {.      "term": "
+0d00: Dry Scalp Care",.      "count": 9.    },.    {.      "term": "Vo
+0d40: ltaren",.      "count": 8.    },.    {.      "term": "Foaming Ha
+0d80: nd Wash",.      "count": 8.    },.    {.      "term": "Diclofena
+0dc0: c Sodium Delayed Release",.      "count": 8.    },.    {.      "
+0e00: term": "Citroma",.      "count": 8.    },.    {.      "term": "A
+0e40: lcohol-Free Anticavity",.      "count": 8.    },.    {.      "te
+0e80: rm": "NAPRELAN",.      "count": 7.    },.    {.      "term": "AR
+0ec0: THROTEC",.      "count": 7.    },.    {.      "term": "Vitamin A
+0f00:  D",.      "count": 6.    },.    {.      "term": "Pure petroleum
+0f40: ",.      "count": 6.    },.    {.      "term": "Mouth Rinse",.  
+0f80:     "count": 6.    },.    {.      "term": "Hydrocodone Bitartrat
+0fc0: e and Ibuprofen",.      "count": 6.    },.    {.      "term": "H
+1000: ealing",.      "count": 6.    },.    {.      "term": "Everyday C
+1040: lean",.      "count": 6.    },.    {.      "term": "Antibacteria
+1080: l Hand",.      "count": 6.    },.    {.      "term": "Zoloft",. 
+10c0:      "count": 5.    },.    {.      "term": "Therapeutic T Plus",
+1100: .      "count": 5.    },.    {.      "term": "Petrolatum",.     
+1140:  "count": 5.    },.    {.      "term": "PENNSAID",.      "count"
+1180: : 5.    },.    {.      "term": "Moisturizing Antibacterial",.   
+11c0:    "count": 5.    },.    {.      "term": "Magnesium Citrate",.  
+1200:     "count": 5.    },.    {.      "term": "Instant Hand sanitize
+1240: r",.      "count": 5.    },.    {.      "term": "Flurbiprofen",.
+1280:       "count": 5.    },.    {.      "term": "Chest Rub",.      "
+12c0: count": 5.    },.    {.      "term": "Acebutolol Hydrochloride",
+1300: .      "count": 5.    },.    {.      "term": "Zipsor",.      "co
+1340: unt": 4.    },.    {.      "term": "Waterless Hand Sanitizer",. 
+1380:      "count": 4.    },.    {.      "term": "Therapeutic Plus",. 
+13c0:      "count": 4.    },.    {.      "term": "Novolin 70/30",.    
+1400:   "count": 4.    },.    {.      "term": "Medicated",.      "coun
+1440: t": 4.    },.    {.      "term": "INDOMETHACIN",.      "count": 
+1480: 4.    },.    {.      "term": "Hand wash",.      "count": 4.    }
+14c0: ,.    {.      "term": "HYDROCODONE BITARTRATE AND IBUPROFEN",.  
+1500:     "count": 4.    },.    {.      "term": "First Aid Antiseptic"
+1540: ,.      "count": 4.    },.    {.      "term": "Diflunisal",.    
+1580:   "count": 4.    },.    {.      "term": "Diclofenac Sodium and M
+15c0: isoprostol",.      "count": 4.    },.    {.      "term": "Clear 
+1600: Anti Itch",.      "count": 4.    },.    {.      "term": "Castor 
+1640: Oil",.      "count": 4.    },.    {.      "term": "Vicoprofen",.
+1680:       "count": 3.    },.    {.      "term": "VOLTAREN",.      "c
+16c0: ount": 3.    },.    {.      "term": "Tolmetin Sodium",.      "co
+1700: unt": 3.    },.    {.      "term": "SULINDAC",.      "count": 3.
+1740:     },.    {.      "term": "SERTRALINE",.      "count": 3.    },
+1780: .    {.      "term": "Phenelzine Sulfate",.      "count": 3.    
+17c0: },.    {.      "term": "Mefenamic Acid",.      "count": 3.    },
+1800: .    {.      "term": "Medicated Dandruff",.      "count": 3.    
+1840: },.    {.      "term": "Katinko Pain And Itch Relieving",.      
+1880: "count": 3.    },.    {.      "term": "Isopropyl",.      "count"
+18c0: : 3.    },.    {.      "term": "IBUPROFEN",.      "count": 3.   
+1900:  },.    {.      "term": "Healing for Babies",.      "count": 3. 
+1940:    },.    {.      "term": "Handi Sani",.      "count": 3.    },.
+1980:     {.      "term": "Fenoprofen",.      "count": 3.    }.  ].}
+17:01:41.463923 == Info: Connection #0 to host openfda.intellectsolutions.com left intact

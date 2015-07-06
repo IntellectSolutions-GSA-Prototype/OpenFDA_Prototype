@@ -1,0 +1,152 @@
+17:01:41.475037 == Info:   Trying 54.172.240.70...
+17:01:41.475624 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 8000 (#0)
+17:01:41.475643 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+17:01:41.529926 == Info: skipping SSL peer certificate verification
+17:01:41.533672 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+17:01:41.533682 == Info: Server certificate:
+17:01:41.533712 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+17:01:41.533732 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+17:01:41.533737 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+17:01:41.533740 == Info: 	common name: openfda.intellectsolutions.com
+17:01:41.533744 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+17:01:41.533784 => Send header, 129 bytes (0x81)
+0000: GET /openfda/listBrandNamePRESDrugs HTTP/1.1
+002e: User-Agent: curl/7.40.0
+0047: Host: openfda.intellectsolutions.com:8000
+0072: Accept: */*
+007f: 
+17:01:41.601879 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+17:01:41.601909 <= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: Express
+17:01:41.601917 <= Recv header, 32 bytes (0x20)
+0000: Access-Control-Allow-Origin: *
+17:01:41.601928 <= Recv header, 78 bytes (0x4e)
+0000: Access-Control-Allow-Headers: Origin, X-Requested-With, Content-
+0040: Type, Accept
+17:01:41.601939 <= Recv header, 40 bytes (0x28)
+0000: Access-Control-Allow-Methods: POST,GET
+17:01:41.601995 <= Recv header, 47 bytes (0x2f)
+0000: Content-Type: application/json; charset=utf-8
+17:01:41.602005 <= Recv header, 22 bytes (0x16)
+0000: Content-Length: 6855
+17:01:41.602013 <= Recv header, 39 bytes (0x27)
+0000: ETag: W/"1ac7-hEefTmguugNqX7sJis0x3Q"
+17:01:41.602021 <= Recv header, 23 bytes (0x17)
+0000: Vary: Accept-Encoding
+17:01:41.602028 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 17:01:41 GMT
+17:01:41.602036 <= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+17:01:41.602044 <= Recv header, 2 bytes (0x2)
+0000: 
+17:01:41.602050 <= Recv data, 6855 bytes (0x1ac7)
+0000: {.  "meta": {.    "disclaimer": "openFDA is a beta research proj
+0040: ect and not for clinical use. While we make every effort to ensu
+0080: re that data is accurate, you should assume all results are unva
+00c0: lidated.",.    "license": "http://open.fda.gov/license",.    "la
+0100: st_updated": "2015-05-31".  },.  "results": [.    {.      "term"
+0140: : "Gabapentin",.      "count": 180.    },.    {.      "term": "L
+0180: isinopril",.      "count": 126.    },.    {.      "term": "Hydro
+01c0: chlorothiazide",.      "count": 124.    },.    {.      "term": "
+0200: Metformin Hydrochloride",.      "count": 118.    },.    {.      
+0240: "term": "Levothyroxine Sodium",.      "count": 107.    },.    {.
+0280:       "term": "Prednisone",.      "count": 106.    },.    {.    
+02c0:   "term": "Ibuprofen",.      "count": 106.    },.    {.      "te
+0300: rm": "Amoxicillin",.      "count": 103.    },.    {.      "term"
+0340: : "Metoprolol Tartrate",.      "count": 100.    },.    {.      "
+0380: term": "Levetiracetam",.      "count": 96.    },.    {.      "te
+03c0: rm": "Furosemide",.      "count": 93.    },.    {.      "term": 
+0400: "Ciprofloxacin",.      "count": 92.    },.    {.      "term": "S
+0440: ulfamethoxazole and Trimethoprim",.      "count": 91.    },.    
+0480: {.      "term": "Lorazepam",.      "count": 91.    },.    {.    
+04c0:   "term": "Atenolol",.      "count": 91.    },.    {.      "term
+0500: ": "Hydrocodone Bitartrate and Acetaminophen",.      "count": 90
+0540: .    },.    {.      "term": "Naproxen",.      "count": 88.    },
+0580: .    {.      "term": "Carvedilol",.      "count": 88.    },.    
+05c0: {.      "term": "Promethazine Hydrochloride",.      "count": 84.
+0600:     },.    {.      "term": "Doxycycline Hyclate",.      "count":
+0640:  82.    },.    {.      "term": "Lidocaine Hydrochloride",.      
+0680: "count": 81.    },.    {.      "term": "Metronidazole",.      "c
+06c0: ount": 78.    },.    {.      "term": "Bupropion Hydrochloride",.
+0700:       "count": 77.    },.    {.      "term": "Amlodipine Besylat
+0740: e",.      "count": 75.    },.    {.      "term": "Alprazolam",. 
+0780:      "count": 73.    },.    {.      "term": "Acyclovir",.      "
+07c0: count": 72.    },.    {.      "term": "Warfarin Sodium",.      "
+0800: count": 71.    },.    {.      "term": "Simvastatin",.      "coun
+0840: t": 70.    },.    {.      "term": "Omeprazole",.      "count": 6
+0880: 9.    },.    {.      "term": "Diltiazem Hydrochloride",.      "c
+08c0: ount": 69.    },.    {.      "term": "Lamotrigine",.      "count
+0900: ": 66.    },.    {.      "term": "Cyclobenzaprine Hydrochloride"
+0940: ,.      "count": 66.    },.    {.      "term": "Cephalexin",.   
+0980:    "count": 66.    },.    {.      "term": "Methocarbamol",.     
+09c0:  "count": 65.    },.    {.      "term": "Amoxicillin and Clavula
+0a00: nate Potassium",.      "count": 65.    },.    {.      "term": "V
+0a40: enlafaxine Hydrochloride",.      "count": 63.    },.    {.      
+0a80: "term": "Propranolol Hydrochloride",.      "count": 63.    },.  
+0ac0:   {.      "term": "Potassium Chloride",.      "count": 63.    },
+0b00: .    {.      "term": "Phentermine Hydrochloride",.      "count":
+0b40:  63.    },.    {.      "term": "Ondansetron",.      "count": 63.
+0b80:     },.    {.      "term": "Mirtazapine",.      "count": 63.    
+0bc0: },.    {.      "term": "Fluoxetine",.      "count": 61.    },.  
+0c00:   {.      "term": "Sertraline Hydrochloride",.      "count": 60.
+0c40:     },.    {.      "term": "Olanzapine",.      "count": 60.    }
+0c80: ,.    {.      "term": "Clonidine Hydrochloride",.      "count": 
+0cc0: 60.    },.    {.      "term": "Lovastatin",.      "count": 57.  
+0d00:   },.    {.      "term": "Hydroxyzine Hydrochloride",.      "cou
+0d40: nt": 57.    },.    {.      "term": "Risperidone",.      "count":
+0d80:  55.    },.    {.      "term": "Levofloxacin",.      "count": 55
+0dc0: .    },.    {.      "term": "Glipizide",.      "count": 55.    }
+0e00: ,.    {.      "term": "Diclofenac Sodium",.      "count": 53.   
+0e40:  },.    {.      "term": "HYDROCODONE BITARTRATE AND ACETAMINOPHE
+0e80: N",.      "count": 52.    },.    {.      "term": "Sodium Chlorid
+0ec0: e",.      "count": 51.    },.    {.      "term": "Fluconazole",.
+0f00:       "count": 50.    },.    {.      "term": "Citalopram",.     
+0f40:  "count": 49.    },.    {.      "term": "Tramadol Hydrochloride"
+0f80: ,.      "count": 48.    },.    {.      "term": "Verapamil Hydroc
+0fc0: hloride",.      "count": 47.    },.    {.      "term": "Hydralaz
+1000: ine Hydrochloride",.      "count": 47.    },.    {.      "term":
+1040:  "Diazepam",.      "count": 47.    },.    {.      "term": "Melox
+1080: icam",.      "count": 46.    },.    {.      "term": "Amitriptyli
+10c0: ne Hydrochloride",.      "count": 46.    },.    {.      "term": 
+1100: "Glyburide",.      "count": 45.    },.    {.      "term": "Ketor
+1140: olac Tromethamine",.      "count": 44.    },.    {.      "term":
+1180:  "Triamcinolone Acetonide",.      "count": 43.    },.    {.     
+11c0:  "term": "Clonazepam",.      "count": 42.    },.    {.      "ter
+1200: m": "Zolpidem Tartrate",.      "count": 41.    },.    {.      "t
+1240: erm": "Famotidine",.      "count": 40.    },.    {.      "term":
+1280:  "Etodolac",.      "count": 40.    },.    {.      "term": "Allop
+12c0: urinol",.      "count": 40.    },.    {.      "term": "Trazodone
+1300:  Hydrochloride",.      "count": 38.    },.    {.      "term": "R
+1340: anitidine",.      "count": 38.    },.    {.      "term": "Nystat
+1380: in",.      "count": 38.    },.    {.      "term": "Losartan Pota
+13c0: ssium",.      "count": 38.    },.    {.      "term": "Metoclopra
+1400: mide",.      "count": 37.    },.    {.      "term": "Indomethaci
+1440: n",.      "count": 35.    },.    {.      "term": "Triamterene an
+1480: d Hydrochlorothiazide",.      "count": 34.    },.    {.      "te
+14c0: rm": "Spironolactone",.      "count": 34.    },.    {.      "ter
+1500: m": "Azithromycin",.      "count": 34.    },.    {.      "term":
+1540:  "Topiramate",.      "count": 33.    },.    {.      "term": "Bac
+1580: lofen",.      "count": 33.    },.    {.      "term": "Paroxetine
+15c0: ",.      "count": 32.    },.    {.      "term": "Hydrocortisone"
+1600: ,.      "count": 32.    },.    {.      "term": "Escitalopram",. 
+1640:      "count": 31.    },.    {.      "term": "Doxycycline",.     
+1680:  "count": 31.    },.    {.      "term": "Divalproex Sodium",.   
+16c0:    "count": 30.    },.    {.      "term": "Oxycodone and Acetami
+1700: nophen",.      "count": 29.    },.    {.      "term": "Gemfibroz
+1740: il",.      "count": 29.    },.    {.      "term": "TOPIRAMATE",.
+1780:       "count": 26.    },.    {.      "term": "Hydrocodone Bitart
+17c0: rate And Acetaminophen",.      "count": 26.    },.    {.      "t
+1800: erm": "Haloperidol",.      "count": 26.    },.    {.      "term"
+1840: : "Benztropine Mesylate",.      "count": 25.    },.    {.      "
+1880: term": "Ofloxacin",.      "count": 24.    },.    {.      "term":
+18c0:  "Lithium Carbonate",.      "count": 24.    },.    {.      "term
+1900: ": "Nortriptyline Hydrochloride",.      "count": 23.    },.    {
+1940: .      "term": "Nabumetone",.      "count": 23.    },.    {.    
+1980:   "term": "Morphine Sulfate",.      "count": 23.    },.    {.   
+19c0:    "term": "Glimepiride",.      "count": 23.    },.    {.      "
+1a00: term": "Dicyclomine Hydrochloride",.      "count": 23.    },.   
+1a40:  {.      "term": "Citalopram Hydrobromide",.      "count": 23.  
+1a80:   },.    {.      "term": "Carbamazepine",.      "count": 23.    
+1ac0: }.  ].}
+17:01:41.602735 == Info: Connection #0 to host openfda.intellectsolutions.com left intact

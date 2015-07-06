@@ -1,0 +1,159 @@
+17:01:41.708327 == Info:   Trying 54.172.240.70...
+17:01:41.708946 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 8000 (#0)
+17:01:41.708987 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+17:01:41.759150 == Info: skipping SSL peer certificate verification
+17:01:41.762925 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+17:01:41.762935 == Info: Server certificate:
+17:01:41.762953 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+17:01:41.762975 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+17:01:41.762980 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+17:01:41.762984 == Info: 	common name: openfda.intellectsolutions.com
+17:01:41.762988 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+17:01:41.763031 => Send header, 127 bytes (0x7f)
+0000: GET /openfda/listGenericPRESDrugs HTTP/1.1
+002c: User-Agent: curl/7.40.0
+0045: Host: openfda.intellectsolutions.com:8000
+0070: Accept: */*
+007d: 
+17:01:41.815219 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+17:01:41.815256 <= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: Express
+17:01:41.815264 <= Recv header, 32 bytes (0x20)
+0000: Access-Control-Allow-Origin: *
+17:01:41.815272 <= Recv header, 78 bytes (0x4e)
+0000: Access-Control-Allow-Headers: Origin, X-Requested-With, Content-
+0040: Type, Accept
+17:01:41.815304 <= Recv header, 40 bytes (0x28)
+0000: Access-Control-Allow-Methods: POST,GET
+17:01:41.815330 <= Recv header, 47 bytes (0x2f)
+0000: Content-Type: application/json; charset=utf-8
+17:01:41.815340 <= Recv header, 22 bytes (0x16)
+0000: Content-Length: 7313
+17:01:41.815347 <= Recv header, 39 bytes (0x27)
+0000: ETag: W/"1c91-V1YQ9IeVzVLJExrd92jeCQ"
+17:01:41.815355 <= Recv header, 23 bytes (0x17)
+0000: Vary: Accept-Encoding
+17:01:41.815362 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 17:01:41 GMT
+17:01:41.815371 <= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+17:01:41.815378 <= Recv header, 2 bytes (0x2)
+0000: 
+17:01:41.815384 <= Recv data, 7313 bytes (0x1c91)
+0000: {.  "meta": {.    "disclaimer": "openFDA is a beta research proj
+0040: ect and not for clinical use. While we make every effort to ensu
+0080: re that data is accurate, you should assume all results are unva
+00c0: lidated.",.    "license": "http://open.fda.gov/license",.    "la
+0100: st_updated": "2015-05-31".  },.  "results": [.    {.      "term"
+0140: : "NAPROXEN",.      "count": 97.    },.    {.      "term": "SERT
+0180: RALINE HYDROCHLORIDE",.      "count": 90.    },.    {.      "ter
+01c0: m": "DICLOFENAC SODIUM",.      "count": 81.    },.    {.      "t
+0200: erm": "PYRITHIONE ZINC",.      "count": 76.    },.    {.      "t
+0240: erm": "EUCALYPTOL, MENTHOL, METHYL SALICYLATE, THYMOL",.      "c
+0280: ount": 69.    },.    {.      "term": "MELOXICAM",.      "count":
+02c0:  64.    },.    {.      "term": "SODIUM FLUORIDE",.      "count":
+0300:  59.    },.    {.      "term": "KETOROLAC TROMETHAMINE",.      "
+0340: count": 47.    },.    {.      "term": "ETODOLAC",.      "count":
+0380:  41.    },.    {.      "term": "ETHYL ALCOHOL",.      "count": 4
+03c0: 1.    },.    {.      "term": "WHITE PETROLATUM",.      "count": 
+0400: 38.    },.    {.      "term": "ALCOHOL",.      "count": 35.    }
+0440: ,.    {.      "term": "INDOMETHACIN",.      "count": 33.    },. 
+0480:    {.      "term": "CELECOXIB",.      "count": 32.    },.    {. 
+04c0:      "term": "IBUPROFEN",.      "count": 31.    },.    {.      "
+0500: term": "EUCALYPTOL",.      "count": 30.    },.    {.      "term"
+0540: : "MAGESIUM CITRATE",.      "count": 29.    },.    {.      "term
+0580: ": "ISOPROPYL ALCOHOL",.      "count": 29.    },.    {.      "te
+05c0: rm": "COAL TAR",.      "count": 21.    },.    {.      "term": "C
+0600: ETYLPYRIDINIUM CHLORIDE",.      "count": 21.    },.    {.      "
+0640: term": "SULINDAC",.      "count": 20.    },.    {.      "term": 
+0680: "PIROXICAM",.      "count": 20.    },.    {.      "term": "HYDRO
+06c0: GEN PEROXIDE",.      "count": 20.    },.    {.      "term": "TRI
+0700: CLOSAN",.      "count": 19.    },.    {.      "term": "NAPROXEN 
+0740: SODIUM",.      "count": 19.    },.    {.      "term": "MENTHOL, 
+0780: ZINC OXIDE",.      "count": 19.    },.    {.      "term": "BENZA
+07c0: LKONIUM CHLORIDE",.      "count": 19.    },.    {.      "term": 
+0800: "DICLOFENAC POTASSIUM",.      "count": 18.    },.    {.      "te
+0840: rm": "WITCH HAZEL",.      "count": 16.    },.    {.      "term":
+0880:  "NABUMETONE",.      "count": 16.    },.    {.      "term": "HYD
+08c0: ROCODONE BITARTRATE AND IBUPROFEN",.      "count": 16.    },.   
+0900:  {.      "term": "ZINC OXIDE",.      "count": 15.    },.    {.  
+0940:     "term": "OXAPROZIN",.      "count": 15.    },.    {.      "t
+0980: erm": "SERTRALINE",.      "count": 14.    },.    {.      "term":
+09c0:  "SALICYLIC ACID",.      "count": 14.    },.    {.      "term": 
+0a00: "MINERAL OIL",.      "count": 13.    },.    {.      "term": "MAG
+0a40: NESIUM SULFATE",.      "count": 13.    },.    {.      "term": "M
+0a80: AGNESIUM CITRATE",.      "count": 13.    },.    {.      "term": 
+0ac0: "DICLOFENAC SODIUM AND MISOPROSTOL",.      "count": 13.    },.  
+0b00:   {.      "term": "PETROLATUM",.      "count": 12.    },.    {. 
+0b40:      "term": "KETOPROFEN",.      "count": 12.    },.    {.      
+0b80: "term": "FERRIC OXIDE RED",.      "count": 12.    },.    {.     
+0bc0:  "term": "DIMETHICONE",.      "count": 10.    },.    {.      "te
+0c00: rm": "OCTINOXATE, ZINC OXIDE",.      "count": 8.    },.    {.   
+0c40:    "term": "OCTINOXATE, OCTISALATE, TITANIUM DIOXIDE",.      "co
+0c80: unt": 8.    },.    {.      "term": "TRICLOSAN 0.46%",.      "cou
+0cc0: nt": 7.    },.    {.      "term": "HUMAN INSULIN",.      "count"
+0d00: : 7.    },.    {.      "term": "ZINC OXIDE AND TITANIUM DIOXIDE"
+0d40: ,.      "count": 6.    },.    {.      "term": "SELENIUM SULFIDE"
+0d80: ,.      "count": 6.    },.    {.      "term": "LANOLIN, PETROLAT
+0dc0: UM",.      "count": 6.    },.    {.      "term": "CHLORHEXIDINE 
+0e00: GLUCONATE AND HYDROGEN PEROXIDE",.      "count": 6.    },.    {.
+0e40:       "term": "ACEBUTOLOL HYDROCHLORIDE",.      "count": 6.    }
+0e80: ,.    {.      "term": "PRAMOXINE HCL, ZINC ACETATE",.      "coun
+0ec0: t": 5.    },.    {.      "term": "PHENELZINE SULFATE",.      "co
+0f00: unt": 5.    },.    {.      "term": "MEFENAMIC ACID",.      "coun
+0f40: t": 5.    },.    {.      "term": "FLURBIPROFEN",.      "count": 
+0f80: 5.    },.    {.      "term": "DIPHENHYDRAMINE HCL, ZINC ACETATE"
+0fc0: ,.      "count": 5.    },.    {.      "term": "CAMPHOR, EUCALYPT
+1000: US OIL, MENTHOL",.      "count": 5.    },.    {.      "term": "B
+1040: ENZALKONIUM CHLORIDE 0.13%",.      "count": 5.    },.    {.     
+1080:  "term": "TOLMETIN SODIUM",.      "count": 4.    },.    {.      
+10c0: "term": "POVIDONE-IODINE",.      "count": 4.    },.    {.      "
+1100: term": "OXYCODONE HYDROCHLORIDE AND IBUPROFEN",.      "count": 4
+1140: .    },.    {.      "term": "DIFLUNISAL",.      "count": 4.    }
+1180: ,.    {.      "term": "CASTOR OIL",.      "count": 4.    },.    
+11c0: {.      "term": "SODIUM PHENYLBUTYRATE",.      "count": 3.    },
+1200: .    {.      "term": "MENTHOL",.      "count": 3.    },.    {.  
+1240:     "term": "FENOPROFEN",.      "count": 3.    },.    {.      "t
+1280: erm": "CAMPHOR (SYNTHETIC), MENTHOL, METHYL SALICYLATE",.      "
+12c0: count": 3.    },.    {.      "term": "CAMPHOR",.      "count": 3
+1300: .    },.    {.      "term": "VITAMIN C, CALCIUM, IRON, VITAMIN D
+1340: 3, VITAMIN E, THIAMIN, RIBOFLAVIN, NIACINAMIDE, VITAMIN B6, FOLI
+1380: C ACID, IODINE, ZINC, COPPER, DOCUSATE SODIUM",.      "count": 2
+13c0: .    },.    {.      "term": "OCTOCRYLENE, OXYBENZONE",.      "co
+1400: unt": 2.    },.    {.      "term": "OATMEAL",.      "count": 2. 
+1440:    },.    {.      "term": "NAPROXEN, .GAMMA.-AMINOBUTYRIC ACID",
+1480: .      "count": 2.    },.    {.      "term": "NAPROXEN AND ESOME
+14c0: PRAZOLE MAGNESIUM",.      "count": 2.    },.    {.      "term": 
+1500: "METHYL SALICYLATE AND MENTHOL",.      "count": 2.    },.    {. 
+1540:      "term": "INSULIN HUMAN",.      "count": 2.    },.    {.    
+1580:   "term": "FENOPROFEN CALCIUM",.      "count": 2.    },.    {.  
+15c0:     "term": "FAMOTIDINE",.      "count": 2.    },.    {.      "t
+1600: erm": "DANDRUFF",.      "count": 2.    },.    {.      "term": "C
+1640: ETYLPYRIDIIUM CHLORIDE",.      "count": 2.    },.    {.      "te
+1680: rm": "BENZOYL PEROXIDE",.      "count": 2.    },.    {.      "te
+16c0: rm": "AMMONIUM LACTATE",.      "count": 2.    },.    {.      "te
+1700: rm": "ZINC OXIDE, OCTINOXATE, OCTISALATE",.      "count": 1.    
+1740: },.    {.      "term": "VOLTAREN",.      "count": 1.    },.    {
+1780: .      "term": "TOPICAL LIDOCAINE (4% W/W)",.      "count": 1.  
+17c0:   },.    {.      "term": "SODIUM PHENYLACETATE AND SODIUM BENZOA
+1800: TE",.      "count": 1.    },.    {.      "term": "SELEGILINE",. 
+1840:      "count": 1.    },.    {.      "term": "SDOIUM FLUORIDE",.  
+1880:     "count": 1.    },.    {.      "term": "SALICYLIC ACID, ZINC 
+18c0: OXIDE",.      "count": 1.    },.    {.      "term": "SALICYLIC A
+1900: CID 2%",.      "count": 1.    },.    {.      "term": "SALICLYLIC
+1940:  ACID",.      "count": 1.    },.    {.      "term": "RUB",.     
+1980:  "count": 1.    },.    {.      "term": "PYRITHIONS ZINC",.      
+19c0: "count": 1.    },.    {.      "term": "PYRITHIONE ZINCE",.      
+1a00: "count": 1.    },.    {.      "term": "PULSATILLA VULGARIS AND E
+1a40: UPHORBIA RESINIFERA RESIN AND LUFFA OPSILVER NITRATEERCULATA FRU
+1a80: IT AND MERCURIC IODIDE AND SUS SCROFA NASAL MUCOSA AND SILVER NI
+1ac0: TRATE AND CALCIUM SULFIDE AND SINUSITISINUM",.      "count": 1. 
+1b00:    },.    {.      "term": "PRASTERONE AND IBUPROFEN",.      "cou
+1b40: nt": 1.    },.    {.      "term": "PIROXICAM, .GAMMA.-AMINOBUTYR
+1b80: IC ACID",.      "count": 1.    },.    {.      "term": "PHENOZAPY
+1bc0: RIDINE HYDROCHLORIDE",.      "count": 1.    },.    {.      "term
+1c00: ": "OCTINOXATE, TITANIUM DIOXIDE",.      "count": 1.    },.    {
+1c40: .      "term": "OCTINOXATE, OCTISALATE, AVOBENZONE",.      "coun
+1c80: t": 1.    }.  ].}
+17:01:41.818384 == Info: Connection #0 to host openfda.intellectsolutions.com left intact

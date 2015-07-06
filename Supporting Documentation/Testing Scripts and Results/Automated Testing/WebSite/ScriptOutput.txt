@@ -1,0 +1,32 @@
+[mpease@ip-172-31-13-14 ~]$ scripts/testWebSite.sh
+/home/mpease/webTest Available
+Testing Home Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  32066      0 --:--:-- --:--:-- --:--:-- 32234
+Testing Our Solution Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  74644      0 --:--:-- --:--:-- --:--:-- 75326
+Testing Drug Search Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  31780      0 --:--:-- --:--:-- --:--:-- 31804
+Testing Feedback Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  61366      0 --:--:-- --:--:-- --:--:-- 61689
+Testing About Us Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  54340      0 --:--:-- --:--:-- --:--:-- 54212
+Testing Legal Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  35579      0 --:--:-- --:--:-- --:--:-- 36141
+Testing Privacy Page
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7156  100  7156    0     0  43978      0 --:--:-- --:--:-- --:--:-- 47078
+Checking for Errors
+Testing Complete

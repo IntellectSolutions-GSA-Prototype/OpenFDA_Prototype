@@ -1,0 +1,45 @@
+17:01:41.285631 == Info:   Trying 54.172.240.70...
+17:01:41.286318 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 8000 (#0)
+17:01:41.286342 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+17:01:41.363132 == Info: skipping SSL peer certificate verification
+17:01:41.366718 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+17:01:41.366729 == Info: Server certificate:
+17:01:41.366746 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+17:01:41.366768 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+17:01:41.366773 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+17:01:41.366776 == Info: 	common name: openfda.intellectsolutions.com
+17:01:41.366780 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+17:01:41.366824 => Send header, 117 bytes (0x75)
+0000: GET /openfda/clearCache HTTP/1.1
+0022: User-Agent: curl/7.40.0
+003b: Host: openfda.intellectsolutions.com:8000
+0066: Accept: */*
+0073: 
+17:01:41.368254 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+17:01:41.368272 <= Recv header, 23 bytes (0x17)
+0000: X-Powered-By: Express
+17:01:41.368280 <= Recv header, 32 bytes (0x20)
+0000: Access-Control-Allow-Origin: *
+17:01:41.368288 <= Recv header, 78 bytes (0x4e)
+0000: Access-Control-Allow-Headers: Origin, X-Requested-With, Content-
+0040: Type, Accept
+17:01:41.368360 <= Recv header, 40 bytes (0x28)
+0000: Access-Control-Allow-Methods: POST,GET
+17:01:41.368372 <= Recv header, 47 bytes (0x2f)
+0000: Content-Type: application/json; charset=utf-8
+17:01:41.368380 <= Recv header, 20 bytes (0x14)
+0000: Content-Length: 46
+17:01:41.368387 <= Recv header, 37 bytes (0x25)
+0000: ETag: W/"2e-ZaOSiJqX9U1ZftJgqrKTMQ"
+17:01:41.368395 <= Recv header, 23 bytes (0x17)
+0000: Vary: Accept-Encoding
+17:01:41.368402 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 17:01:41 GMT
+17:01:41.368411 <= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+17:01:41.368418 <= Recv header, 2 bytes (0x2)
+0000: 
+17:01:41.368424 <= Recv data, 46 bytes (0x2e)
+0000: [.  {.    "results": "Local Cache Reset".  }.]
+17:01:41.370156 == Info: Connection #0 to host openfda.intellectsolutions.com left intact

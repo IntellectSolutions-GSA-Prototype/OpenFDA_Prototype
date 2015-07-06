@@ -1,0 +1,154 @@
+14:42:01.789683 == Info:   Trying 54.172.240.70...
+14:42:01.790391 == Info: Connected to openfda.intellectsolutions.com (54.172.240.70) port 443 (#0)
+14:42:01.790416 == Info: Initializing NSS with certpath: sql:/etc/pki/nssdb
+14:42:01.853098 == Info:   CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+14:42:01.885188 == Info: SSL connection using TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+14:42:01.885210 == Info: Server certificate:
+14:42:01.885236 == Info: 	subject: CN=openfda.intellectsolutions.com,OU=Free SSL,OU=Domain Control Validated
+14:42:01.885258 == Info: 	start date: Jun 26 00:00:00 2015 GMT
+14:42:01.885263 == Info: 	expire date: Sep 24 23:59:59 2015 GMT
+14:42:01.885267 == Info: 	common name: openfda.intellectsolutions.com
+14:42:01.885271 == Info: 	issuer: CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+14:42:01.885324 => Send header, 94 bytes (0x5e)
+0000: GET / HTTP/1.1
+0010: User-Agent: curl/7.40.0
+0029: Host: openfda.intellectsolutions.com
+004f: Accept: */*
+005c: 
+14:42:01.888511 <= Recv header, 17 bytes (0x11)
+0000: HTTP/1.1 200 OK
+14:42:01.888577 <= Recv header, 37 bytes (0x25)
+0000: Date: Mon, 06 Jul 2015 14:42:01 GMT
+14:42:01.888594 <= Recv header, 30 bytes (0x1e)
+0000: Server: Apache/2.4.12 (Unix)
+14:42:01.888602 <= Recv header, 45 bytes (0x2d)
+0000: Strict-Transport-Security: max-age=15768000
+14:42:01.888611 <= Recv header, 46 bytes (0x2e)
+0000: Last-Modified: Mon, 06 Jul 2015 10:29:15 GMT
+14:42:01.888619 <= Recv header, 28 bytes (0x1c)
+0000: ETag: "1bf4-51a32609ad4c0"
+14:42:01.888627 <= Recv header, 22 bytes (0x16)
+0000: Accept-Ranges: bytes
+14:42:01.888634 <= Recv header, 22 bytes (0x16)
+0000: Content-Length: 7156
+14:42:01.888642 <= Recv header, 19 bytes (0x13)
+0000: Connection: close
+14:42:01.888650 <= Recv header, 40 bytes (0x28)
+0000: Content-Type: text/html; charset=UTF-8
+14:42:01.888658 <= Recv header, 2 bytes (0x2)
+0000: 
+14:42:01.888694 <= Recv data, 7156 bytes (0x1bf4)
+0000: ...<!DOCTYPE html>.<html lang="en" xmlns="http://www.w3.org/1999
+0040: /xhtml" class="no-js" ng-app="OpenFDAPrototype">.<head>.    <met
+0080: a charset="utf-8" />.    <meta name="viewport" content="width=de
+00c0: vice-width, initial-scale=1, maximum-scale=1">.    <link rel="sh
+0100: ortcut icon" href="favicon.ico" />.    <title>ADERS</title>.    
+0140: <!--Begin Style References-->.    <!--CDN References-->.    <!--
+0180: Styles-->.    <link href="https://cdnjs.cloudflare.com/ajax/libs
+01c0: /twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />.
+0200:     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-b
+0240: ootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">.    <!
+0280: --Fonts-->.    <link href='https://fonts.googleapis.com/css?fami
+02c0: ly=Questrial' rel='stylesheet' type='text/css'>.    <link href='
+0300: https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'
+0340:  type='text/css'>.    <!--Site Dependencies-->.    <!--Styles-->
+0380: .    <!--Style Overrides-->.    <link href="Styles/Master/banner
+03c0: .css" rel="stylesheet" />.    <link href="Styles/Master/master.c
+0400: ss" rel="stylesheet" />.    <link href="Styles/Master/menu.css" 
+0440: rel="stylesheet" />.    <link href="Styles/Views/index.css" rel=
+0480: "stylesheet" />.    <link href="Styles/Views/search.css" rel="st
+04c0: ylesheet" />.    <link href="Styles/Views/landing.css" rel="styl
+0500: esheet" />.    <!--Begin Script References-->.    <!--CDN Refere
+0540: nces-->.    <!--Scripts-->.    <!--ExoTools-->.    <script src="
+0580: Scripts/ExoTools/ExoTools.js"></script>.    <script src="Scripts
+05c0: /ExoTools/ExoTools.Collections.js"></script>.    <script src="Sc
+0600: ripts/ExoTools/ExoTools.Document.js"></script>.    <script type=
+0640: "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/an
+0680: gular.js/1.4.1/angular.js"></script>.    <script type="text/java
+06c0: script" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1
+0700: .4.1/angular-route.js"></script>.    <script type="text/javascri
+0740: pt" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/
+0780: modernizr.js"></script>.    <script type="text/javascript" src="
+07c0: https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.j
+0800: s"></script>.    <script type="text/javascript" src="https://cdn
+0840: js.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap
+0880: .js"></script>.    <script type="text/javascript" src="https://c
+08c0: dnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>.    
+0900: <!--Site References Post Dependencies Loaded-->.    <script src=
+0940: "Scripts/Master/menu.js"></script>.    <script src="Scripts/Mast
+0980: er/master.js"></script>.    <script src="Scripts/Master/types.js
+09c0: "></script>.    <script src="Scripts/Master/Angular-Init.js"></s
+0a00: cript>.</head>.<body ng-controller="MainController as main" ng-i
+0a40: nit="main.setPageTitle()">.    <input type="hidden" id="mobilify
+0a80: " />.    <div class="flex-menu site-menu menu-blue">.        <ul
+0ac0:  class="site-menu-list">.            <li ng-repeat="item in main
+0b00: .menuItems" class="menu-item {{item.classes}}" ng-show="item.sho
+0b40: w" ng-class="{'menu-logo': item.isLogo}">.                <span 
+0b80: class="menu-item-content" ng-class="{'menu-logo-content': item.i
+0bc0: sLogo}">.                    <span ng-class="{'prototype-logo': 
+0c00: item.isLogo}">.                        <a href="{{item.url}}" ng
+0c40: -click="main.closeMenu()">.                            <span ng-
+0c80: show="{{ !item.isImage }}">.                                {{it
+0cc0: em.text}}.                            </span>.                  
+0d00:           <img src="{{item.src}}" alt="{{item.alt}}" ng-show="{{
+0d40: item.isImage}}" />.                        </a>.                
+0d80:     </span>.                </span>.            </li>.        </
+0dc0: ul>.    </div>.    <div class="flex-menu site-menu-mobile-icon">
+0e00: .        <div class="site-menu-mobile-text">.            <span c
+0e40: lass="site-menu-mobile-bar">.            </span>.            <sp
+0e80: an class="site-menu-mobile-bar">.            </span>.           
+0ec0:  <span class="site-menu-mobile-bar">.            </span>.       
+0f00:  </div>.    </div>.    <div id="wrapper">.        <div id="heade
+0f40: r">.           .        </div>.        <div id="content">.      
+0f80:       <div>.                <div ng-view>.                    <!
+0fc0: --View Content Injected Here-->.                </div>.         
+1000:    </div>.        </div>.        <div id="footer">.            <
+1040: table class="footer-content">.                <tbody>.          
+1080:           <tr>.                         <td ng-show="!main.isMob
+10c0: ile()">.                            <div class="intellLogoContai
+1100: ner">.                                <img src="Images/Intellect
+1140: Solutions-Logo.png" alt="Intellect Solutions Logo" class="intell
+1180: Logo" /><br />.                                <a href="http://w
+11c0: ww.intellectsolutions.com" target="_blank">www.intellectsolution
+1200: s.com</a>.                            </div>.                   
+1240:      </td>.                        <td>.                        
+1280:     <div class="footer-contact">.                               
+12c0:  <span>CONTACT US</span>.                                <br />.
+1300:                                 Phone: 877-691-7477.            
+1340:                     <br />.                                <span
+1380: >GSA Contract # GS-35F-144AA</span>.                            
+13c0: </div>.                        </td>.                        <td
+1400: >.                            <div class="footer-address">.     
+1440:                            Intellect Solutions, LLC.            
+1480:                     <br />.                                <span
+14c0: >5602 Pickwick Road</span>.                                <br /
+1500: >.                                <span>Centerville, VA 20120</s
+1540: pan>.                            </div>.                        
+1580: </td>.                        <td>.                            <
+15c0: a href="#/Privacy">Privacy Policy</a><br />.                    
+1600:         <a href="#/Legal">Legal Notice</a><br />.               
+1640:          </td>.                    </tr>.                </tbody
+1680: >.            </table>.            <div ng-show="main.isMobile()
+16c0: ">.                <table class="table-center">.                
+1700:     <tbody>.                        <tr>.                       
+1740:      <td>.                                &copy;<img src="Images
+1780: /IntellectSolutions-Logo.png" alt="Intellect Solutions Logo" cla
+17c0: ss="intellLogo" />.                            </td>.           
+1800:              </tr>.                    </tbody>.                
+1840: </table>.            </div>.        </div>.    </div>.    <!--Co
+1880: ntrollers-->.    <!--Views/Search.html-->.    <script src="Scrip
+18c0: ts/Controllers/SearchController.js" type="text/javascript"></scr
+1900: ipt>.    <!--Views/Disclosure.html-->.    <script src="Scripts/C
+1940: ontrollers/DisclosureController.js" type="text/javascript"></scr
+1980: ipt>.    <!--Views/About.html-->.    <script src="Scripts/Contro
+19c0: llers/AboutController.js" type="text/javascript"></script>.    <
+1a00: !--Views/Video.html-->.    <script src="Scripts/Controllers/Vide
+1a40: oController.js"></script>.    <!--Views/Landing.html-->.    <scr
+1a80: ipt src="Scripts/Controllers/LandingController.js"></script>.   
+1ac0:  <!--Views/Feedback.html-->.    <script src="Scripts/Controllers
+1b00: /FeedbackController.js"></script>.    <!--Views/Privacy.html-->.
+1b40:     <script src="Scripts/Controllers/PrivacyController.js"></scr
+1b80: ipt>.    <!--Views/Legla.html-->.    <script src="Scripts/Contro
+1bc0: llers/LegalController.js"></script>.</body>.</html>.
+14:42:01.891588 == Info: Closing connection 0
