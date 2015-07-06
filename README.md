@@ -1,4 +1,7 @@
-﻿URL of the Prototype: https://openfda.intellectsolutions.com - the URL is hosted on an Amazon Web Service (AWS) EC2 Linux instance and operated in accordance with AWS terms of services <<http://aws.amazon.com/legal/>>
+﻿Intellect Solutions is pleased to submit it's prototype Adverse Drug Effects Research System (ADERS) for Development pool (pool two).
+
+
+URL of the Prototype: https://openfda.intellectsolutions.com - the URL is hosted on an Amazon Web Service (AWS) EC2 Linux instance and operated in accordance with AWS terms of services <<http://aws.amazon.com/legal/>>
 
 
 URL of the Source Code Repository: https://github.com/IntellectSolutions-GSA-Prototype/OpenFDA_Prototype 
